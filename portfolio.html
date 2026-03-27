@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joshan Randhawa — Software Engineer</title>
+<meta name="description" content="T-Level student & Amazon placement graduate. I build AI-assisted tools, accessible web apps, and real-time operational systems with real-world impact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --border: #222222;
+    --text: #e8e8e8;
+    --muted: #555555;
+    --accent: #e8ff47;
+    --accent2: #47ffe8;
+    --accent3: #ff6b47;
+    --accent4: #b47fff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  nav.scrolled {
+    background: rgba(10,10,10,0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HEADER */
+  header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem;
+    padding-top: 8rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .glow1 {
+    top: -30%; right: -15%;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(232,255,71,0.05) 0%, transparent 65%);
+  }
+
+  .glow2 {
+    bottom: -20%; left: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(71,255,232,0.04) 0%, transparent 65%);
+  }
+
+  .header-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3.5rem, 9vw, 8.5rem);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  h1 em { font-style: normal; color: var(--accent); }
+  h1 .dim { color: #2a2a2a; }
+
+  .header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .header-desc { max-width: 500px; color: #777; font-size: 1rem; line-height: 1.75; }
+
+  .header-badges { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.85rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .badge.live { border-color: var(--accent); color: var(--accent); }
+  .badge.award { border-color: var(--accent4); color: var(--accent4); }
+
+  .scroll-line {
+    position: absolute;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.2s;
+  }
+
+  .scroll-line span { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.2em; }
+
+  .scroll-line::after {
+    content: '';
+    display: block; width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--muted), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%,100% { opacity: 0.4; } 50% { opacity: 1; }
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 4rem; border-top: 1px solid var(--border); }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 3.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .section-label::after { content: ''; width: 50px; height: 1px; background: var(--accent); opacity: 0.3; }
+
+  /* PROJECTS */
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .project.visible { opacity: 1; transform: translateY(0); }
+  .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .project-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.2em; margin-bottom: 1.2rem; }
+
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-context { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+
+  .adopted {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: 'DM Mono', monospace; font-size: 0.63rem;
+    color: var(--accent); border: 1px solid var(--accent);
+    padding: 0.28rem 0.75rem; margin-bottom: 1.4rem;
+  }
+
+  .adopted::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 1.5s ease infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .tag {
+    font-family: 'DM Mono', monospace; font-size: 0.63rem;
+    padding: 0.22rem 0.65rem; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.05em;
+  }
+
+  .tag.a { border-color: rgba(232,255,71,0.35); color: var(--accent); }
+  .tag.b { border-color: rgba(71,255,232,0.35); color: var(--accent2); }
+  .tag.c { border-color: rgba(180,127,255,0.35); color: var(--accent4); }
+
+  .project-desc { color: #999; font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.4rem; }
+
+  .stats-row { display: flex; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 1.8rem; }
+
+  .stat { flex: 1; background: var(--surface); padding: 0.9rem; text-align: center; }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700;
+    color: var(--accent); line-height: 1; margin-bottom: 0.2rem;
+  }
+
+  .stat-num.s2 { color: var(--accent2); }
+  .stat-num.s3 { color: var(--accent3); }
+  .stat-num.s4 { color: var(--accent4); }
+
+  .stat-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .detail-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.6rem; }
+
+  .detail-list li { font-size: 0.87rem; color: #888; padding-left: 1.2rem; position: relative; line-height: 1.6; }
+
+  .detail-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.72rem; top: 0.08em; }
+
+  .testimonial {
+    background: var(--surface); border-left: 2px solid var(--accent);
+    padding: 1.1rem 1.3rem; margin-bottom: 0.7rem;
+  }
+
+  .testimonial.t2 { border-left-color: var(--accent2); }
+  .testimonial.t3 { border-left-color: var(--accent3); }
+  .testimonial.t4 { border-left-color: var(--accent4); }
+
+  .testimonial-text { font-size: 0.83rem; color: #999; line-height: 1.7; font-style: italic; margin-bottom: 0.5rem; }
+  .testimonial-author { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.08em; }
+  .testimonial-author strong { color: #bbb; font-weight: 400; }
+
+  /* EXPERIENCE */
+  .timeline { display: flex; flex-direction: column; }
+
+  .timeline-item {
+    display: grid; grid-template-columns: 180px 1fr; gap: 3rem;
+    padding: 2.5rem 0; border-bottom: 1px solid var(--border);
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-item.visible { opacity: 1; transform: translateY(0); }
+
+  .tl-date { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; line-height: 1.7; padding-top: 0.15rem; }
+  .tl-date strong { display: block; color: var(--accent); font-size: 0.72rem; font-weight: 400; margin-bottom: 0.3rem; }
+
+  .tl-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .tl-org { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 0.7rem; }
+  .tl-body { font-size: 0.87rem; color: #888; line-height: 1.75; }
+
+  /* ABOUT */
+  .about-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
+
+  .about-text { font-size: 0.98rem; color: #999; line-height: 1.9; }
+  .about-text p + p { margin-top: 1.2rem; }
+  .about-text strong { color: var(--text); font-weight: 400; }
+
+  .about-sidebar { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+
+  .about-row { background: var(--surface); padding: 1rem 1.3rem; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+
+  .arl { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; white-space: nowrap; }
+  .arv { font-size: 0.83rem; color: #bbb; text-align: right; }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+  }
+
+  .skill-block {
+    background: var(--surface); padding: 1.8rem 1.5rem;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s;
+  }
+
+  .skill-block:hover { background: var(--surface2); }
+  .skill-block.visible { opacity: 1; transform: translateY(0); }
+
+  .skill-cat { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+
+  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.38rem; }
+  .skill-list li { font-size: 0.82rem; color: #888; }
+
+  /* CONTACT */
+  #contact { background: var(--surface); }
+
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+
+  .contact-h {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.5rem;
+  }
+
+  .contact-h em { font-style: normal; color: var(--accent); }
+
+  .contact-sub { color: #777; font-size: 0.93rem; line-height: 1.75; margin-bottom: 2rem; }
+
+  .contact-links { display: flex; flex-direction: column; gap: 0.7rem; }
+
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.9rem 1.1rem; border: 1px solid var(--border);
+    text-decoration: none; background: var(--bg);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .contact-link:hover { border-color: var(--accent); background: rgba(232,255,71,0.02); }
+
+  .cl-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; min-width: 58px; }
+  .cl-value { font-size: 0.86rem; color: var(--text); }
+
+  .contact-right { display: flex; flex-direction: column; gap: 0.8rem; }
+
+  .contact-card { background: var(--bg); border: 1px solid var(--border); padding: 1.3rem; }
+  .cc-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .cc-value { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 600; }
+
+  footer {
+    padding: 2.5rem 4rem; border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
+  .footer-note { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--muted); letter-spacing: 0.1em; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    header, section { padding: 4rem 1.5rem; }
+    .project { grid-template-columns: 1fr; gap: 2rem; }
+    .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.4rem; }
+    footer { padding: 2rem 1.5rem; }
+    .scroll-line { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <span class="nav-name">Joshan Randhawa</span>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+  <p class="header-tag">Software Engineer & Builder</p>
+  <h1>Joshan<br><em>Randhawa</em><br><span class="dim">———</span></h1>
+  <div class="header-bottom">
+    <p class="header-desc">T-Level Digital Production student. Amazon placement graduate. I build AI-assisted operational tools, accessible web platforms, and real-time systems — focused on real-world impact at every layer of the stack.</p>
+    <div class="header-badges">
+      <span class="badge live">✦ Amazon Placement Graduate</span>
+      <span class="badge award">★ BAE Systems Best Candidate</span>
+      <span class="badge">The Leigh UTC · 2024–2026</span>
+      <span class="badge">Available for Roles · 2026</span>
+    </div>
+  </div>
+  <div class="scroll-line"><span>SCROLL</span></div>
+</header>
+
+<section id="projects">
+  <p class="section-label">Selected Projects</p>
+
+  <div class="project">
+    <div>
+      <p class="project-num">01 — Primary</p>
+      <h2 class="project-title">TicketScope</h2>
+      <p class="project-context">Amazon Prime Video · Individual Project · 2025</p>
+      <div class="adopted">Company-Wide Adoption Confirmed</div>
+      <div class="tags">
+        <span class="tag a">React</span><span class="tag a">TypeScript</span><span class="tag a">MCP Server</span>
+        <span class="tag">Recharts</span><span class="tag">AI Workflows</span><span class="tag">AWS EC2</span>
+      </div>
+    </div>
+    <div>
+      <p class="project-desc">A real-time operational intelligence tool for on-call engineers at Prime Video. Engineers needed faster access to the right data during live incidents — TicketScope surfaces operational insights the moment they're needed, reducing cognitive load when it matters most.</p>
+      <p class="project-desc">Built around a TypeScript MCP server I engineered from scratch, aggregating structured data from multiple internal sources and enabling AI-assisted querying. The React frontend provides intuitive interaction with Recharts visualisations, designed around low-latency flows for real-time decision making. Confirmed for company-wide adoption.</p>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">MCP</div><div class="stat-label">Server</div></div>
+        <div class="stat"><div class="stat-num s2">RT</div><div class="stat-label">Real-Time</div></div>
+        <div class="stat"><div class="stat-num s3">AI</div><div class="stat-label">Query Layer</div></div>
+        <div class="stat"><div class="stat-num s4">↑</div><div class="stat-label">Company-Wide</div></div>
+      </div>
+      <ul class="detail-list">
+        <li>Engineered a TypeScript MCP server aggregating structured operational data from multiple internal sources</li>
+        <li>Built a React/TypeScript frontend optimised for fast interaction under operational pressure</li>
+        <li>Implemented Recharts visualisations for system metrics and event trends</li>
+        <li>Designed low-latency data flows supporting real-time decision making for on-call engineers</li>
+        <li>Delivered within Amazon's internal production tooling constraints — confirmed for company-wide rollout</li>
+        <li>Learned React and TypeScript from scratch during placement, then shipped production-grade tooling</li>
+      </ul>
+      <div class="testimonial t2">
+        <p class="testimonial-text">"He is a quick learner who demonstrates an impeccable work ethic. His ability to communicate effectively with a diverse range of individuals in professional settings makes you forget the fact he's only 17."</p>
+        <p class="testimonial-author"><strong>Flo Busfield</strong> — UX/UI Apprentice, Amazon buddy</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div>
+      <p class="project-num">02 — EPQ Artefact</p>
+      <h2 class="project-title">NeuroNav</h2>
+      <p class="project-context">Personal Project · EPQ Primary Artefact · Live on Vercel</p>
+      <div class="tags">
+        <span class="tag a">React</span><span class="tag a">TypeScript</span><span class="tag b">Vite</span>
+        <span class="tag b">Vercel</span><span class="tag">Accessibility</span><span class="tag">UX Research</span>
+      </div>
+    </div>
+    <div>
+      <p class="project-desc">An accessibility-focused revision web app supporting neurodivergent learners — my EPQ primary artefact. A research-led project combining UX design principles with technical implementation to serve a real and underserved user group.</p>
+      <p class="project-desc">Uses localStorage caching to preserve user progress without any backend reliance, keeping it fast and friction-free. Design decisions were grounded in accessibility research throughout. The app is live and has reached 30+ real users.</p>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Real Users</div></div>
+        <div class="stat"><div class="stat-num s2">Live</div><div class="stat-label">On Vercel</div></div>
+        <div class="stat"><div class="stat-num s4">EPQ</div><div class="stat-label">Artefact</div></div>
+      </div>
+      <ul class="detail-list">
+        <li>Built and deployed a full React/TypeScript/Vite app supporting neurodivergent learners</li>
+        <li>localStorage caching preserves user progress without any backend dependency</li>
+        <li>Research-led UX process — accessibility principles shaped every design decision</li>
+        <li>30+ real users; primary artefact for Extended Project Qualification</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="project">
+    <div>
+      <p class="project-num">03 — Team Project</p>
+      <h2 class="project-title">Prime Levels</h2>
+      <p class="project-context">Amazon · T-Level Group Project · 4-Week Sprint</p>
+      <div class="tags">
+        <span class="tag a">HTML5</span><span class="tag a">CSS3</span><span class="tag a">JavaScript</span>
+        <span class="tag">Python/Flask</span><span class="tag">AWS S3</span><span class="tag b">WCAG 2.1</span>
+      </div>
+    </div>
+    <div>
+      <p class="project-desc">A fully accessible, multi-page promotional website for Amazon T-Level placements — presented to an audience of 80+ people. I delivered 95% of all frontend development in a 4-week sprint, while simultaneously mentoring other cohort members with their own projects.</p>
+      <p class="project-desc">Designed the full visual identity from scratch — colour palette, typography, component library — before writing a line of code. Passed accessibility audit with full WCAG 2.1 compliance.</p>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">10</div><div class="stat-label">Pages</div></div>
+        <div class="stat"><div class="stat-num s2">3.8k</div><div class="stat-label">Lines HTML</div></div>
+        <div class="stat"><div class="stat-num s3">80+</div><div class="stat-label">Audience</div></div>
+        <div class="stat"><div class="stat-num s4">4wk</div><div class="stat-label">Sprint</div></div>
+      </div>
+      <ul class="detail-list">
+        <li>95% of all frontend: ~3,850 HTML, 2,018 CSS, ~1,150 JavaScript lines across 10 pages</li>
+        <li>Designed full UI/UX system: concept → wireframe → responsive cross-browser implementation</li>
+        <li>65 ARIA attributes and full WCAG 2.1 compliance throughout</li>
+        <li>Integrated with Python/Flask backend deployed on AWS S3</li>
+        <li>Led bi-daily standups and coordinated task allocation across the 5-person team</li>
+      </ul>
+      <div class="testimonial">
+        <p class="testimonial-text">"He was no doubt one of the main leading factors of our success. His determination led to him writing 99 percent of the front end, committing his time not only to the code but to helping his team understand the process behind it all."</p>
+        <p class="testimonial-author"><strong>Cameron Thornton</strong> — Backend Developer, T-Level cohort</p>
+      </div>
+      <div class="testimonial t3" style="margin-top:0.7rem">
+        <p class="testimonial-text">"Joshan showed Learning & Development throughout — reaching out to others when uncertain, and helping those around him during periods of uncertainty. His collaboration and ownership of his tasks was evident through our bi-daily meetings."</p>
+        <p class="testimonial-author"><strong>Tristan Pakey-Arthur</strong> — Team member, T-Level cohort</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div>
+      <p class="project-num">04 — Experimental</p>
+      <h2 class="project-title">CogniSign</h2>
+      <p class="project-context">Personal Project · Computer Vision · Python</p>
+      <div class="tags">
+        <span class="tag a">Python</span><span class="tag a">MediaPipe</span>
+        <span class="tag c">Computer Vision</span><span class="tag">Gesture Control</span><span class="tag">Accessibility</span>
+      </div>
+    </div>
+    <div>
+      <p class="project-desc">A gesture-control prototype for accessibility-driven interaction. Uses Python and MediaPipe for real-time hand tracking, mapping gestures to system actions including dynamic pinch-to-zoom logic engineered from scratch. Built independently end-to-end: motion detection through to functional execution.</p>
+      <ul class="detail-list">
+        <li>Real-time hand tracking using Python and MediaPipe</li>
+        <li>Custom gesture-to-action logic including dynamic pinch-to-zoom</li>
+        <li>Built independently: motion detection → gesture classification → action execution</li>
+        <li>Explores accessibility-driven human-computer interaction</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <p class="section-label">Experience</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-date"><strong>Oct – Dec 2025</strong>T-Level Placement<br>9 weeks</div>
+      <div>
+        <p class="tl-title">Software Development Engineer</p>
+        <p class="tl-org">Amazon Prime Video</p>
+        <p class="tl-body">Built TicketScope — an MCP server to React frontend operational metrics tool confirmed for company-wide adoption. Launched a T-Level promotional website presented to 80+ people. Learned and shipped TypeScript, React, Chart.js, EC2, and S3 during the placement. Participated in weekly business meetings and daily standups across 9 weeks.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date"><strong>March 2025</strong>Step Up</div>
+      <div>
+        <p class="tl-title">Placement Participant</p>
+        <p class="tl-org">Amazon · Step Up Work Experience</p>
+        <p class="tl-body">Collaborated on a team prototype application using AWS PartyRock AI, designing and implementing core features based on user requirements. Presented the completed application to an audience and worked closely with AWS/Prime Video mentors.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-date"><strong>July 2023</strong>Shadowing</div>
+      <div>
+        <p class="tl-title">Junior Full Stack Assistant</p>
+        <p class="tl-org">Tribeca</p>
+        <p class="tl-body">Shadowed full-stack developers and worked alongside a lead back-end developer, gaining hands-on exposure to application architecture and database management. Contributed to team problem-solving sessions and demonstrated initiative throughout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <p class="section-label">About</p>
+  <div class="about-layout">
+    <div class="about-text">
+      <p>My route into software started in <strong>gaming and modding communities</strong> — collaborating on Minecraft and Counter-Strike projects taught me to debug unfamiliar codebases, iterate fast, and ship solutions for real users. That investigative mindset has stayed constant.</p>
+      <p>During my Amazon placement I taught myself <strong>React and TypeScript from scratch</strong> while delivering TicketScope — a production-grade AI-assisted operational tool confirmed for company-wide adoption. At the same time I was mentoring fellow placement students on JavaScript, Git, and frontend architecture.</p>
+      <p>Outside formal work I manage operations for a <strong>modding services community</strong> supporting hundreds of clients. I facilitate high-value transactions as an intermediary, organise large-scale events (12× participant growth since 2023), and translate ambiguous user needs into clear technical requirements. Different domain, same skills.</p>
+      <p>My EPQ artefact is <strong>NeuroNav</strong> — a deployed, research-led accessibility app with 30+ real users. I was also awarded <strong>Best Candidate</strong> from the BAE Systems mock interview programme.</p>
+      <p>Long-term I want to build <strong>efficient, scalable, and ethically grounded AI systems</strong> — at the intersection of connectivity, infrastructure, and intelligent automation.</p>
+    </div>
+    <div class="about-sidebar">
+      <div class="about-row"><span class="arl">Status</span><span class="arv">T-Level Year 2</span></div>
+      <div class="about-row"><span class="arl">School</span><span class="arv">The Leigh UTC</span></div>
+      <div class="about-row"><span class="arl">Placement</span><span class="arv">Amazon Prime Video · SDE</span></div>
+      <div class="about-row"><span class="arl">Location</span><span class="arv">United Kingdom</span></div>
+      <div class="about-row"><span class="arl">Award</span><span class="arv">BAE Systems Best Candidate</span></div>
+      <div class="about-row"><span class="arl">EPQ Project</span><span class="arv">NeuroNav — 30+ users</span></div>
+      <div class="about-row"><span class="arl">GitHub</span><span class="arv">github.com/z3zz</span></div>
+      <div class="about-row"><span class="arl">Available</span><span class="arv">Grad Roles & Apprenticeships 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <p class="section-label">Skills & Tools</p>
+  <div class="skills-grid">
+    <div class="skill-block">
+      <p class="skill-cat">Languages</p>
+      <ul class="skill-list"><li>TypeScript</li><li>JavaScript (ES6+)</li><li>Python</li><li>HTML5 / CSS3</li><li>SQL</li></ul>
+    </div>
+    <div class="skill-block">
+      <p class="skill-cat">Frameworks</p>
+      <ul class="skill-list"><li>React</li><li>Flask</li><li>Vite</li><li>Chart.js / Recharts</li><li>MediaPipe</li></ul>
+    </div>
+    <div class="skill-block">
+      <p class="skill-cat">Infrastructure</p>
+      <ul class="skill-list"><li>AWS EC2 & S3</li><li>Vercel</li><li>Linux (Arch, Ubuntu, Void)</li><li>Git & Gitfarm</li><li>YAML / JSON</li></ul>
+    </div>
+    <div class="skill-block">
+      <p class="skill-cat">AI & Data</p>
+      <ul class="skill-list"><li>MCP Protocol</li><li>AI-Assisted Workflows</li><li>Pandas</li><li>Data Pipeline Design</li><li>System Observability</li></ul>
+    </div>
+    <div class="skill-block">
+      <p class="skill-cat">Design</p>
+      <ul class="skill-list"><li>UI/UX Design</li><li>WCAG 2.1 Accessibility</li><li>Design Systems</li><li>Graphic Design</li><li>Wireframing</li></ul>
+    </div>
+    <div class="skill-block">
+      <p class="skill-cat">Soft Skills</p>
+      <ul class="skill-list"><li>Technical Mentoring</li><li>Stakeholder Comms</li><li>Rapid Self-Teaching</li><li>Event Leadership</li><li>Community Operations</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="section-label">Get In Touch</p>
+  <div class="contact-layout">
+    <div>
+      <h2 class="contact-h">Let's<br><em>work</em><br>together.</h2>
+      <p class="contact-sub">Looking for graduate roles, apprenticeships, and placement opportunities starting 2026. If you're building something interesting in AI, infrastructure, or developer tooling — I'd like to hear about it.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:joshanrandhawa5@hotmail.com">
+          <span class="cl-label">Email</span><span class="cl-value">joshanrandhawa5@hotmail.com</span>
+        </a>
+        <a class="contact-link" href="https://github.com/z3zz" target="_blank">
+          <span class="cl-label">GitHub</span><span class="cl-value">github.com/z3zz</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com" target="_blank">
+          <span class="cl-label">LinkedIn</span><span class="cl-value">linkedin.com/in/joshan-randhawa</span>
+        </a>
+        <a class="contact-link" href="tel:+447474001820">
+          <span class="cl-label">Phone</span><span class="cl-value">+44 7474 001820</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="contact-card"><p class="cc-label">Currently</p><p class="cc-value">T-Level Digital Production · Year 2</p></div>
+      <div class="contact-card"><p class="cc-label">Recent Placement</p><p class="cc-value">Amazon Prime Video · SDE</p></div>
+      <div class="contact-card"><p class="cc-label">Seeking</p><p class="cc-value">Graduate Roles & Apprenticeships · 2026</p></div>
+      <div class="contact-card"><p class="cc-label">Focus Areas</p><p class="cc-value">AI · Infrastructure · Developer Tooling</p></div>
+      <div class="contact-card"><p class="cc-label">Award</p><p class="cc-value">BAE Systems Best Candidate</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-name">Joshan Randhawa</p>
+  <p class="footer-note">T-Level Student · Amazon Placement Graduate · Builder</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.project, .skill-block, .timeline-item').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.skill-block').forEach((el, i) => { el.style.transitionDelay = `${i * 0.07}s`; });
+  document.querySelectorAll('.timeline-item').forEach((el, i) => { el.style.transitionDelay = `${i * 0.1}s`; });
+</script>
+</body>
+</html>
