@@ -1,688 +1,328 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joshan Randhawa — Software Engineer</title>
-<meta name="description" content="T-Level + & Amazon placement graduate. I build AI-assisted tools, accessible web apps, and real-time operational systems with real-world impact.">
+<title>joshan.dev</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3Eg%7Bstroke%3A%230a0a0a%7D.s%7Bfill%3A%230a0a0a%7D%40media%20%28prefers-color-scheme%3Adark%29%7Bg%7Bstroke%3A%23fafafa%7D.s%7Bfill%3A%23fafafa%7D%7D%3C/style%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222.6%22%3E%3Cpath%20d%3D%22M22.5%204.2A13.5%2013.5%200%201%200%2027.8%209.5%22%20stroke-width%3D%223.2%22/%3E%3Cpath%20d%3D%22M26%202.5l1.1%202.9%202.9%201.1-2.9%201.1-1.1%202.9-1.1-2.9-2.9-1.1%202.9-1.1z%22%20class%3D%22s%22%20stroke-width%3D%22.6%22/%3E%3Cpath%20d%3D%22M19.5%209.5V18.5a4.5%204.5%200%200%201-9%200%22%20stroke-width%3D%223.2%22/%3E%3C/g%3E%3C/svg%3E">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Joshan Randhawa, software engineer. One person, nine worlds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
 <style>
-  :root {
-    --bg: #0a0a0a;
-    --surface: #111111;
-    --surface2: #1a1a1a;
-    --border: #222222;
-    --text: #f3f3f3;
-    --muted: #b6b6b6;
-    --accent: #e8ff47;
-    --accent2: #47ffe8;
-    --accent3: #ff6b47;
-    --accent4: #b47fff;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.35;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 4rem;
-    transition: border-color 0.3s, background 0.3s;
-  }
-
-  nav.scrolled {
-    background: rgba(10,10,10,0.92);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(12px);
-  }
-
-  .nav-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; }
-
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-
-  .nav-links a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  /* HEADER */
-  header {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 4rem;
-    padding-top: 8rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .glow {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  .glow1 {
-    top: -30%; right: -15%;
-    width: 800px; height: 800px;
-    background: radial-gradient(circle, rgba(232,255,71,0.05) 0%, transparent 65%);
-  }
-
-  .glow2 {
-    bottom: -20%; left: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(71,255,232,0.04) 0%, transparent 65%);
-  }
-
-  .header-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--accent);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.2s;
-  }
-
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(3.5rem, 9vw, 8.5rem);
-    font-weight: 800;
-    line-height: 0.92;
-    letter-spacing: -0.03em;
-    margin-bottom: 3rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.4s;
-  }
-
-  h1 em { font-style: normal; color: var(--accent); }
-  h1 .dim { color: #2a2a2a; }
-
-  .header-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.6s;
-  }
-
-  .header-desc { max-width: 500px; color: #777; font-size: 1rem; line-height: 1.75; }
-
-  .header-badges { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
-
-  .badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    padding: 0.3rem 0.85rem;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
-
-  .badge.live { border-color: var(--accent); color: var(--accent); }
-  .badge.award { border-color: var(--accent4); color: var(--accent4); }
-
-  .scroll-line {
-    position: absolute;
-    bottom: 2rem; left: 50%;
-    transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 1.2s;
-  }
-
-  .scroll-line span { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.2em; }
-
-  .scroll-line::after {
-    content: '';
-    display: block; width: 1px; height: 40px;
-    background: linear-gradient(to bottom, var(--muted), transparent);
-    animation: scrollPulse 2s ease infinite;
-  }
-
-  @keyframes scrollPulse {
-    0%,100% { opacity: 0.4; } 50% { opacity: 1; }
-  }
-
-  /* SECTIONS */
-  section { padding: 6rem 4rem; border-top: 1px solid var(--border); }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--accent);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 3.5rem;
-    display: flex; align-items: center; gap: 1rem;
-  }
-
-  .section-label::after { content: ''; width: 50px; height: 1px; background: var(--accent); opacity: 0.3; }
-
-  /* PROJECTS */
-  .project {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 5rem;
-    margin-bottom: 5rem;
-    padding-bottom: 5rem;
-    border-bottom: 1px solid var(--border);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .project.visible { opacity: 1; transform: translateY(0); }
-  .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-  .project-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.2em; margin-bottom: 1.2rem; }
-
-  .project-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.8rem;
-  }
-
-  .project-context { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 1.5rem; }
-
-  .adopted {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-family: 'DM Mono', monospace; font-size: 0.63rem;
-    color: var(--accent); border: 1px solid var(--accent);
-    padding: 0.28rem 0.75rem; margin-bottom: 1.4rem;
-  }
-
-  .adopted::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 1.5s ease infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-
-  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-  .tag {
-    font-family: 'DM Mono', monospace; font-size: 0.63rem;
-    padding: 0.22rem 0.65rem; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.05em;
-  }
-
-  .tag.a { border-color: rgba(232,255,71,0.35); color: var(--accent); }
-  .tag.b { border-color: rgba(71,255,232,0.35); color: var(--accent2); }
-  .tag.c { border-color: rgba(180,127,255,0.35); color: var(--accent4); }
-
-  .project-desc { color: #999; font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.4rem; }
-
-  .stats-row { display: flex; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 1.8rem; }
-
-  .stat { flex: 1; background: var(--surface); padding: 0.9rem; text-align: center; }
-
-  .stat-num {
-    font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700;
-    color: var(--accent); line-height: 1; margin-bottom: 0.2rem;
-  }
-
-  .stat-num.s2 { color: var(--accent2); }
-  .stat-num.s3 { color: var(--accent3); }
-  .stat-num.s4 { color: var(--accent4); }
-
-  .stat-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-
-  .detail-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.6rem; }
-
-  .detail-list li { font-size: 0.87rem; color: #b3b3b3; padding-left: 1.2rem; position: relative; line-height: 1.6; }
-
-  .detail-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.72rem; top: 0.08em; }
-
-  .testimonial {
-    background: var(--surface); border-left: 2px solid var(--accent);
-    padding: 1.1rem 1.3rem; margin-bottom: 0.7rem;
-  }
-
-  .testimonial.t2 { border-left-color: var(--accent2); }
-  .testimonial.t3 { border-left-color: var(--accent3); }
-  .testimonial.t4 { border-left-color: var(--accent4); }
-
-  .testimonial-text { font-size: 0.83rem; color: #999; line-height: 1.7; font-style: italic; margin-bottom: 0.5rem; }
-  .testimonial-author { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.08em; }
-  .testimonial-author strong { color: #bbb; font-weight: 400; }
-
-  /* EXPERIENCE */
-  .timeline { display: flex; flex-direction: column; }
-
-  .timeline-item {
-    display: grid; grid-template-columns: 180px 1fr; gap: 3rem;
-    padding: 2.5rem 0; border-bottom: 1px solid var(--border);
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .timeline-item:last-child { border-bottom: none; }
-  .timeline-item.visible { opacity: 1; transform: translateY(0); }
-
-  .tl-date { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; line-height: 1.7; padding-top: 0.15rem; }
-  .tl-date strong { display: block; color: var(--accent); font-size: 0.72rem; font-weight: 400; margin-bottom: 0.3rem; }
-
-  .tl-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.25rem; }
-  .tl-org { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 0.7rem; }
-  .tl-body { font-size: 0.87rem; color: #b3b3b3; line-height: 1.75; }
-
-  /* ABOUT */
-  .about-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
-
-  .about-text { font-size: 0.98rem; color: #999; line-height: 1.9; }
-  .about-text p + p { margin-top: 1.2rem; }
-  .about-text strong { color: var(--text); font-weight: 400; }
-
-  .about-sidebar { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-
-  .about-row { background: var(--surface); padding: 1rem 1.3rem; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-
-  .arl { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; white-space: nowrap; }
-  .arv { font-size: 0.83rem; color: #bbb; text-align: right; }
-
-  /* SKILLS */
-  .skills-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-    gap: 1px; background: var(--border); border: 1px solid var(--border);
-  }
-
-  .skill-block {
-    background: var(--surface); padding: 1.8rem 1.5rem;
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s;
-  }
-
-  .skill-block:hover { background: var(--surface2); }
-  .skill-block.visible { opacity: 1; transform: translateY(0); }
-
-  .skill-cat { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
-
-  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.38rem; }
-  .skill-list li { font-size: 0.82rem; color: #b3b3b3; }
-
-  /* CONTACT */
-  #contact { background: var(--surface); }
-
-  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-
-  .contact-h {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.5rem;
-  }
-
-  .contact-h em { font-style: normal; color: var(--accent); }
-
-  .contact-sub { color: #777; font-size: 0.93rem; line-height: 1.75; margin-bottom: 2rem; }
-
-  .contact-links { display: flex; flex-direction: column; gap: 0.7rem; }
-
-  .contact-link {
-    display: flex; align-items: center; gap: 1rem;
-    padding: 0.9rem 1.1rem; border: 1px solid var(--border);
-    text-decoration: none; background: var(--bg);
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .contact-link:hover { border-color: var(--accent); background: rgba(232,255,71,0.02); }
-
-  .cl-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; min-width: 58px; }
-  .cl-value { font-size: 0.86rem; color: var(--text); }
-
-  .contact-right { display: flex; flex-direction: column; gap: 0.8rem; }
-
-  .contact-card { background: var(--bg); border: 1px solid var(--border); padding: 1.3rem; }
-  .cc-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
-  .cc-value { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 600; }
-
-  footer {
-    padding: 2.5rem 4rem; border-top: 1px solid var(--border);
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-  }
-
-  .footer-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
-  .footer-note { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--muted); letter-spacing: 0.1em; }
-
-  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    header, section { padding: 4rem 1.5rem; }
-    .project { grid-template-columns: 1fr; gap: 2rem; }
-    .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-    .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-    .timeline-item { grid-template-columns: 1fr; gap: 0.4rem; }
-    footer { padding: 2rem 1.5rem; }
-    .scroll-line { display: none; }
-  }
-
-  @media (max-width: 600px) {
-    h1 {
-      font-size: clamp(2.5rem, 7vw, 5rem);
-    }
-  }
+/* Layout: a monochrome index. Name, then seven numbered rows, one per world; each row inverts to black on hover and
+   only then shows that world's colours. Below, a plain one-screen summary for anyone with no time for magic. */
+:root{
+  --paper:#fafafa;
+  --ink:#0a0a0a;
+  --ink-2:#3a3a3a;
+  --mute:#7a7a7a;
+  --rule:#e2e2e2;
+  --hover-bg:#0a0a0a;
+  --hover-fg:#fafafa;
+  --f-sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --gutter:max(20px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(20px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0a0a0a;--ink:#f2f2f2;--ink-2:#c4c4c4;--mute:#8a8a8a;--rule:#262626;--hover-bg:#f2f2f2;--hover-fg:#0a0a0a;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0a0a0a;--ink:#f2f2f2;--ink-2:#c4c4c4;--mute:#8a8a8a;--rule:#262626;--hover-bg:#f2f2f2;--hover-fg:#0a0a0a;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--ink);color:var(--paper)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.mono{font-family:var(--f-mono)}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--paper)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;letter-spacing:-.01em}
+.mark i{width:24px;height:24px;color:var(--ink);display:block}.mark i svg{width:100%;height:100%;display:block}
+.bar nav{display:flex;align-items:center;gap:22px}
+.bar nav a{font-family:var(--f-mono);font-size:12px;color:var(--mute);text-decoration:none}
+.bar nav a:hover{color:var(--ink)}
+.clock{font-family:var(--f-mono);font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+@media (max-width:560px){.clock{display:none}}
+
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,360px);gap:clamp(28px,4vw,64px);align-items:end;padding-block:clamp(48px,9vh,104px) clamp(40px,7vh,72px)}
+.hero h1{margin:0;font-weight:600;font-size:clamp(54px,9.6vw,150px);line-height:.86;letter-spacing:-.055em}
+.portrait{margin:0;position:relative}
+.portrait .frame{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--rule)}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:48% 40%;filter:grayscale(1) contrast(1.08);transition:filter .6s,transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.portrait:hover img{filter:none;transform:scale(1.03)}
+.portrait .frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 14%,transparent);pointer-events:none}
+.portrait figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-family:var(--f-mono);font-size:11.5px;color:var(--mute)}
+.portrait figcaption b{color:var(--ink);font-weight:500}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.portrait{max-width:420px}}
+.hero h1 span{display:block}
+.sig{margin:18px 0 0;font-size:clamp(17px,1.6vw,21px);font-style:italic;letter-spacing:-.01em;color:var(--ink-2)}
+.sig::before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-right:12px;opacity:.5}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500;font-size:15px;letter-spacing:-.01em;border-radius:999px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.cta>span{font-family:var(--f-mono);font-size:12px;color:var(--mute)}
+.hero h1 span:last-child{color:var(--mute)}
+.hero-row{display:grid;gap:22px;margin-top:clamp(28px,5vh,48px)}
+.hero p.lead{margin:0;font-size:clamp(19px,1.9vw,24px);line-height:1.35;letter-spacing:-.015em;max-width:30ch;color:var(--ink-2)}
+.hero p.lead b{color:var(--ink);font-weight:500}
+.facts{list-style:none;margin:0;padding:0;font-family:var(--f-mono);font-size:12.5px;color:var(--mute);display:flex;flex-wrap:wrap;gap:6px 22px}
+.facts li span{color:var(--ink)}
+
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+.head h2{margin:0;font-weight:500;font-size:13px;font-family:var(--f-mono);letter-spacing:.02em;text-transform:uppercase}
+.head p{margin:0;font-family:var(--f-mono);font-size:12px;color:var(--mute)}
+.head kbd{font-family:var(--f-mono);font-size:11px;border:1px solid var(--rule);padding:1px 5px;color:var(--ink)}
+@media (max-width:640px){.head p{display:none}}
+
+.worlds{list-style:none;margin:0;padding:0}
+.world a{position:relative;display:grid;grid-template-columns:56px 64px minmax(0,1.1fr) minmax(0,1.4fr) 128px 28px;gap:20px;align-items:center;padding:22px 16px 22px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);isolation:isolate;transition:color .25s,padding .35s cubic-bezier(.2,.7,.1,1)}
+.world a::before{content:"";position:absolute;inset:0 calc(-1 * var(--gutter-r)) 0 calc(-1 * var(--gutter));z-index:-1;background:var(--hover-bg);transform:scaleY(0);transform-origin:50% 100%;transition:transform .35s cubic-bezier(.2,.7,.1,1)}
+.world a:hover,.world a:focus-visible{color:var(--hover-fg);padding-left:14px;outline:none}
+.world a:hover::before,.world a:focus-visible::before{transform:scaleY(1)}
+.n{font-family:var(--f-mono);font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
+.world a:hover .n,.world a:focus-visible .n{color:inherit}
+.ic{width:52px;height:52px}
+.ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.ic svg .sp{transform-origin:20px 20px;transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.world a:hover .ic svg .sp{transform:rotate(120deg)}
+.nm{display:flex;flex-direction:column;gap:4px;min-width:0}
+.nm b{font-weight:600;font-size:clamp(24px,2.6vw,36px);line-height:1;letter-spacing:-.035em}
+.nm small{font-family:var(--f-mono);font-size:11.5px;color:var(--mute)}
+.world a:hover .nm small,.world a:focus-visible .nm small{color:inherit;opacity:.65}
+.ds{margin:0;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.world a:hover .ds,.world a:focus-visible .ds{color:inherit;opacity:.8}
+.tags{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.mode{font-family:var(--f-mono);font-size:11px;padding:2px 8px;border:1px solid currentColor;border-radius:99px}
+.sw{display:flex;gap:3px;height:6px}
+.sw i{width:16px;height:6px;background:var(--mute);opacity:.35;transition:background .3s,opacity .3s}
+.world a:hover .sw i,.world a:focus-visible .sw i{background:var(--c);opacity:1}
+.ar{font-family:var(--f-mono);font-size:18px;transition:transform .35s cubic-bezier(.2,.7,.1,1)}
+.world a:hover .ar{transform:translateX(6px)}
+.series{padding:26px 0 10px;font-family:var(--f-mono);font-size:11.5px;color:var(--mute);border-bottom:1px solid var(--rule);display:flex;justify-content:space-between}
+@media (max-width:980px){.world a{grid-template-columns:40px 48px minmax(0,1fr) 28px;row-gap:10px}.ic{width:42px;height:42px}.ds{grid-column:3/4;grid-row:2}.tags{grid-column:3/4;grid-row:3;flex-direction:row;align-items:center}.ar{grid-column:4;grid-row:1}}
+@media (max-width:480px){.world a{grid-template-columns:32px minmax(0,1fr) 22px;gap:12px}.ic{display:none}.ds,.tags{grid-column:2/3}.ar{grid-column:3}}
+
+.plain{padding-block:clamp(64px,12vh,120px) 40px}
+.plain .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px 32px;margin-top:32px}
+.plain .intro{grid-column:span 5}
+.plain .intro p{margin:0;font-size:clamp(19px,1.8vw,22px);line-height:1.4;letter-spacing:-.015em;color:var(--ink-2)}
+.plain .intro p+p{margin-top:16px;font-size:16px;color:var(--mute);letter-spacing:0}
+.col{grid-column:span 7}
+.blk+.blk{margin-top:30px}
+.blk h3{margin:0 0 4px;font-family:var(--f-mono);font-size:11.5px;font-weight:400;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+.rows{list-style:none;margin:0;padding:0}
+.skills{margin:0}.skills div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:11px 0;border-bottom:1px solid var(--rule)}.skills dt{font-family:var(--f-mono);font-size:12px;color:var(--mute);padding-top:2px}.skills dd{margin:0;font-size:14.5px;color:var(--ink-2)}
+@media (max-width:520px){.skills div{grid-template-columns:1fr;gap:4px}}
+.rows li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.rows b{font-weight:500}
+.rows span{color:var(--ink-2);font-size:14.5px}
+.rows em{font-style:normal;font-family:var(--f-mono);font-size:12px;color:var(--mute);white-space:nowrap;text-align:right}
+@media (max-width:860px){.plain .intro,.col{grid-column:1/-1}}
+@media (max-width:520px){.rows li{grid-template-columns:1fr}.rows em{text-align:left}}
+
+.contact{padding-block:40px 0}
+.big{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding:36px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.big h2{margin:0;font-weight:600;font-size:clamp(40px,7vw,104px);line-height:.9;letter-spacing:-.05em}
+.big h2 span{color:var(--mute)}
+.links{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-family:var(--f-mono);font-size:14px;justify-items:end}
+.links li{display:flex;gap:12px;align-items:baseline}
+.links .l{color:var(--mute);font-size:11.5px}
+.links a,.links .v{text-decoration:none;border-bottom:1px solid var(--ink);user-select:all;overflow-wrap:anywhere}
+.copy{font-family:var(--f-mono);font-size:11px;color:var(--paper);background:var(--ink);border:0;padding:3px 8px;cursor:pointer}
+@media (max-width:760px){.big{grid-template-columns:1fr}.links{justify-items:start}}
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px calc(env(safe-area-inset-bottom,0px) + 28px);font-family:var(--f-mono);font-size:11.5px;color:var(--mute)}
+
+/* cursor label that follows the pointer over the list */
+.peek{position:fixed;left:0;top:0;z-index:30;pointer-events:none;padding:5px 9px;background:var(--paper);color:var(--ink);font-family:var(--f-mono);font-size:11px;opacity:0;transform:translate(16px,18px);transition:opacity .2s;white-space:nowrap}
+.peek.on{opacity:1}
+@media (hover:none){.peek{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.world a,.world a::before,.ar,.ic svg .sp{transition:none}}
+.flo+.flo{margin-top:20px}.plain .intro .flo p{font-size:17px;line-height:1.5;color:var(--ink-2);margin:0}.flo{margin:28px 0 0;padding-left:18px;border-left:1px solid currentColor}.flo p{font-style:italic;margin:0}.flo cite{display:block;margin-top:10px;font-style:normal;font-size:12px;opacity:.6;letter-spacing:.04em}
 </style>
-</head>
-<body>
 
-<nav id="nav">
-  <span class="nav-name">Joshan Randhawa Portfolio</span>
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<header>
-  <div class="glow glow1"></div>
-  <div class="glow glow2"></div>
-  <p class="header-tag">Software Engineer & Builder</p>
-  <h1>Joshan<br><em>Randhawa</em><br><span class="dim">———</span></h1>
-  <div class="header-bottom">
-    <p class="header-desc">T-Level Digital Production Graduate. Amazon placement graduate. I build AI-assisted operational tools, accessible web platforms, and real-time systems — focused on real-world impact at every layer of the stack.</p>
-    <div class="header-badges">
-      <span class="badge live">✦ Amazon Placement Graduate</span>
-      <span class="badge award">★ BAE Systems Best Candidate</span>
-      <span class="badge">The Leigh UTC · 2024–2026</span>
-      <span class="badge">Available for Roles · 2026</span>
-    </div>
+<header class="top">
+  <div class="wrap bar">
+    <a class="mark" href="#top"><i aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 4.2A13.5 13.5 0 1 0 27.8 9.5" stroke-width="2.2"/><path d="M26 2.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1z" fill="currentColor" stroke-width=".6"/><path d="M19.5 9.5V18.5a4.5 4.5 0 0 1-9 0" stroke-width="2.8"/></svg></i>joshan.dev</a>
+    <nav aria-label="Sections"><a href="#worlds">Worlds</a><a href="#plain">Summary</a><a href="#contact">Contact</a></nav>
+    <span class="clock" id="clock" aria-label="Local time in London">London --:--</span>
   </div>
-  <div class="scroll-line"><span>SCROLL</span></div>
 </header>
 
-<section id="projects">
-  <p class="section-label">Selected Projects</p>
-
-  <div class="project">
+<main id="top">
+  <section class="wrap hero" aria-label="Introduction">
     <div>
-      <p class="project-num">01 — Primary</p>
-      <h2 class="project-title">TicketScope</h2>
-      <p class="project-context">Amazon Prime Video · Individual Project · 2025</p>
-      <div class="adopted">Company-Wide Adoption Confirmed</div>
-      <div class="tags">
-        <span class="tag a">React</span><span class="tag a">TypeScript</span><span class="tag a">MCP Server</span>
-        <span class="tag">Recharts</span><span class="tag">AI Workflows</span><span class="tag">AWS EC2</span>
-      </div>
-    </div>
-    <div>
-      <p class="project-desc">A real-time operational intelligence tool for on-call engineers at Prime Video. Engineers needed faster access to the right data during live incidents — TicketScope surfaces operational insights the moment they're needed, reducing cognitive load when it matters most.</p>
-      <p class="project-desc">Built around a TypeScript MCP server I engineered from scratch, aggregating structured data from multiple internal sources and enabling AI-assisted querying. The React frontend provides intuitive interaction with Recharts visualisations, designed around low-latency flows for real-time decision making. Confirmed for company-wide adoption.</p>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-num">MCP</div><div class="stat-label">Server</div></div>
-        <div class="stat"><div class="stat-num s2">RT</div><div class="stat-label">Real-Time</div></div>
-        <div class="stat"><div class="stat-num s3">AI</div><div class="stat-label">Query Layer</div></div>
-        <div class="stat"><div class="stat-num s4">↑</div><div class="stat-label">Company-Wide</div></div>
-      </div>
-      <ul class="detail-list">
-        <li>Engineered a TypeScript MCP server aggregating structured operational data from multiple internal sources</li>
-        <li>Built a React/TypeScript frontend optimised for fast interaction under operational pressure</li>
-        <li>Implemented Recharts visualisations for system metrics and event trends</li>
-        <li>Designed low-latency data flows supporting real-time decision making for on-call engineers</li>
-        <li>Delivered within Amazon's internal production tooling constraints — confirmed for company-wide rollout</li>
-        <li>Learned React and TypeScript from scratch during placement, then shipped production-grade tooling</li>
+    <h1><span>Joshan</span><span>Randhawa</span></h1>
+    <p class="sig">Excited by the idea, satisfied by the result.</p>
+    <div class="hero-row">
+      <p class="lead">Software engineer. <b>One person, nine worlds.</b> Each one is a different way through the same work. Pick a door.</p>
+      <ul class="facts">
+        <li>Junior Application Developer · <span>Thirtyone:eight</span></li>
+        <li>BSc Computer Science with AI · <span>The Open University</span></li>
+        <li>Previously · <span>Amazon Prime Video</span></li>
+        <li>London area</li>
       </ul>
-      <div class="testimonial t2">
-        <p class="testimonial-text">"He is a quick learner who demonstrates an impeccable work ethic. His ability to communicate effectively with a diverse range of individuals in professional settings makes you forget the fact he's only 17."</p>
-        <p class="testimonial-author"><strong>Flo Busfield</strong> — UX/UI Apprentice, Amazon buddy</p>
-      </div>
+      <div class="cta"><a class="btn" href="#plain">No time for magic <span aria-hidden="true">&darr;</span></a><span>The whole story on one screen, no effects.</span></div>
     </div>
-  </div>
+    </div>
+    <figure class="portrait">
+      <div class="frame"><img src="img/gym.jpg" alt="Joshan at the gym, headphones on, between cable machines" width="1000" height="558"></div>
+      <figcaption><b>Joshan</b><span>Showing up on the tired days too.</span></figcaption>
+    </figure>
+  </section>
 
-  <div class="project">
-    <div>
-      <p class="project-num">02 — EPQ Artefact</p>
-      <h2 class="project-title">NeuroNav</h2>
-      <p class="project-context">Personal Project · EPQ Primary Artefact · Live on Vercel</p>
-      <div class="tags">
-        <span class="tag a">React</span><span class="tag a">TypeScript</span><span class="tag b">Vite</span>
-        <span class="tag b">Vercel</span><span class="tag">Accessibility</span><span class="tag">UX Research</span>
+  <section class="wrap" id="worlds" aria-labelledby="worlds-h">
+    <div class="head"><h2 id="worlds-h">Worlds · 09</h2><p>Press <kbd>1</kbd> to <kbd>9</kbd> to jump in</p></div>
+    <p class="series"><span>The Arcanum series</span><span>Light · code as magic</span></p>
+    <ol class="worlds">
+      <li class="world"><a href="arcanum.html" data-k="1" data-peek="Enter Arcanum">
+        <span class="n">01</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><g class="sp"><path d="M20 6 L32.1 27 L7.9 27 Z"/><path d="M20 34 L7.9 13 L32.1 13 Z"/></g><circle cx="20" cy="20" r="5"/></svg></span>
+        <span class="nm"><b>Arcanum</b><small>Scroll world</small></span>
+        <p class="ds">Sky islands above a sea of cloud, and a code sigil that draws itself as you go.</p>
+        <span class="tags"><span class="mode">Light</span><span class="sw" aria-hidden="true"><i style="--c:#2d5bff"></i><i style="--c:#0e9a90"></i><i style="--c:#d98d0b"></i><i style="--c:#df3f66"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+      <li class="world"><a href="grimoire.html" data-k="2" data-peek="Open the book">
+        <span class="n">02</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M4 9 C10 7 15 8 20 11 C25 8 30 7 36 9 V32 C30 30 25 31 20 34 C15 31 10 30 4 32 Z M20 11 V34"/><g class="sp"><path d="M9 15 h7 M9 19 h7 M24 15 h7 M24 19 h5"/></g></svg></span>
+        <span class="nm"><b>Grimoire</b><small>Page turn</small></span>
+        <p class="ds">A spellbook whose pages turn as you scroll, with notes written in invisible ink.</p>
+        <span class="tags"><span class="mode">Light</span><span class="sw" aria-hidden="true"><i style="--c:#1d2a6e"></i><i style="--c:#a87a22"></i><i style="--c:#f3ead6"></i><i style="--c:#b8392b"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+      <li class="world"><a href="orrery.html" data-k="3" data-peek="Set it in motion">
+        <span class="n">03</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><ellipse cx="20" cy="20" rx="17" ry="7"/><ellipse cx="20" cy="20" rx="10" ry="4"/><circle cx="20" cy="20" r="3.5"/><g class="sp"><circle cx="37" cy="20" r="1.8"/><circle cx="10" cy="23" r="1.4"/></g></svg></span>
+        <span class="nm"><b>Orrery</b><small>Orbital</small></span>
+        <p class="ds">Eight projects orbit one sun, the idea. Each swings into view as you scroll.</p>
+        <span class="tags"><span class="mode">Light</span><span class="sw" aria-hidden="true"><i style="--c:#14213d"></i><i style="--c:#a8761e"></i><i style="--c:#e3c27a"></i><i style="--c:#3563e9"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+      <li class="world"><a href="incantation.html" data-k="4" data-peek="Start casting">
+        <span class="n">04</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="13" stroke-dasharray="2 3" class="sp"/><path d="M13 16 L18 20 L13 24 M21 25 H28"/></svg></span>
+        <span class="nm"><b>Incantation</b><small>Type to cast</small></span>
+        <p class="ds">A real console inside a casting circle. Type a spell to summon the work.</p>
+        <span class="tags"><span class="mode">Light</span><span class="sw" aria-hidden="true"><i style="--c:#6b3cff"></i><i style="--c:#f0478f"></i><i style="--c:#10b48a"></i><i style="--c:#ff9f43"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+      <li class="world"><a href="academy.html" data-k="5" data-peek="Start the run">
+        <span class="n">05</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 6 V14 M20 14 L11 22 M20 14 L29 22 M11 22 V30 M29 22 L23 30 M29 22 L35 30"/><g class="sp"><rect x="17" y="3" width="6" height="6" transform="rotate(45 20 6)"/></g><circle cx="11" cy="32" r="2.2"/><circle cx="23" cy="32" r="2.2"/><circle cx="35" cy="32" r="2.2"/></svg></span>
+        <span class="nm"><b>Academy</b><small>Skill tree</small></span>
+        <p class="ds">An anime skill tree that unlocks as you scroll and levels you up to eighteen.</p>
+        <span class="tags"><span class="mode">Light</span><span class="sw" aria-hidden="true"><i style="--c:#ff6f9f"></i><i style="--c:#f5a623"></i><i style="--c:#4fb6f5"></i><i style="--c:#8a6bff"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+    </ol>
+    <p class="series"><span>Standalone worlds</span><span>Dusk and night</span></p>
+    <ol class="worlds" start="6">
+      <li class="world"><a href="between.html" data-k="6" data-peek="Walk the path">
+        <span class="n">06</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 10 Q20 7 34 10 M9 15 H31 M12 10 V29 M28 10 V29 M20 15 V12"/><g class="sp"><path d="M5 33 H35 M10 36 H30" stroke-dasharray="3 3"/></g></svg></span>
+        <span class="nm"><b>The World Between Worlds</b><small>Scroll world</small></span>
+        <p class="ds">A twilight lake and a crimson gate you walk through, into a lantern-lit night.</p>
+        <span class="tags"><span class="mode">Dusk</span><span class="sw" aria-hidden="true"><i style="--c:#a3392a"></i><i style="--c:#c9a35b"></i><i style="--c:#8fae9f"></i><i style="--c:#0a0d11"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+      <li class="world"><a href="skyline.html" data-k="7" data-peek="Take the lift">
+        <span class="n">07</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M4 35 H36 M7 35 V20 H13 V35 M15 35 V8 H22 V35 M24 35 V16 H30 V35 M31 35 V24 H35 V35"/><g class="sp"><path d="M18 12 h1 M18 17 h1 M18 22 h1 M18 27 h1"/></g></svg></span>
+        <span class="nm"><b>Skyline</b><small>Lift ride</small></span>
+        <p class="ds">A night city seen from a rising tower. Rain on the glass, dawn at the top.</p>
+        <span class="tags"><span class="mode">Dark</span><span class="sw" aria-hidden="true"><i style="--c:#f2a541"></i><i style="--c:#ff4a3d"></i><i style="--c:#8a95a5"></i><i style="--c:#07090d"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+    </ol>
+    <p class="series"><span>From the redesign</span><span>Two earlier favourites</span></p>
+    <ol class="worlds" start="8">
+      <li class="world"><a href="selected-works.html" data-k="8" data-peek="Visit the gallery">
+        <span class="n">08</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="7" y="6" width="26" height="22"/><rect x="11" y="10" width="18" height="14" class="sp"/><path d="M12 34 H28 M20 28 V34"/></svg></span>
+        <span class="nm"><b>Selected Works</b><small>Gallery</small></span>
+        <p class="ds">A white-walled gallery catalogue. Every project hung like an exhibit, with its own wall label.</p>
+        <span class="tags"><span class="mode">Light</span><span class="sw" aria-hidden="true"><i style="--c:#0a0a0a"></i><i style="--c:#6d6d6d"></i><i style="--c:#c8f135"></i><i style="--c:#b4ef3a"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+      <li class="world"><a href="neon-aurora.html" data-k="9" data-peek="Light the sky">
+        <span class="n">09</span>
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><g class="sp"><path d="M4 16 Q12 8 20 14 T36 12" /><path d="M4 22 Q12 14 20 20 T36 18"/></g><path d="M6 36 V28 H11 V36 M14 36 V24 H20 V36 M23 36 V27 H28 V36 M30 36 V30 H34 V36"/></svg></span>
+        <span class="nm"><b>Neon Aurora</b><small>Neon city</small></span>
+        <p class="ds">A neon city under a posterised aurora. Launch fireworks and draw spells on the sky.</p>
+        <span class="tags"><span class="mode">Dark</span><span class="sw" aria-hidden="true"><i style="--c:#ff2bd6"></i><i style="--c:#00e5ff"></i><i style="--c:#ffe600"></i><i style="--c:#00f5a0"></i></span></span>
+        <span class="ar" aria-hidden="true">→</span></a></li>
+    </ol>
+  </section>
+
+  <section class="wrap plain" id="plain" aria-labelledby="plain-h">
+    <div class="head"><h2 id="plain-h">No time for magic</h2><p>The same story, in one screen</p></div>
+    <div class="grid">
+      <div class="intro">
+        <p>I came into software through games, modding Minecraft and Counter-Strike. Code still feels like LEGO to me: the fun is in the building.</p>
+        <p>I took a T Level instead of A Levels to start building sooner, worked with Amazon Prime Video at seventeen, and I own what I ship. Outside work I run operations for a modding services community, where our events have grown 12× since 2023.</p>
+        <blockquote class="flo"><p>“He is a quick learner who demonstrates an impeccable work ethic. His ability to communicate effectively with a diverse range of individuals in professional settings makes you forget the fact he's only 17.”</p><cite>Flo Busfield, UX/UI Apprentice and my Amazon buddy</cite></blockquote>
+        <blockquote class="flo"><p>“He was no doubt one of the main leading factors of our success.”</p><cite>Cameron Thornton, Backend Developer, T Level cohort</cite></blockquote>
+        <blockquote class="flo"><p>“Joshan showed Learning &amp; Development throughout, reaching out to others when uncertain.”</p><cite>Tristan Pakey-Arthur, T Level cohort</cite></blockquote>
+      </div>
+      <div class="col">
+        <div class="blk"><h3>Experience</h3><ul class="rows">
+          <li><span><b>Junior Application Developer</b> · Thirtyone:eight. Dynamics 365, Power Platform and TypeScript for a safeguarding charity.</span><em>Sep 2026 to now</em></li>
+          <li><span><b>Software Development Engineer</b> · Amazon Prime Video, 9-week T Level placement with LiRA. Built TicketScope and Prime Levels; learned TypeScript, React, Chart.js, EC2 and S3 on the job.</span><em>Oct to Dec 2025</em></li>
+          <li><span><b>Step Up participant</b> · Amazon. Built and presented a team prototype with AWS PartyRock, mentored by AWS and Prime Video engineers.</span><em>Mar 2025</em></li>
+          <li><span><b>Junior Full Stack Assistant</b> · Tribeca, shadowing. Exposure to application architecture and databases.</span><em>Jul 2023</em></li>
+        </ul></div>
+        <div class="blk"><h3>Selected work</h3><ul class="rows">
+          <li><span><b>TicketScope</b> · Operational tool for on-call engineers. React, TypeScript, MCP.</span><em>Adopted company-wide</em></li>
+          <li><span><b>Prime Levels</b> · Ten-page accessible site, WCAG 2.1, 80+ stakeholders.</span><em>~95% of the frontend</em></li>
+          <li><span><b>NeuroNav</b> · Revision app for neurodivergent learners.</span><em>30+ users</em></li>
+          <li><span><b>klokd</b> · Privacy-first desktop time tracker.</span><em>In development</em></li>
+          <li><span><b>Org Checker</b> · Record validation for a safeguarding charity. Power Apps, Dataverse.</span><em>In testing</em></li>
+          <li><span><b>JA Studios</b> · Web studio, co-founded with a friend.</span><em>Launching</em></li>
+        </ul></div>
+        <div class="blk"><h3>Skills</h3><dl class="skills">
+          <div><dt>Languages</dt><dd>TypeScript, JavaScript, Python, SQL, HTML, CSS</dd></div>
+          <div><dt>Frameworks</dt><dd>React, Vite, Flask, Recharts, Chart.js, MediaPipe</dd></div>
+          <div><dt>Platforms</dt><dd>Dynamics 365, Power Platform, Dataverse, AWS (EC2, S3), Vercel, Git, Linux</dd></div>
+          <div><dt>AI</dt><dd>MCP servers, AI-assisted workflows, computer vision prototyping</dd></div>
+          <div><dt>Design</dt><dd>UI/UX, WCAG 2.1 accessibility, design systems, wireframing</dd></div>
+          <div><dt>People</dt><dd>Stakeholder communication, technical mentoring, event leadership</dd></div>
+        </dl></div>
+        <div class="blk"><h3>Education and recognition</h3><ul class="rows">
+          <li><span><b>The Open University</b> · BSc (Hons) Computer Science with AI</span><em>2026 to now</em></li>
+          <li><span><b>T Level</b> · Digital Production, Design and Development</span><em>Distinction</em></li>
+          <li><span><b>BAE Systems</b> · Mock interview programme</span><em>Best Candidate</em></li>
+        </ul></div>
       </div>
     </div>
-    <div>
-      <p class="project-desc">An accessibility-focused revision web app supporting neurodivergent learners — my EPQ primary artefact. A research-led project combining UX design principles with technical implementation to serve a real and underserved user group.</p>
-      <p class="project-desc">Uses localStorage caching to preserve user progress without any backend reliance, keeping it fast and friction-free. Design decisions were grounded in accessibility research throughout. The app is live and has reached 30+ real users.</p>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Real Users</div></div>
-        <div class="stat"><div class="stat-num s2">Live</div><div class="stat-label">On Vercel</div></div>
-        <div class="stat"><div class="stat-num s4">EPQ</div><div class="stat-label">Artefact</div></div>
-      </div>
-      <ul class="detail-list">
-        <li>Built and deployed a full React/TypeScript/Vite app supporting neurodivergent learners</li>
-        <li>localStorage caching preserves user progress without any backend dependency</li>
-        <li>Research-led UX process — accessibility principles shaped every design decision</li>
-        <li>30+ real users; primary artefact for Extended Project Qualification</li>
+  </section>
+
+  <section class="wrap contact" id="contact" aria-labelledby="contact-h">
+    <div class="big">
+      <h2 id="contact-h">The next chapter<br><span>is unwritten.</span></h2>
+      <ul class="links">
+        <li><span class="l">Email</span><span class="v" id="email">joshanrandhawa5@hotmail.com</span><button class="copy" id="copy" type="button">Copy</button></li>
+        <li><span class="l">GitHub</span><a href="https://github.com/z3zZ" target="_blank" rel="noopener">z3zZ</a></li>
+        <li><span class="l">LinkedIn</span><a href="https://www.linkedin.com/in/joshan-randhawa/" target="_blank" rel="noopener">Joshan Randhawa</a></li>
       </ul>
     </div>
-  </div>
-
-  <div class="project">
-    <div>
-      <p class="project-num">03 — Team Project</p>
-      <h2 class="project-title">Prime Levels</h2>
-      <p class="project-context">Amazon · T-Level Group Project · 4-Week Sprint</p>
-      <div class="tags">
-        <span class="tag a">HTML5</span><span class="tag a">CSS3</span><span class="tag a">JavaScript</span>
-        <span class="tag">Python/Flask</span><span class="tag">AWS S3</span><span class="tag b">WCAG 2.1</span>
-      </div>
-    </div>
-    <div>
-      <p class="project-desc">A fully accessible, multi-page promotional website for Amazon T-Level placements — presented to an audience of 80+ people. I delivered 95% of all frontend development in a 4-week sprint, while simultaneously mentoring other cohort members with their own projects.</p>
-      <p class="project-desc">Designed the full visual identity from scratch — colour palette, typography, component library — before writing a line of code. Passed accessibility audit with full WCAG 2.1 compliance.</p>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-num">10</div><div class="stat-label">Pages</div></div>
-        <div class="stat"><div class="stat-num s2">3.8k</div><div class="stat-label">Lines HTML</div></div>
-        <div class="stat"><div class="stat-num s3">80+</div><div class="stat-label">Audience</div></div>
-        <div class="stat"><div class="stat-num s4">4wk</div><div class="stat-label">Sprint</div></div>
-      </div>
-      <ul class="detail-list">
-        <li>95% of all frontend: ~3,850 HTML, 2,018 CSS, ~1,150 JavaScript lines across 10 pages</li>
-        <li>Designed full UI/UX system: concept → wireframe → responsive cross-browser implementation</li>
-        <li>65 ARIA attributes and full WCAG 2.1 compliance throughout</li>
-        <li>Integrated with Python/Flask backend deployed on AWS S3</li>
-        <li>Led bi-daily standups and coordinated task allocation across the 5-person team</li>
-      </ul>
-      <div class="testimonial">
-        <p class="testimonial-text">"He was no doubt one of the main leading factors of our success. His determination led to him writing 99 percent of the front end, committing his time not only to the code but to helping his team understand the process behind it all."</p>
-        <p class="testimonial-author"><strong>Cameron Thornton</strong> — Backend Developer, T-Level cohort</p>
-      </div>
-      <div class="testimonial t3" style="margin-top:0.7rem">
-        <p class="testimonial-text">"Joshan showed Learning & Development throughout — reaching out to others when uncertain, and helping those around him during periods of uncertainty. His collaboration and ownership of his tasks was evident through our bi-daily meetings."</p>
-        <p class="testimonial-author"><strong>Tristan Pakey-Arthur</strong> — Team member, T-Level cohort</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div>
-      <p class="project-num">04 — Experimental</p>
-      <h2 class="project-title">CogniSign</h2>
-      <p class="project-context">Personal Project · Computer Vision · Python</p>
-      <div class="tags">
-        <span class="tag a">Python</span><span class="tag a">MediaPipe</span>
-        <span class="tag c">Computer Vision</span><span class="tag">Gesture Control</span><span class="tag">Accessibility</span>
-      </div>
-    </div>
-    <div>
-      <p class="project-desc">A gesture-control prototype for accessibility-driven interaction. Uses Python and MediaPipe for real-time hand tracking, mapping gestures to system actions including dynamic pinch-to-zoom logic engineered from scratch. Built independently end-to-end: motion detection through to functional execution.</p>
-      <ul class="detail-list">
-        <li>Real-time hand tracking using Python and MediaPipe</li>
-        <li>Custom gesture-to-action logic including dynamic pinch-to-zoom</li>
-        <li>Built independently: motion detection → gesture classification → action execution</li>
-        <li>Explores accessibility-driven human-computer interaction</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <p class="section-label">Experience</p>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="tl-date"><strong>Oct – Dec 2025</strong>T-Level Placement<br>9 weeks</div>
-      <div>
-        <p class="tl-title">Software Development Engineer</p>
-        <p class="tl-org">Amazon Prime Video</p>
-        <p class="tl-body">Built TicketScope — an MCP server to React frontend operational metrics tool confirmed for company-wide adoption. Launched a T-Level promotional website presented to 80+ people. Learned and shipped TypeScript, React, Chart.js, EC2, and S3 during the placement. Participated in weekly business meetings and daily standups across 9 weeks.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-date"><strong>March 2025</strong>Step Up</div>
-      <div>
-        <p class="tl-title">Placement Participant</p>
-        <p class="tl-org">Amazon · Step Up Work Experience</p>
-        <p class="tl-body">Collaborated on a team prototype application using AWS PartyRock AI, designing and implementing core features based on user requirements. Presented the completed application to an audience and worked closely with AWS/Prime Video mentors.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="tl-date"><strong>July 2023</strong>Shadowing</div>
-      <div>
-        <p class="tl-title">Junior Full Stack Assistant</p>
-        <p class="tl-org">Tribeca</p>
-        <p class="tl-body">Shadowed full-stack developers and worked alongside a lead back-end developer, gaining hands-on exposure to application architecture and database management. Contributed to team problem-solving sessions and demonstrated initiative throughout.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <p class="section-label">About</p>
-  <div class="about-layout">
-    <div class="about-text">
-      <p>My route into software started in <strong>gaming and modding communities</strong> — collaborating on Minecraft and Counter-Strike projects taught me to debug unfamiliar codebases, iterate fast, and ship solutions for real users. That investigative mindset has stayed constant.</p>
-      <p>During my Amazon placement I taught myself <strong>React and TypeScript from scratch</strong> while delivering TicketScope — a production-grade AI-assisted operational tool confirmed for company-wide adoption. At the same time I was mentoring fellow placement students on JavaScript, Git, and frontend architecture.</p>
-      <p>Outside formal work I manage operations for a <strong>modding services community</strong> supporting hundreds of clients. I facilitate high-value transactions as an intermediary, organise large-scale events (12× participant growth since 2023), and translate ambiguous user needs into clear technical requirements. Different domain, same skills.</p>
-      <p>My EPQ artefact is <strong>NeuroNav</strong> — a deployed, research-led accessibility app with 30+ real users. I was also awarded <strong>Best Candidate</strong> from the BAE Systems mock interview programme.</p>
-      <p>Long-term I want to build <strong>efficient, scalable, and ethically grounded AI systems</strong> — at the intersection of connectivity, infrastructure, and intelligent automation.</p>
-    </div>
-    <div class="about-sidebar">
-      <div class="about-row"><span class="arl">Status</span><span class="arv">T-Level Year 2</span></div>
-      <div class="about-row"><span class="arl">School</span><span class="arv">The Leigh UTC</span></div>
-      <div class="about-row"><span class="arl">Placement</span><span class="arv">Amazon Prime Video · SDE</span></div>
-      <div class="about-row"><span class="arl">Location</span><span class="arv">United Kingdom</span></div>
-      <div class="about-row"><span class="arl">Award</span><span class="arv">BAE Systems Best Candidate</span></div>
-      <div class="about-row"><span class="arl">EPQ Project</span><span class="arv">NeuroNav — 30+ users</span></div>
-      <div class="about-row"><span class="arl">GitHub</span><span class="arv">github.com/z3zz</span></div>
-      <div class="about-row"><span class="arl">Available</span><span class="arv">Grad Roles & Apprenticeships 2026</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <p class="section-label">Skills & Tools</p>
-  <div class="skills-grid">
-    <div class="skill-block">
-      <p class="skill-cat">Languages</p>
-      <ul class="skill-list"><li>TypeScript</li><li>JavaScript (ES6+)</li><li>Python</li><li>HTML5 / CSS3</li><li>SQL</li></ul>
-    </div>
-    <div class="skill-block">
-      <p class="skill-cat">Frameworks</p>
-      <ul class="skill-list"><li>React</li><li>Flask</li><li>Vite</li><li>Chart.js / Recharts</li><li>MediaPipe</li></ul>
-    </div>
-    <div class="skill-block">
-      <p class="skill-cat">Infrastructure</p>
-      <ul class="skill-list"><li>AWS EC2 & S3</li><li>Vercel</li><li>Linux (Arch, Ubuntu, Void)</li><li>Git & Gitfarm</li><li>YAML / JSON</li></ul>
-    </div>
-    <div class="skill-block">
-      <p class="skill-cat">AI & Data</p>
-      <ul class="skill-list"><li>MCP Protocol</li><li>AI-Assisted Workflows</li><li>Pandas</li><li>Data Pipeline Design</li><li>System Observability</li></ul>
-    </div>
-    <div class="skill-block">
-      <p class="skill-cat">Design</p>
-      <ul class="skill-list"><li>UI/UX Design</li><li>WCAG 2.1 Accessibility</li><li>Design Systems</li><li>Graphic Design</li><li>Wireframing</li></ul>
-    </div>
-    <div class="skill-block">
-      <p class="skill-cat">Soft Skills</p>
-      <ul class="skill-list"><li>Technical Mentoring</li><li>Stakeholder Comms</li><li>Rapid Self-Teaching</li><li>Event Leadership</li><li>Community Operations</li></ul>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <p class="section-label">Get In Touch</p>
-  <div class="contact-layout">
-    <div>
-      <h2 class="contact-h">Let's<br><em>work</em><br>together.</h2>
-      <p class="contact-sub">Looking for graduate roles, apprenticeships, and placement opportunities starting 2026. If you're building something interesting in AI, infrastructure, or developer tooling — I'd like to hear about it.</p>
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:joshanrandhawa5@hotmail.com">
-          <span class="cl-label">Email</span><span class="cl-value">joshanrandhawa5@hotmail.com</span>
-        </a>
-        <a class="contact-link" href="https://github.com/z3zz" target="_blank">
-          <span class="cl-label">GitHub</span><span class="cl-value">github.com/z3zz</span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/joshan-randhawa/" target="_blank">
-          <span class="cl-label">LinkedIn</span><span class="cl-value">linkedin.com/in/joshan-randhawa</span>
-        </a>
-        <a class="contact-link" href="tel:+447474001820">
-          <span class="cl-label">Phone</span><span class="cl-value">+44 7474 001820</span>
-        </a>
-      </div>
-    </div>
-    <div class="contact-right">
-      <div class="contact-card"><p class="cc-label">Currently</p><p class="cc-value">T-Level Digital Production · Year 2</p></div>
-      <div class="contact-card"><p class="cc-label">Recent Placement</p><p class="cc-value">Amazon Prime Video · SDE</p></div>
-      <div class="contact-card"><p class="cc-label">Seeking</p><p class="cc-value">Graduate Roles & Apprenticeships · 2026</p></div>
-      <div class="contact-card"><p class="cc-label">Focus Areas</p><p class="cc-value">AI · Infrastructure · Developer Tooling</p></div>
-      <div class="contact-card"><p class="cc-label">Award</p><p class="cc-value">BAE Systems Best Candidate</p></div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p class="footer-name">Joshan Randhawa</p>
-  <p class="footer-note">T-Level Graduate · Amazon Placement Graduate · Builder</p>
-</footer>
+    <footer><span>© 2026 Joshan Randhawa</span><span>Every world is drawn live in the browser. No stock images.</span></footer>
+  </section>
+</main>
+<div class="peek" id="peek" aria-hidden="true"></div>
 
 <script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.project, .skill-block, .timeline-item').forEach(el => observer.observe(el));
-
-  document.querySelectorAll('.skill-block').forEach((el, i) => { el.style.transitionDelay = `${i * 0.07}s`; });
-  document.querySelectorAll('.timeline-item').forEach((el, i) => { el.style.transitionDelay = `${i * 0.1}s`; });
+(function(){
+'use strict';
+/* London clock */
+var clock=document.getElementById('clock');
+function tick(){try{clock.textContent='London '+new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit'}).format(new Date());}catch(e){}}
+tick();setInterval(tick,15000);
+/* number keys jump into a world */
+var rows=[].slice.call(document.querySelectorAll('.world a'));
+document.addEventListener('keydown',function(e){if(e.metaKey||e.ctrlKey||e.altKey||e.target.closest('input,textarea'))return;var r=rows.filter(function(a){return a.dataset.k===e.key;})[0];if(r){r.focus();r.click();}});
+/* a small label follows the cursor over each row */
+var peek=document.getElementById('peek');
+rows.forEach(function(a){
+  a.addEventListener('pointerenter',function(){peek.textContent=a.dataset.peek+' →';peek.classList.add('on');});
+  a.addEventListener('pointerleave',function(){peek.classList.remove('on');});
+  a.addEventListener('pointermove',function(e){peek.style.left=e.clientX+'px';peek.style.top=e.clientY+'px';});
+});
+/* copy email */
+var b=document.getElementById('copy'),t=document.getElementById('email');
+b.addEventListener('click',function(){function sel(){var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';}
+  try{navigator.clipboard.writeText(t.textContent.trim()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1600);},sel);}catch(e){sel();}});
+})();
 </script>
-</body>
-</html>
