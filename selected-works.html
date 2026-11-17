@@ -321,41 +321,38 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <section class="room wrap" id="works">
     <div class="room-h rv"><span class="no">Room I</span><h2>Works</h2><p>Fifteen pieces: shipped, in use, or still on the easel.</p></div>
     <div class="works">
-      <article class="work w7 rv">
-        <div class="piece"><canvas data-art="wave" aria-label="A sound wave settling into lines of text"></canvas></div>
-        <div class="label"><span class="n">01</span><h3>Video Transcriber</h3><span class="med">Python, FastAPI, faster-whisper, Silero VAD</span>
-          <p>Built for my own learning: long videos in, transcripts out, for me and for feeding LLMs as memory. Whisper runs entirely on your own machine, so recordings never leave it: the transcript streams in live, every timestamp jumps the video, and it exports to TXT, SRT, VTT or JSON. GPU when there is one, CPU fallback when it fails.</p>
-          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Video-Transcriber" target="_blank" rel="noopener">GitHub ↗</a></span><span>Up for adoption at Thirtyone:eight</span></div></div>
-      </article>
-      <article class="work w5 drop rv">
+      <article class="work w5 rv">
         <div class="piece tall"><div class="withheld"><b>Work withheld</b><span>at the lender's request</span></div></div>
-        <div class="label"><span class="n">02</span><h3>TicketScope</h3><span class="med">MCP server, React, TypeScript</span>
+        <div class="label"><span class="n">01</span><h3>TicketScope</h3><span class="med">MCP server, React, TypeScript</span>
           <p>An internal tool for on-call engineers, confirmed for company-wide adoption. I learned React and TypeScript from scratch to build it. Shown by title only, under NDA.</p>
           <div class="meta"><span>Collection of <b>Amazon</b></span><span>Adopted company-wide</span></div></div>
       </article>
-      <article class="work w5 drop rv">
-        <div class="piece sq"><canvas data-art="rings" aria-label="Concentric circles breathing slowly"></canvas></div>
-        <div class="label"><span class="n">03</span><h3>NeuroNav</h3><span class="med">React, TypeScript, Vite</span>
-          <p>A revision app built accessibility-first for neurodivergent learners. The main artefact of my EPQ.</p>
-          <div class="meta"><span>Personal collection · <a href="https://neuro-nav.vercel.app" target="_blank" rel="noopener">Live ↗</a></span><span><b>30+</b> real users</span></div></div>
-      </article>
-      <article class="work w7 rv">
-        <div class="piece"><canvas data-art="pages" aria-label="Ten vertical columns rising and falling"></canvas></div>
-        <div class="label"><span class="n">04</span><h3>Prime Levels</h3><span class="med">Python, Flask, AWS S3 · ten pages, WCAG 2.1</span>
-          <p>A promotional website for Amazon's T-Level programme. I wrote about 95% of the frontend and presented it live to the stakeholders.</p>
-          <div class="meta"><span>Collection of <b>Amazon</b></span><span><b>80+</b> stakeholders</span></div></div>
-      </article>
       <article class="work w7 drop rv">
         <div class="piece"><canvas data-art="grid" aria-label="A grid of squares being checked one row at a time"></canvas></div>
-        <div class="label"><span class="n">05</span><h3>Organisation Checker</h3><span class="med">Power Fx, Dataverse Web API, model-driven apps, custom pages</span>
+        <div class="label"><span class="n">02</span><h3>Organisation Checker</h3><span class="med">Power Fx, Dataverse Web API, model-driven apps, custom pages</span>
           <p>A metadata-driven validation engine for a safeguarding charity&rsquo;s organisation records. I wrote the engine from scratch in Power Fx: seven operators, cross-field and cross-system checks, case-insensitive matching. I created its 39 bespoke rules and 297 conditions through the Dataverse Web API, built a 20-record regression suite, and shipped the test harness into the model-driven app as a custom page.</p>
           <div class="meta"><span>Collection of <b>Thirtyone:eight</b> · under NDA</span><span>In UAT</span></div></div>
       </article>
-      <article class="work w5 rv">
-        <div class="piece sq"><canvas data-art="orbit" aria-label="A globe with a point of light crossing the sky above it"></canvas></div>
-        <div class="label"><span class="n">06</span><h3>StellarEye</h3><span class="med">TypeScript, NASA APIs</span>
-          <p>A live 3D Earth showing which sky events you can see tonight. Built early in bringing AI tools into my workflow.</p>
-          <div class="meta"><span>Personal collection · <a href="https://stellareye.vercel.app" target="_blank" rel="noopener">Live ↗</a></span><span>Live</span></div></div>
+      <article class="work w4 rv">
+        <div class="piece tall"><canvas data-art="frames" aria-label="Overlapping window outlines drifting"></canvas></div>
+        <div class="label"><span class="n">03</span><h3>JA Studios</h3><span class="med">Web design, build and hosting</span>
+          <p>A small web studio I co-run, building and maintaining websites for local organisations.</p>
+          <div class="meta"><span>Co-founder</span><span>Revamp in progress</span></div></div>
+      </article>
+      <article class="work w4 drop rv">
+        <div class="piece tall"><canvas data-art="relay" aria-label="Points passing a signal around a loop to a central checkpoint"></canvas></div>
+        <div class="label"><span class="n">04</span><h3>Roblox Forge</h3><span class="med">Claude Code, Grok, Luau</span>
+          <p>An agentic pipeline: an AI project manager writes game briefs overnight, Claude builds playable prototypes, and I playtest and approve each one. It grew out of a dual-LLM app I dropped, one that routed tasks between Claude and ChatGPT and let them debate.</p>
+          <div class="meta"><span>Personal collection</span><span>Early stage</span></div></div>
+      </article>
+      <article class="work w4 rv">
+        <div class="piece cf" aria-label="A redacted document with a CONFIDENTIAL stamp">
+          <div class="cf-bars"><i style="width:62%"></i><i style="width:88%"></i><i class="on" style="width:46%"></i><i style="width:74%"></i><i style="width:58%"></i><i class="on" style="width:80%"></i><i style="width:40%"></i></div>
+          <span class="cf-stamp">Confidential</span>
+        </div>
+        <div class="label"><span class="n">05</span><h3>Private agent workflows</h3><span class="med">Claude, Grok, GitHub, scheduled jobs</span>
+          <p>A private stack of AI agents I run to optimise my own life. One is a market researcher that follows world economics overnight; others scout research for my projects. Findings live in a private repository as memory and reach me as a morning brief. What the briefs say stays sealed: this shows the product and the skills, not the insight.</p>
+          <div class="meta"><span>Private collection</span><span>Running daily</span></div></div>
       </article>
       <article class="work w7 rv">
         <div class="piece klokd" aria-label="klokd: a chart of tracked hours with late-night peaks highlighted in lime">
@@ -364,65 +361,68 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <div class="k-bars" id="kbars"></div>
           <div class="k-axis"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
         </div>
-        <div class="label"><span class="n">07</span><h3><span class="b-klokd">klokd</span></h3><span class="med">Electron, better-sqlite3, Node</span>
+        <div class="label"><span class="n">06</span><h3><span class="b-klokd">klokd</span></h3><span class="med">Electron, better-sqlite3, Node</span>
           <p>A desktop time tracker with a pattern-analysis layer that surfaces your peak productivity hours and what you were doing during them.</p>
           <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Klokd" target="_blank" rel="noopener">GitHub ↗</a></span><span>MVP built</span></div>
           <span class="note">Shown in the product's own colours.</span></div>
       </article>
       <article class="work w5 drop rv">
-        <div class="piece errnd sq" aria-label="errnd: a waveform icon that turns into a checkmark">
-          <span class="e-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><g class="e-wave"><rect x="3" y="8" width="5" height="24" rx="2.5"/><rect x="11" y="4" width="5" height="32" rx="2.5"/><rect x="19" y="10" width="5" height="20" rx="2.5"/><rect x="27" y="5" width="5" height="30" rx="2.5"/><rect x="35" y="12" width="5" height="16" rx="2.5"/></g><path class="e-check" d="M6 21 L16 31 L35 9"/></svg></span>
-          <span class="e-word">errnd<i>.</i><small>Your errand, ran.</small></span>
-        </div>
-        <div class="label"><span class="n">08</span><h3><span class="b-errnd">errnd</span></h3><span class="med">Voice, single agent</span>
-          <p>A voice-driven personal assistant. Say what needs doing and it gets handled.</p>
-          <div class="meta"><span>Personal collection</span><span>In design</span></div>
-          <span class="note">Shown in the product's own colours.</span></div>
+        <div class="piece"><canvas data-art="wave" aria-label="A sound wave settling into lines of text"></canvas></div>
+        <div class="label"><span class="n">07</span><h3>Video Transcriber</h3><span class="med">Python, FastAPI, faster-whisper, Silero VAD</span>
+          <p>Built for my own learning: long videos in, transcripts out, for me and for feeding LLMs as memory. Whisper runs entirely on your own machine, so recordings never leave it: the transcript streams in live, every timestamp jumps the video, and it exports to TXT, SRT, VTT or JSON. GPU when there is one, CPU fallback when it fails.</p>
+          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Video-Transcriber" target="_blank" rel="noopener">GitHub ↗</a></span><span>Up for adoption at Thirtyone:eight</span></div></div>
+      </article>
+      <article class="work w7 rv">
+        <div class="piece"><canvas data-art="pages" aria-label="Ten vertical columns rising and falling"></canvas></div>
+        <div class="label"><span class="n">08</span><h3>Prime Levels</h3><span class="med">Python, Flask, AWS S3 · ten pages, WCAG 2.1</span>
+          <p>A promotional website for Amazon's T-Level programme. I wrote about 95% of the frontend and presented it live to the stakeholders.</p>
+          <div class="meta"><span>Collection of <b>Amazon</b></span><span><b>80+</b> stakeholders</span></div></div>
+      </article>
+      <article class="work w5 drop rv">
+        <div class="piece sq"><canvas data-art="rings" aria-label="Concentric circles breathing slowly"></canvas></div>
+        <div class="label"><span class="n">09</span><h3>NeuroNav</h3><span class="med">React, TypeScript, Vite</span>
+          <p>A revision app built accessibility-first for neurodivergent learners. The main artefact of my EPQ.</p>
+          <div class="meta"><span>Personal collection · <a href="https://neuro-nav.vercel.app" target="_blank" rel="noopener">Live ↗</a></span><span><b>30+</b> real users</span></div></div>
       </article>
       <article class="work w4 rv">
         <div class="piece tall"><canvas data-art="trace" aria-label="A single line tracing a five-point star"></canvas></div>
-        <div class="label"><span class="n">09</span><h3>CogniSign</h3><span class="med">Python, MediaPipe, OpenCV</span>
+        <div class="label"><span class="n">10</span><h3>CogniSign</h3><span class="med">Python, MediaPipe, OpenCV</span>
           <p>Gestures in, actions and speech out, for people who can&rsquo;t use their voice. It began in February 2026 as an intruder-detection app and kept evolving. Now being rebuilt as a full proof of concept.</p>
           <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Intruder-Detection-app" target="_blank" rel="noopener">Origin ↗</a></span><span>Rebuilding</span></div></div>
       </article>
       <article class="work w4 drop rv">
-        <div class="piece tall"><canvas data-art="relay" aria-label="Points passing a signal around a loop to a central checkpoint"></canvas></div>
-        <div class="label"><span class="n">10</span><h3>Roblox Forge</h3><span class="med">Claude Code, Grok, Luau</span>
-          <p>An agentic pipeline: an AI project manager writes game briefs overnight, Claude builds playable prototypes, and I playtest and approve each one. It grew out of a dual-LLM app I dropped, one that routed tasks between Claude and ChatGPT and let them debate.</p>
-          <div class="meta"><span>Personal collection</span><span>Early stage</span></div></div>
+        <div class="piece sq"><canvas data-art="orbit" aria-label="A globe with a point of light crossing the sky above it"></canvas></div>
+        <div class="label"><span class="n">11</span><h3>StellarEye</h3><span class="med">TypeScript, NASA APIs</span>
+          <p>A live 3D Earth showing which sky events you can see tonight. Built early in bringing AI tools into my workflow.</p>
+          <div class="meta"><span>Personal collection · <a href="https://stellareye.vercel.app" target="_blank" rel="noopener">Live ↗</a></span><span>Live</span></div></div>
       </article>
       <article class="work w4 rv">
-        <div class="piece tall"><canvas data-art="frames" aria-label="Overlapping window outlines drifting"></canvas></div>
-        <div class="label"><span class="n">11</span><h3>JA Studios</h3><span class="med">Web design, build and hosting</span>
-          <p>A small web studio I co-run, building and maintaining websites for local organisations.</p>
-          <div class="meta"><span>Co-founder</span><span>Revamp in progress</span></div></div>
-      </article>
-      <article class="work w6 rv">
-        <div class="piece"><canvas data-art="pen" aria-label="A handwritten equation being drawn stroke by stroke"></canvas></div>
-        <div class="label"><span class="n">12</span><h3>inkd</h3><span class="med">TypeScript</span>
-          <p>Handwritten maths for pen tablets: write an equation by hand and have it recognised and worked through. Modelled on MyScript Math, but more customisable, with no paid engines.</p>
-          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/inkd" target="_blank" rel="noopener">GitHub ↗</a></span><span>In development</span></div></div>
-      </article>
-      <article class="work w6 drop rv">
-        <div class="piece"><canvas data-art="lapse" aria-label="Frames of a timelapse ticking past"></canvas></div>
-        <div class="label"><span class="n">13</span><h3>rewnd</h3><span class="med">Python</span>
-          <p>A webcam timelapse capture tool that runs locally on Linux, with nothing sent to the cloud.</p>
-          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/rewnd" target="_blank" rel="noopener">GitHub ↗</a></span><span>In development</span></div></div>
-      </article>
-      <article class="work w6 rv">
         <div class="piece"><canvas data-art="watch" aria-label="A stopwatch hand sweeping round its dial"></canvas></div>
-        <div class="label"><span class="n">14</span><h3>Stopwatch</h3><span class="med">TypeScript</span>
+        <div class="label"><span class="n">12</span><h3>Stopwatch</h3><span class="med">TypeScript</span>
           <p>I got fed up with how bad the on-screen timers looked in my timelapse videos, so I built my own and learned to make it look exactly how I wanted. Small, used daily, and proof that a project doesn&rsquo;t need to be complicated to matter.</p>
           <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Stopwatch" target="_blank" rel="noopener">GitHub ↗</a></span><span>In use</span></div></div>
       </article>
-      <article class="work w6 drop rv">
-        <div class="piece cf" aria-label="A redacted document with a CONFIDENTIAL stamp">
-          <div class="cf-bars"><i style="width:62%"></i><i style="width:88%"></i><i class="on" style="width:46%"></i><i style="width:74%"></i><i style="width:58%"></i><i class="on" style="width:80%"></i><i style="width:40%"></i></div>
-          <span class="cf-stamp">Confidential</span>
+      <article class="work w4 rv">
+        <div class="piece"><canvas data-art="pen" aria-label="A handwritten equation being drawn stroke by stroke"></canvas></div>
+        <div class="label"><span class="n">13</span><h3>inkd</h3><span class="med">TypeScript</span>
+          <p>Handwritten maths for pen tablets: write an equation by hand and have it recognised and worked through. Modelled on MyScript Math, but more customisable, with no paid engines.</p>
+          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/inkd" target="_blank" rel="noopener">GitHub ↗</a></span><span>In development</span></div></div>
+      </article>
+      <article class="work w4 drop rv">
+        <div class="piece"><canvas data-art="lapse" aria-label="Frames of a timelapse ticking past"></canvas></div>
+        <div class="label"><span class="n">14</span><h3>rewnd</h3><span class="med">Python</span>
+          <p>A webcam timelapse capture tool that runs locally on Linux, with nothing sent to the cloud.</p>
+          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/rewnd" target="_blank" rel="noopener">GitHub ↗</a></span><span>In development</span></div></div>
+      </article>
+      <article class="work w4 rv">
+        <div class="piece errnd sq" aria-label="errnd: a waveform icon that turns into a checkmark">
+          <span class="e-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><g class="e-wave"><rect x="3" y="8" width="5" height="24" rx="2.5"/><rect x="11" y="4" width="5" height="32" rx="2.5"/><rect x="19" y="10" width="5" height="20" rx="2.5"/><rect x="27" y="5" width="5" height="30" rx="2.5"/><rect x="35" y="12" width="5" height="16" rx="2.5"/></g><path class="e-check" d="M6 21 L16 31 L35 9"/></svg></span>
+          <span class="e-word">errnd<i>.</i><small>Your errand, ran.</small></span>
         </div>
-        <div class="label"><span class="n">15</span><h3>Private agent workflows</h3><span class="med">Claude, Grok, GitHub, scheduled jobs</span>
-          <p>A private stack of AI agents I run to optimise my own life. One is a market researcher that follows world economics overnight; others scout research for my projects. Findings live in a private repository as memory and reach me as a morning brief. What the briefs say stays sealed: this shows the product and the skills, not the insight.</p>
-          <div class="meta"><span>Private collection</span><span>Running daily</span></div></div>
+        <div class="label"><span class="n">15</span><h3><span class="b-errnd">errnd</span></h3><span class="med">Voice, single agent</span>
+          <p>A voice-driven personal assistant. Say what needs doing and it gets handled.</p>
+          <div class="meta"><span>Personal collection</span><span>In design</span></div>
+          <span class="note">Shown in the product's own colours.</span></div>
       </article>
     </div>
   </section>

@@ -9,7 +9,7 @@ A.mulberry=function(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a
 A.esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
 A.rmq=window.matchMedia('(prefers-reduced-motion: reduce)');
 
-A.ORDER=['transcriber','ticketscope','primelevels','neuronav','orgchecker','stellareye','cognisign','klokd','forge','agents','inkd','rewnd','stopwatch','errnd','ja'];
+A.ORDER=['ticketscope','orgchecker','ja','forge','agents','klokd','transcriber','primelevels','neuronav','cognisign','stellareye','stopwatch','inkd','rewnd','errnd'];
 A.P={
  transcriber:{name:'Video Transcriber',el:'#1f8fd6',soft:'rgba(31,143,214,.12)',viz:'transcript',school:'Inscription',type:'Tool · Independent',
   fx:'Turns recordings into searchable, timestamped text without them ever leaving the machine.',stat:'Fully local',

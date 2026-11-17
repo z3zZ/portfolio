@@ -645,19 +645,19 @@ setStill(still);
 /* ---------- case files ---------- */
 var SKYC={agents:'#ff7a1a',stopwatch:'#f2c94c',ticketscope:'#f2a541',primelevels:'#f2a541',orgchecker:'#f2a541',transcriber:'#5fd1c4',neuronav:'#5fd1c4',stellareye:'#9aa8ff',cognisign:'#9aa8ff',forge:'#f2a541'};
 var FILES={};Object.keys(window.ARC.P).forEach(function(id){var p=window.ARC.P[id],o={};for(var k in p)o[k]=p[k];if(SKYC[id])o.el=SKYC[id];FILES[id]=o;});
-var TENANTS=[['transcriber','Video Transcriber','Private, local transcription with Whisper. Recordings never leave the machine.','Up for adoption','#5fd1c4',''],
- ['neuronav','NeuroNav','Revision platform for neurodivergent learners. 30+ users.','Live','#5fd1c4',''],
- ['stellareye','StellarEye','A live 3D Earth showing tonight&rsquo;s sky events.','Live','#9aa8ff',''],
- ['klokd','klokd','Privacy-first time tracking. Your day, kloked.','MVP built','#c8f135','mono'],
- ['cognisign','CogniSign','Gestures into actions and speech, for people who can&rsquo;t use their voice.','Rebuilding','#9aa8ff',''],
+var TENANTS=[['ja','JA Studios','A small web studio, co-founded with a friend.','Revamp','#b5532f','serif'],
  ['forge','Roblox Forge','AI writes briefs overnight, Claude builds prototypes, I approve.','Running','#f2a541',''],
  ['agents','Private agent workflows','AI agents, including a world-economics market researcher. What they tell me stays sealed.','Confidential','#ff7a1a','mono'],
+ ['klokd','klokd','Privacy-first time tracking. Your day, kloked.','MVP built','#c8f135','mono'],
+ ['transcriber','Video Transcriber','Private, local transcription with Whisper. Recordings never leave the machine.','Up for adoption','#5fd1c4',''],
+ ['neuronav','NeuroNav','Revision platform for neurodivergent learners. 30+ users.','Live','#5fd1c4',''],
+ ['cognisign','CogniSign','Gestures into actions and speech, for people who can&rsquo;t use their voice.','Rebuilding','#9aa8ff',''],
+ ['stellareye','StellarEye','A live 3D Earth showing tonight&rsquo;s sky events.','Live','#9aa8ff',''],
+ ['stopwatch','Stopwatch','A custom stopwatch, built because every timer looked bad on my timelapses.','In use','#f2c94c',''],
  ['inkd','inkd','Handwritten maths for pen tablets.','In development','#e86fa1',''],
  ['rewnd','rewnd','Local webcam timelapses on Linux.','In development','#8fa3b8',''],
- ['stopwatch','Stopwatch','A custom stopwatch, built because every timer looked bad on my timelapses.','In use','#f2c94c',''],
- ['errnd','errnd','Voice-first assistant. Your errand, ran.','In design','#b9f04a','mono'],
- ['ja','JA Studios','A small web studio, co-founded with a friend.','Revamp','#b5532f','serif']];
-var ORDER=['ticketscope','primelevels','orgchecker'].concat(TENANTS.map(function(t){return t[0];}));
+ ['errnd','errnd','Voice-first assistant. Your errand, ran.','In design','#b9f04a','mono']];
+var ORDER=['ticketscope','orgchecker','ja','forge','agents','klokd','transcriber','primelevels','neuronav','cognisign','stellareye','stopwatch','inkd','rewnd','errnd'];
 
 function arcPath(cx,cy,r,a0,a1){var x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);return'M'+x0.toFixed(1)+' '+y0.toFixed(1)+' A'+r+' '+r+' 0 '+((a1-a0)>Math.PI?1:0)+' 1 '+x1.toFixed(1)+' '+y1.toFixed(1);}
 var VIZ=window.ARC.VIZ;
