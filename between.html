@@ -138,6 +138,7 @@ h2.sec{font-family:var(--f-display);font-weight:500;font-size:clamp(34px,4.6vw,6
 .inner.dark .meta{color:rgba(233,235,221,.55)}
 .inner.k .seal{border-color:var(--klokd);color:var(--klokd);font-family:var(--f-mono)}
 .inner.e{color:var(--errnd)}
+.inner.cf{background:#0b0b0b;color:#ff7a1a;box-shadow:inset 0 0 0 1px rgba(255,122,26,.5)}.inner.cf .seal{border-color:#ff7a1a;color:#ff7a1a;font-family:var(--f-mono)}.inner.cf .meta{color:rgba(255,122,26,.75)}
 .inner.e .seal{border-color:var(--errnd);color:var(--errnd);font-family:var(--f-mono)}
 .gallery-hint{margin:6px 0 0;text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-faint)}
 @media (max-width:820px){
@@ -192,6 +193,7 @@ a.c-v:hover{border-bottom-color:var(--gold)}
 .sheet.t-klokd,.sheet.t-errnd{--sh-bg:#0e0f0b;--sh-fg:#e9ebdd;--sh-dim:rgba(233,235,221,.6);--sh-rule:rgba(200,241,53,.16);--sh-title:var(--f-mono);--viz-bg:#080906;--viz-b:#e9ebdd}
 .sheet.t-klokd{--sh-acc:var(--klokd);--viz-a:var(--klokd)}
 .sheet.t-errnd{--sh-acc:var(--errnd);--viz-a:var(--errnd)}
+.sheet.t-cf{--sh-bg:#0b0b0b;--sh-fg:#f4ece4;--sh-dim:rgba(244,236,228,.6);--sh-rule:rgba(255,122,26,.25);--sh-acc:#ff7a1a;--viz-a:#ff7a1a;--viz-b:#f4ece4;--viz-bg:#0b0b0b}
 .sheet-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);min-height:min(620px,calc(100dvh - 48px))}
 .sheet-viz{margin:0;background:var(--viz-bg);display:grid;place-items:center;padding:clamp(24px,4vw,56px)}
 .sheet-viz svg{width:100%;max-width:420px;height:auto;display:block}
@@ -277,7 +279,7 @@ a.c-v:hover{border-bottom-color:var(--gold)}
       <div class="ink" style="max-width:620px">
         <p class="eyebrow"><span class="kj" lang="ja" aria-hidden="true">作</span><span class="ln" aria-hidden="true"></span>Work</p>
         <h2 class="sec" id="work-h">The pavilion of work</h2>
-        <p class="lead">Eight scrolls hang here. Select one to unroll it.</p>
+        <p class="lead">Fifteen scrolls hang here. Select one to unroll it.</p>
       </div>
       <ul class="gallery">
         <li><button class="scroll" style="--i:0" data-p="0" type="button" aria-haspopup="dialog" aria-label="TicketScope, Amazon Prime Video. Open project.">
@@ -285,40 +287,75 @@ a.c-v:hover{border-bottom-color:var(--gold)}
           <span class="rod"></span>
           <span class="mount"><span class="inner"><span class="seal">TS</span><span class="vt">TicketScope</span><span class="meta">Amazon<br>Prime Video</span></span></span>
           <span class="rod low"></span></button></li>
-        <li><button class="scroll" style="--i:1" data-p="1" type="button" aria-haspopup="dialog" aria-label="Prime Levels, Amazon. Open project.">
+        <li><button class="scroll" style="--i:1" data-p="1" type="button" aria-haspopup="dialog" aria-label="Org Checker, Thirtyone:eight. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner"><span class="seal">OC</span><span class="vt">Org Checker</span><span class="meta">Thirtyone:eight<br>Under NDA</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:2" data-p="2" type="button" aria-haspopup="dialog" aria-label="JA Studios, web studio. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner"><span class="seal">JA</span><span class="vt">JA Studios</span><span class="meta">Co-founder<br>Revamp</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:3" data-p="3" type="button" aria-haspopup="dialog" aria-label="Roblox Forge, agentic pipeline. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner"><span class="seal">RF</span><span class="vt">Roblox Forge</span><span class="meta">Agentic<br>Early stage</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:4" data-p="4" type="button" aria-haspopup="dialog" aria-label="Private agent workflows, confidential. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner dark cf"><span class="seal">✕</span><span class="vt">Classified</span><span class="meta">Private<br>Confidential</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:5" data-p="5" type="button" aria-haspopup="dialog" aria-label="Klokd, independent product. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner dark k"><span class="seal">K</span><span class="vt">klokd</span><span class="meta">MVP<br>built</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:6" data-p="6" type="button" aria-haspopup="dialog" aria-label="Video Transcriber, private local transcription. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner"><span class="seal">VT</span><span class="vt">Video Transcriber</span><span class="meta">Independent<br>Runs locally</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:7" data-p="7" type="button" aria-haspopup="dialog" aria-label="Prime Levels, Amazon. Open project.">
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
           <span class="mount"><span class="inner"><span class="seal">PL</span><span class="vt">Prime Levels</span><span class="meta">Amazon<br>T Levels</span></span></span>
           <span class="rod low"></span></button></li>
-        <li><button class="scroll" style="--i:2" data-p="2" type="button" aria-haspopup="dialog" aria-label="NeuroNav, accessibility. Open project.">
+        <li><button class="scroll" style="--i:8" data-p="8" type="button" aria-haspopup="dialog" aria-label="NeuroNav, accessibility. Open project.">
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
           <span class="mount"><span class="inner"><span class="seal">NN</span><span class="vt">NeuroNav</span><span class="meta">Independent<br>Accessibility</span></span></span>
           <span class="rod low"></span></button></li>
-        <li><button class="scroll" style="--i:3" data-p="3" type="button" aria-haspopup="dialog" aria-label="Klokd, independent product. Open project.">
+        <li><button class="scroll" style="--i:9" data-p="9" type="button" aria-haspopup="dialog" aria-label="CogniSign, gestures to speech. Open project.">
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
-          <span class="mount"><span class="inner dark k"><span class="seal">K</span><span class="vt">klokd</span><span class="meta">In<br>development</span></span></span>
+          <span class="mount"><span class="inner"><span class="seal">CS</span><span class="vt">CogniSign</span><span class="meta">Independent<br>Rebuilding</span></span></span>
           <span class="rod low"></span></button></li>
-        <li><button class="scroll" style="--i:4" data-p="4" type="button" aria-haspopup="dialog" aria-label="Errnd, product concept. Open project.">
+        <li><button class="scroll" style="--i:10" data-p="10" type="button" aria-haspopup="dialog" aria-label="StellarEye, live 3D Earth. Open project.">
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
-          <span class="mount"><span class="inner dark e"><span class="seal">E</span><span class="vt">errnd</span><span class="meta">Concept</span></span></span>
+          <span class="mount"><span class="inner"><span class="seal">SE</span><span class="vt">StellarEye</span><span class="meta">Independent<br>Live</span></span></span>
           <span class="rod low"></span></button></li>
-        <li><button class="scroll" style="--i:5" data-p="5" type="button" aria-haspopup="dialog" aria-label="Org Checker, Thirtyone:eight. Open project.">
+        <li><button class="scroll" style="--i:11" data-p="11" type="button" aria-haspopup="dialog" aria-label="Stopwatch, custom timer. Open project.">
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
-          <span class="mount"><span class="inner"><span class="seal">OC</span><span class="vt">Org Checker</span><span class="meta">Thirtyone:eight<br>Day job</span></span></span>
+          <span class="mount"><span class="inner"><span class="seal">SW</span><span class="vt">Stopwatch</span><span class="meta">Small<br>In use</span></span></span>
           <span class="rod low"></span></button></li>
-        <li><button class="scroll" style="--i:6" data-p="6" type="button" aria-haspopup="dialog" aria-label="CogniSign, gesture control prototype. Open project.">
+        <li><button class="scroll" style="--i:12" data-p="12" type="button" aria-haspopup="dialog" aria-label="inkd, handwritten maths. Open project.">
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
-          <span class="mount"><span class="inner"><span class="seal">CS</span><span class="vt">CogniSign</span><span class="meta">Independent<br>Prototype</span></span></span>
+          <span class="mount"><span class="inner"><span class="seal">IN</span><span class="vt">inkd</span><span class="meta">Pen maths<br>In development</span></span></span>
           <span class="rod low"></span></button></li>
-        <li><button class="scroll" style="--i:7" data-p="7" type="button" aria-haspopup="dialog" aria-label="JA Studios, web studio. Open project.">
+        <li><button class="scroll" style="--i:13" data-p="13" type="button" aria-haspopup="dialog" aria-label="rewnd, local timelapses. Open project.">
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
-          <span class="mount"><span class="inner"><span class="seal">JA</span><span class="vt">JA Studios</span><span class="meta">Co-founder<br>Web studio</span></span></span>
+          <span class="mount"><span class="inner"><span class="seal">RW</span><span class="vt">rewnd</span><span class="meta">Timelapse<br>In development</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:14" data-p="14" type="button" aria-haspopup="dialog" aria-label="Errnd, voice assistant. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner dark e"><span class="seal">E</span><span class="vt">errnd</span><span class="meta">In design</span></span></span>
           <span class="rod low"></span></button></li>
       </ul>
       <p class="gallery-hint">TicketScope and Org Checker are internal tools, shown in abstract</p>
@@ -560,6 +597,7 @@ void main(){
 }
 </script>
 
+<script src="/arcana.js"></script>
 <script>
 (function(){
 'use strict';
@@ -886,77 +924,11 @@ setStill(still);
 resize();requestAnimationFrame(frame);
 
 /* ---------------- projects ---------------- */
-var PROJECTS=[
- {title:'TicketScope',theme:'ink',viz:'signal',context:'Amazon Prime Video · Engineering placement',
-  lede:'An internal investigation tool for on-call engineers.',
-  what:'When something goes wrong, on-call engineers need to work out what happened. TicketScope helps them investigate incidents and understand the operational information around them.',
-  part:'I built it during my Amazon placement: a React and TypeScript interface, backed by an MCP server written in TypeScript.',
-  stack:['React','TypeScript','MCP server (TypeScript)'],status:'Adopted company-wide at Amazon',
-  note:'This is an internal tool, so its interface and data stay confidential. The illustration is abstract.'},
- {title:'Prime Levels',theme:'ink',viz:'pages',context:'Amazon · T Levels',
-  lede:'A website explaining T Levels, built during my Amazon placement.',
-  what:'A ten-page information site about T Levels, delivered on a project involving more than 80 stakeholders.',
-  part:'I built about 95% of the frontend. Accessibility was part of the work, including WCAG 2.1 considerations.',
-  stack:['Frontend implementation','Accessibility (WCAG 2.1)'],stackLabel:'Focus',status:'Delivered during placement'},
- {title:'NeuroNav',theme:'ink',viz:'route',context:'Independent · Accessibility',
-  lede:'A revision platform designed to help neurodivergent students study more effectively.',
-  what:'Studying looks different for every brain. NeuroNav is a revision platform built around accessibility, so neurodivergent students can study in a way that works for them.',
-  part:'I designed and built it, then put it in front of real students for early feedback.',
-  stack:['React','TypeScript'],status:'Used by more than 30 students'},
- {title:'klokd',theme:'klokd',viz:'clock',context:'Independent product · In development',
-  lede:'Your day, kloked.',
-  what:'A privacy-first desktop app for activity and time tracking. Your data stays local, the experience stays calm, and the insights focus on what matters about how you spent your day.',
-  part:'Product design and engineering. An evolving independent product, not a finished one.',
-  stack:['Desktop app','Local-first data'],stackLabel:'Approach',status:'In development'},
- {title:'errnd',theme:'errnd',viz:'wave',context:'Independent · Concept',
-  lede:'Your errand, ran.',
-  what:'An early concept for a voice-first personal assistant: say what needs doing, and it gets handled.',
-  part:'Concept and product thinking. More detail to come.',status:'Concept'},
- {title:'Org Checker',theme:'ink',viz:'pages',context:'Thirtyone:eight · Day job',
-  lede:'Validation for a safeguarding charity’s records.',
-  what:'A Power Apps solution on Dataverse that checks organisation and user details inside a safeguarding platform before they count.',
-  part:'I prepare the test-case data and debug the validation engine, working alongside a colleague who builds the Power Fx test harnesses.',
-  stack:['Power Apps','Dataverse','Power Fx'],status:'In testing',
-  note:'This is internal to Thirtyone:eight, so the illustration is abstract.'},
- {title:'CogniSign',theme:'ink',viz:'signal',context:'Independent · Prototype',
-  lede:'Controlling a computer with your hands.',
-  what:'A gesture-control prototype that reads hand landmarks and maps movements to actions.',
-  part:'I built it independently to learn computer vision by doing.',
-  stack:['Python','MediaPipe'],status:'Prototype'},
- {title:'JA Studios',theme:'ink',viz:'route',context:'Co-founded with a friend',
-  lede:'Websites, built properly.',
-  what:'A small web studio building proper websites for organisations that need one. Our first project is a prototype site for a local church.',
-  part:'I handle the build and the ongoing technical upkeep.',status:'Launching'}
-];
+var PROJECTS=['ticketscope', 'orgchecker', 'ja', 'forge', 'agents', 'klokd', 'transcriber', 'primelevels', 'neuronav', 'cognisign', 'stellareye', 'stopwatch', 'inkd', 'rewnd', 'errnd'].map(function(id){var p=window.ARC.P[id];return{title:p.name,theme:id==='klokd'?'klokd':id==='errnd'?'errnd':id==='agents'?'cf':'ink',viz:p.viz,context:p.context,lede:p.lede,what:p.what,part:p.part,stack:p.stack?p.stack.split(' · '):null,status:p.status,note:p.note,links:p.links};});
 
 function arcPath(cx,cy,r,a0,a1){var x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
   return 'M'+x0.toFixed(1)+' '+y0.toFixed(1)+' A'+r+' '+r+' 0 '+((a1-a0)>Math.PI?1:0)+' 1 '+x1.toFixed(1)+' '+y1.toFixed(1);}
-var VIZ={
- signal:function(){var r=mulberry(11),s='<svg viewBox="0 0 400 400">';
-  for(var i=0;i<70;i++){var a=r()*Math.PI*2,d=62+Math.pow(r(),.6)*128,x=(200+Math.cos(a)*d).toFixed(1),y=(200+Math.sin(a)*d).toFixed(1);
-   s+='<line x1="'+x+'" y1="'+y+'" x2="200" y2="200" stroke="var(--viz-a)" stroke-opacity="'+(.06+r()*.16).toFixed(2)+'" stroke-width=".7"/>';
-   s+='<circle cx="'+x+'" cy="'+y+'" r="'+(1+r()*2.2).toFixed(1)+'" fill="var(--viz-b)" fill-opacity="'+(.3+r()*.5).toFixed(2)+'"/>';}
-  return s+'<circle cx="200" cy="200" r="50" fill="none" stroke="var(--viz-a)" stroke-opacity=".35" stroke-dasharray="2 6"/><circle cx="200" cy="200" r="26" fill="var(--viz-bg)" stroke="var(--viz-a)"/><circle cx="200" cy="200" r="7" fill="var(--viz-a)"/></svg>';},
- pages:function(){var s='<svg viewBox="0 0 400 400">';
-  for(var i=0;i<10;i++){var ang=-27+i*6,hl=i===9;
-   s+='<g transform="rotate('+ang+' 200 350)"><rect x="140" y="80" width="120" height="164" rx="2" fill="var(--viz-bg)" stroke="'+(hl?'var(--viz-a)':'var(--viz-b)')+'" stroke-opacity="'+(hl?1:.35)+'"/>';
-   if(hl)s+='<line x1="156" y1="104" x2="226" y2="104" stroke="var(--viz-a)" stroke-width="2"/><line x1="156" y1="120" x2="240" y2="120" stroke="var(--viz-b)" stroke-opacity=".45"/><line x1="156" y1="132" x2="232" y2="132" stroke="var(--viz-b)" stroke-opacity=".45"/><line x1="156" y1="144" x2="210" y2="144" stroke="var(--viz-b)" stroke-opacity=".45"/><rect x="156" y="164" width="88" height="56" fill="none" stroke="var(--viz-b)" stroke-opacity=".3"/>';
-   s+='</g>';}
-  return s+'</svg>';},
- route:function(){var d='M48 334 C 130 336, 96 238, 176 226 S 268 150, 248 112 S 300 62, 352 66';
-  var s='<svg viewBox="0 0 400 400"><path d="'+d+'" fill="none" stroke="var(--viz-a)" stroke-opacity=".18" stroke-width="22" stroke-linecap="round"/><path d="'+d+'" fill="none" stroke="var(--viz-a)" stroke-width="1.5" stroke-dasharray="1 7" stroke-linecap="round"/>';
-  [[48,334],[176,226],[248,112],[352,66]].forEach(function(p,i){s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+(i===3?9:5)+'" fill="'+(i===3?'var(--viz-a)':'var(--viz-bg)')+'" stroke="var(--viz-a)" stroke-width="1.5"/>';});
-  return s+'</svg>';},
- clock:function(){var s='<svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="140" fill="none" stroke="var(--viz-b)" stroke-opacity=".12" stroke-width="18"/>';
-  for(var i=0;i<24;i++){var a=i/24*Math.PI*2-Math.PI/2,r0=i%6?166:160;s+='<line x1="'+(200+Math.cos(a)*r0).toFixed(1)+'" y1="'+(200+Math.sin(a)*r0).toFixed(1)+'" x2="'+(200+Math.cos(a)*172).toFixed(1)+'" y2="'+(200+Math.sin(a)*172).toFixed(1)+'" stroke="var(--viz-b)" stroke-opacity=".4"/>';}
-  [[8.6,10.4,1],[10.8,12.3,.75],[13.3,15.9,1],[16.2,17.4,.55],[19.6,20.8,.35]].forEach(function(b){var a0=b[0]/24*Math.PI*2-Math.PI/2,a1=b[1]/24*Math.PI*2-Math.PI/2;
-   s+='<path d="'+arcPath(200,200,140,a0,a1)+'" fill="none" stroke="var(--viz-a)" stroke-opacity="'+b[2]+'" stroke-width="18"/>';});
-  return s+'<text x="200" y="206" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="17" fill="var(--viz-a)">kloked.</text></svg>';},
- wave:function(){var r=mulberry(5),s='<svg viewBox="0 0 400 400">';
-  for(var i=0;i<24;i++){var x=46+i*8.4,env=Math.sin(i/23*Math.PI),h=(10+r()*60)*env+4;
-   s+='<rect x="'+x.toFixed(1)+'" y="'+(200-h).toFixed(1)+'" width="4" height="'+(h*2).toFixed(1)+'" rx="2" fill="var(--viz-a)" fill-opacity="'+(.25+i/23*.6).toFixed(2)+'"/>';}
-  return s+'<path d="M262 202 L294 236 L356 160" fill="none" stroke="var(--viz-a)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>';}
-};
+var VIZ=window.ARC.VIZ;
 
 var sheet=document.getElementById('sheet'),body=document.getElementById('sh-body'),cur=0,opener=null;
 function el(id){return document.getElementById(id);}
@@ -969,6 +941,7 @@ function fill(i){
   if(p.stack)rows.push([p.stackLabel||'Built with',p.stack.join(' · ')]);
   rows.push(['Status',p.status]);
   el('sh-facts').innerHTML=rows.map(function(r){return'<div><dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd></div>';}).join('');
+  if(p.links)el('sh-facts').innerHTML+='<div><dt>Links</dt><dd class="sh-links">'+p.links.map(function(l){return'<a href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+' ↗</a>';}).join(' · ')+'</dd></div>';
   var note=el('sh-note');if(p.note){note.textContent=p.note;note.hidden=false;}else note.hidden=true;
   el('sh-viz').innerHTML=VIZ[p.viz]();
   el('sh-count').textContent=(i+1)+' / '+PROJECTS.length;

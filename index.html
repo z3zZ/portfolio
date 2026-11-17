@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>joshan.dev</title>
 <meta name="theme-color" content="#b08a5b">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -69,7 +71,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .portrait .frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 14%,transparent);pointer-events:none}
 .portrait figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-family:var(--f-mono);font-size:11.5px;color:var(--mute)}
 .portrait figcaption b{color:var(--ink);font-weight:500}
-@media (max-width:860px){.hero{grid-template-columns:1fr}.portrait{max-width:420px}}
+html,body{overflow-x:clip}
+/* phones and small tablets: keep the name and portrait side by side, details below */
+@media (max-width:860px){
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,40%);gap:14px 18px;align-items:end;padding-block:clamp(24px,5vh,48px) clamp(28px,5vh,48px)}
+  .hero>div{display:contents}
+  .hero h1{grid-column:1;grid-row:1;font-size:clamp(34px,10.2vw,80px)}
+  .hero .sig{grid-column:1;grid-row:2;margin:0;font-size:clamp(14px,3.8vw,19px)}
+  .hero .sig::before{width:16px;margin-right:8px}
+  .portrait{grid-column:2;grid-row:1/3;align-self:end}
+  .portrait .frame{aspect-ratio:3/4}
+  .portrait figcaption{display:none}
+  .hero-row{grid-column:1/-1;grid-row:3;margin-top:14px;gap:18px}
+}
 .hero h1 span{display:block}
 .sig{margin:18px 0 0;font-size:clamp(17px,1.6vw,21px);font-style:italic;letter-spacing:-.01em;color:var(--ink-2)}
 .sig::before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-right:12px;opacity:.5}
@@ -132,6 +146,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:520px){.skills div{grid-template-columns:1fr;gap:4px}}
 .rows li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule);align-items:baseline}
 .rows b{font-weight:500}
+.cf-tag{font-style:normal;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:#0b0b0b;color:#ff7a1a;padding:2px 6px;border:1px solid #ff7a1a;vertical-align:1px}
 .rows span{color:var(--ink-2);font-size:14.5px}
 .rows em{font-style:normal;font-family:var(--f-mono);font-size:12px;color:var(--mute);white-space:nowrap;text-align:right}
 @media (max-width:860px){.plain .intro,.col{grid-column:1/-1}}
@@ -209,7 +224,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
         <span class="n">03</span>
         <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><ellipse cx="20" cy="20" rx="17" ry="7"/><ellipse cx="20" cy="20" rx="10" ry="4"/><circle cx="20" cy="20" r="3.5"/><g class="sp"><circle cx="37" cy="20" r="1.8"/><circle cx="10" cy="23" r="1.4"/></g></svg></span>
         <span class="nm"><b>Orrery</b><small>Orbital</small></span>
-        <p class="ds">Eight projects orbit one sun, the idea. Each swings into view as you scroll.</p>
+        <p class="ds">Fifteen projects orbit one sun, the idea. Each swings into view as you scroll.</p>
         <span class="tags"><span class="mode">Light</span><span class="sw" aria-hidden="true"><i style="--c:#14213d"></i><i style="--c:#a8761e"></i><i style="--c:#e3c27a"></i><i style="--c:#3563e9"></i></span></span>
         <span class="ar" aria-hidden="true">→</span></a></li>
       <li class="world"><a href="incantation.html" data-k="4" data-peek="Start casting">
@@ -223,7 +238,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
         <span class="n">05</span>
         <span class="ic" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 6 V14 M20 14 L11 22 M20 14 L29 22 M11 22 V30 M29 22 L23 30 M29 22 L35 30"/><g class="sp"><rect x="17" y="3" width="6" height="6" transform="rotate(45 20 6)"/></g><circle cx="11" cy="32" r="2.2"/><circle cx="23" cy="32" r="2.2"/><circle cx="35" cy="32" r="2.2"/></svg></span>
         <span class="nm"><b>Academy</b><small>Skill tree</small></span>
-        <p class="ds">An anime skill tree that unlocks as you scroll and levels you up to eighteen.</p>
+        <p class="ds">An anime skill tree that unlocks as you scroll and levels you up to twenty-three.</p>
         <span class="tags"><span class="mode">Light</span><span class="sw" aria-hidden="true"><i style="--c:#ff6f9f"></i><i style="--c:#f5a623"></i><i style="--c:#4fb6f5"></i><i style="--c:#8a6bff"></i></span></span>
         <span class="ar" aria-hidden="true">→</span></a></li>
     </ol>
@@ -281,18 +296,27 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
           <li><span><b>Junior Full Stack Assistant</b> · Tribeca, shadowing. Exposure to application architecture and databases.</span><em>Jul 2023</em></li>
         </ul></div>
         <div class="blk"><h3>Selected work</h3><ul class="rows">
-          <li><span><b>TicketScope</b> · Operational tool for on-call engineers. React, TypeScript, MCP.</span><em>Adopted company-wide</em></li>
+          <li><span><b>TicketScope</b> · Operational tool for on-call engineers. React, TypeScript, MCP. Under NDA.</span><em>Adopted company-wide</em></li>
+          <li><span><b>Org Checker</b> · I wrote its metadata-driven rules engine in Power Fx: 48 rules and ~300 conditions stored as Dataverse data, created via the Web API and regression-tested. Under NDA.</span><em>In UAT</em></li>
+          <li><span><b>JA Studios</b> · Web studio, co-founded with a friend.</span><em>Revamp in progress</em></li>
+          <li><span><b>Roblox Forge</b> · Agentic pipeline: AI writes briefs overnight, Claude builds prototypes, I approve.</span><em>Early stage</em></li>
+          <li class="cf"><span><b>Private agent workflows</b> <i class="cf-tag">Confidential</i> · AI agents I run to optimise my life, including a world-economics market researcher.</span><em>Running</em></li>
+          <li><span><b><a href="https://github.com/z3zZ/Klokd" target="_blank" rel="noopener">klokd</a></b> · Privacy-first desktop time tracker.</span><em>MVP built</em></li>
+          <li><span><b><a href="https://github.com/z3zZ/Video-Transcriber" target="_blank" rel="noopener">Video Transcriber</a></b> · Private, local transcription. Recordings never leave the machine. Python, FastAPI, Whisper.</span><em>Up for adoption at Thirtyone:eight</em></li>
           <li><span><b>Prime Levels</b> · Ten-page accessible site, WCAG 2.1, 80+ stakeholders.</span><em>~95% of the frontend</em></li>
-          <li><span><b>NeuroNav</b> · Revision app for neurodivergent learners.</span><em>30+ users</em></li>
-          <li><span><b>klokd</b> · Privacy-first desktop time tracker.</span><em>In development</em></li>
-          <li><span><b>Org Checker</b> · Record validation for a safeguarding charity. Power Apps, Dataverse.</span><em>In testing</em></li>
-          <li><span><b>JA Studios</b> · Web studio, co-founded with a friend.</span><em>Launching</em></li>
+          <li><span><b><a href="https://neuro-nav.vercel.app" target="_blank" rel="noopener">NeuroNav</a></b> · Revision app for neurodivergent learners.</span><em>30+ users</em></li>
+          <li><span><b>CogniSign</b> · Gestures into actions and speech, for people who can&rsquo;t use their voice. Python, MediaPipe.</span><em>Rebuilding</em></li>
+          <li><span><b><a href="https://stellareye.vercel.app" target="_blank" rel="noopener">StellarEye</a></b> · NASA API app with a live 3D Earth showing tonight&rsquo;s sky events.</span><em>Live</em></li>
+          <li><span><b><a href="https://github.com/z3zZ/Stopwatch" target="_blank" rel="noopener">Stopwatch</a></b> · Built my own because every timer looked bad on my timelapses. Small, used daily.</span><em>In use</em></li>
+          <li><span><b><a href="https://github.com/z3zZ/inkd" target="_blank" rel="noopener">inkd</a></b> · Handwritten maths for pen tablets.</span><em>In development</em></li>
+          <li><span><b><a href="https://github.com/z3zZ/rewnd" target="_blank" rel="noopener">rewnd</a></b> · Local webcam timelapses on Linux.</span><em>In development</em></li>
+          <li><span><b>errnd</b> · Voice-first assistant for quick errands.</span><em>In design</em></li>
         </ul></div>
         <div class="blk"><h3>Skills</h3><dl class="skills">
           <div><dt>Languages</dt><dd>TypeScript, JavaScript, Python, SQL, HTML, CSS</dd></div>
-          <div><dt>Frameworks</dt><dd>React, Vite, Flask, Recharts, Chart.js, MediaPipe</dd></div>
+          <div><dt>Frameworks</dt><dd>React, Vite, Flask, FastAPI, Recharts, Chart.js, MediaPipe</dd></div>
           <div><dt>Platforms</dt><dd>Dynamics 365, Power Platform, Dataverse, AWS (EC2, S3), Vercel, Git, Linux</dd></div>
-          <div><dt>AI</dt><dd>MCP servers, AI-assisted workflows, computer vision prototyping</dd></div>
+          <div><dt>AI</dt><dd>MCP servers, agentic pipelines, local speech models (Whisper), computer vision prototyping</dd></div>
           <div><dt>Design</dt><dd>UI/UX, WCAG 2.1 accessibility, design systems, wireframing</dd></div>
           <div><dt>People</dt><dd>Stakeholder communication, technical mentoring, event leadership</dd></div>
         </dl></div>
