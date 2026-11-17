@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="joshan.dev">
 <meta property="og:title" content="Orrery · Joshan Randhawa">
-<meta property="og:description" content="Thirteen projects orbit one sun, the idea. Each swings into view as you scroll. One of nine portfolio worlds by Joshan Randhawa.">
+<meta property="og:description" content="Fifteen projects orbit one sun, the idea. Each swings into view as you scroll. One of nine portfolio worlds by Joshan Randhawa.">
 <meta property="og:url" content="https://joshan.dev/orrery.html">
 <meta property="og:image" content="https://joshan.dev/og/orrery.png">
 <meta property="og:image:width" content="1200">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Orrery · Joshan Randhawa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Orrery · Joshan Randhawa">
-<meta name="twitter:description" content="Thirteen projects orbit one sun, the idea. Each swings into view as you scroll. One of nine portfolio worlds by Joshan Randhawa.">
+<meta name="twitter:description" content="Fifteen projects orbit one sun, the idea. Each swings into view as you scroll. One of nine portfolio worlds by Joshan Randhawa.">
 <meta name="twitter:image" content="https://joshan.dev/og/orrery.png">
 
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -95,7 +95,7 @@ h2.sec em{font-style:italic;color:var(--brass)}
 .whisper{margin:0;font-family:var(--f-display);font-style:italic;font-size:17px;color:var(--ink-faint)}
 
 /* system */
-#system{height:calc(var(--n) * 58vh + 100vh);padding:0}
+#system{height:calc(var(--n) * 52vh + 100vh);padding:0}
 .sys{position:sticky;top:0;height:100vh;height:100svh;padding-left:var(--gutter);padding-right:var(--gutter-r);display:flex;align-items:center}
 .sys .wrap{display:flex;flex-direction:column;gap:20px}
 .sys-head{max-width:480px}
@@ -265,10 +265,10 @@ a.c-v:hover{border-bottom-color:var(--brass)}
     </div></div>
   </section>
 
-  <section id="system" aria-labelledby="sys-h" style="--n:13">
+  <section id="system" aria-labelledby="sys-h" style="--n:15">
     <div class="sys"><div class="wrap">
       <div class="sys-head mist">
-        <p class="eyebrow">The system · Thirteen bodies</p>
+        <p class="eyebrow">The system · Fifteen bodies</p>
         <h2 class="sec" id="sys-h">Keep scrolling. <em>Each one swings into view.</em></h2>
       </div>
       <div class="panels" id="panels"></div>
@@ -392,7 +392,7 @@ setFocus(0);
 var cv=document.getElementById('sky'),ctx=cv.getContext('2d');
 var W=0,H=0,DPR=1,small=false;
 var S={t:0,stage:0,sys:0,rot:0,mx:.5,my:.5,tmx:.5,tmy:.5,intro:0,hot:-2,px:-999,py:-999};
-var BODIES=IDS.map(function(id,i){var r=.22+i*(.72/(IDS.length-1));return{id:id,p:A.P[id],r:r,ph:i*2.39996+.6,w:.16/Math.pow(r,1.5)*.35,size:[9.5,9,8.5,8.5,7.5,8,7,8,7.5,6.5,6,6.5,7][i]||7,sx:0,sy:0,sr:0};});
+var BODIES=IDS.map(function(id,i){var r=.22+i*(.72/(IDS.length-1));return{id:id,p:A.P[id],r:r,ph:i*2.39996+.6,w:.16/Math.pow(r,1.5)*.35,size:[9.5,9,8.5,8.5,7.5,8,7,8,7.5,7,6.5,6,5.5,6.5,7][i]||7,sx:0,sy:0,sr:0};});
 /* layout per chapter: [cx, cy, radius (fraction of min side), alpha] */
 function key(i){
   if(small)return[[.5,.33,.44,1],[.5,.3,.46,1],[.5,.2,.3,.22],[.5,.2,.3,.18],[.5,.27,.44,.95]][i];

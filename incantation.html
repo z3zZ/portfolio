@@ -250,7 +250,7 @@ a.c-v:hover{border-bottom-color:var(--violet)}
 
 <header class="nav">
   <a class="mark" href="#circle" aria-label="Joshan Randhawa, back to the circle"><span class="hx" aria-hidden="true"><svg style="width:1.3em;height:1.3em;display:block;margin:auto" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 4.2A13.5 13.5 0 1 0 27.8 9.5" stroke-width="2.2"/><path d="M26 2.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1z" fill="currentColor" stroke-width=".6"/><path d="M19.5 9.5V18.5a4.5 4.5 0 0 1-9 0" stroke-width="2.8"/></svg></span><span class="name">Joshan Randhawa</span></a>
-  <div class="hudbar" aria-hidden="true"><span class="mana">Mana <span class="bar"><i id="mana"></i></span></span><span class="found">Spells found <b id="found">0 / 13</b></span></div>
+  <div class="hudbar" aria-hidden="true"><span class="mana">Mana <span class="bar"><i id="mana"></i></span></span><span class="found">Spells found <b id="found">0 / 15</b></span></div>
   <nav aria-label="Sections"><ul>
     <li><a class="lk" href="#spells" data-i="1">Spells</a></li>
     <li class="opt"><a class="lk" href="#seals" data-i="2">Seals</a></li>
@@ -397,7 +397,7 @@ IDS.forEach(function(id){var p=A.P[id];var li=document.createElement('li');
 /* ---------- console ---------- */
 var form=$('cast'),input=$('spell'),out=$('out'),found=new Set(),mana=100;
 var ALIAS={ticketscope:['ticketscope','ticket','ts'],primelevels:['primelevels','prime','tlevels','tlevel'],neuronav:['neuronav','neuro'],orgchecker:['orgchecker','org','checker'],
-  cognisign:['cognisign','cogni','gesture'],klokd:['klokd','kloked','clock'],errnd:['errnd','errand'],ja:['ja','jastudios','studio','studios'],forge:['forge','robloxforge','roblox','agents','agent','crew'],transcriber:['transcriber','transcribe','transcript','whisper','video'],stellareye:['stellareye','stellar','sky','nasa','stars'],inkd:['inkd','ink','pen','maths','math'],rewnd:['rewnd','rewind','timelapse']};
+  cognisign:['cognisign','cogni','gesture'],klokd:['klokd','kloked','clock'],errnd:['errnd','errand'],ja:['ja','jastudios','studio','studios'],forge:['forge','robloxforge','roblox','crew'],transcriber:['transcriber','transcribe','transcript','whisper','video'],stellareye:['stellareye','stellar','sky','nasa','stars'],inkd:['inkd','ink','pen','maths','math'],rewnd:['rewnd','rewind','timelapse'],stopwatch:['stopwatch','timer','stop'],agents:['agents','agent','private','confidential','classified','secret']};
 var VOCAB=['help','cast','summon','list','spells','seals','achievements','whoami','about','contact','lux','nox','clear','motto','sudo','hello'].concat(IDS);
 function resolve(text){var flat=text.replace(/[^a-z0-9]/g,'');var toks=text.split(/[^a-z0-9]+/).filter(Boolean);
   for(var id in ALIAS){var al=ALIAS[id];for(var i=0;i<al.length;i++){if(toks.indexOf(al[i])>=0)return id;if(al[i].length>4&&flat.indexOf(al[i])>=0)return id;}}return null;}

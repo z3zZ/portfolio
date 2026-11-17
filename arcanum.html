@@ -637,7 +637,7 @@ function resize(){var w=fg.clientWidth,h=fg.clientHeight;if(!w||!h)return;if(w==
 
 var xpEl=document.getElementById('xp'),areaEl=document.getElementById('area'),links=[].slice.call(document.querySelectorAll('.lk')),lastIdx=-1;
 var AREAS=['Arrival','Origin','Grimoire','Achievements','The wielder','Next quest'];
-var TOASTS=[null,'New area discovered: Origin','13 spells added to your grimoire','6 achievements on display','Party member joined: Joshan','Final quest unlocked'],seen={};
+var TOASTS=[null,'New area discovered: Origin','15 spells added to your grimoire','6 achievements on display','Party member joined: Joshan','Final quest unlocked'],seen={};
 function toast(msg){var box=document.getElementById('toasts');var t=document.createElement('div');t.className='toast';t.innerHTML='<i aria-hidden="true"></i>';t.appendChild(document.createTextNode(msg));box.appendChild(t);setTimeout(function(){t.remove();},still?3000:4300);}
 function hud(){xpEl.style.width=(clamp(S.stage/5.2,0,1)*100).toFixed(1)+'%';
   var idx=clamp(Math.floor(S.stage+.1),0,5);

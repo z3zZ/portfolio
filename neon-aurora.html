@@ -233,6 +233,9 @@ section.ep > *{position:relative;z-index:1}
 .legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:-20px 0 34px;font-family:var(--mono);font-size:12px;color:var(--mute)}
 .legend b{display:inline-grid;place-items:center;width:24px;height:24px;background:var(--fg);color:var(--night);font-family:var(--display);font-weight:400;margin-right:6px;font-size:12px}
 .spell .gh,.spell p a{color:var(--c);font-family:inherit;text-decoration:none;border-bottom:1px solid currentColor;align-self:center}
+.spell.cf{background:#0b0b0b;color:#f4ece4;box-shadow:0 0 0 2px #ff7a1a}.spell.cf .kind,.spell.cf .el{color:#ff7a1a}.spell.cf .incant{color:#ff7a1a;border-color:rgba(255,122,26,.4)}.spell.cf .tags span{border-color:rgba(255,122,26,.5);color:#f4ece4}
+.cf-cover{position:relative;background:#0b0b0b;display:flex;align-items:center;justify-content:center;overflow:hidden}.cf-bars{width:64%;display:grid;gap:13px}.cf-bars i{display:block;height:11px;background:rgba(244,236,228,.14)}.cf-bars i.on{background:#ff7a1a}
+.cf-stamp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-12deg);font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:24px;letter-spacing:.2em;text-transform:uppercase;color:#ff7a1a;border:4px solid #ff7a1a;padding:6px 16px;background:rgba(11,11,11,.85);box-shadow:0 0 24px rgba(255,122,26,.35)}
 .spells{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media (max-width:980px){.spells{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.spells{grid-template-columns:1fr}}
@@ -660,6 +663,28 @@ section.ep > *{position:relative;z-index:1}
           <div class="foot"><span class="mp"><b>0</b>cloud uploads</span><button class="cast" type="button">Cast ▸</button></div>
         </div>
       </article>
+      <article class="pnl spell rise" style="--c:var(--lemon)" data-el="Chronomancy · In use" data-name="Stopwatch" data-kind="Custom timer">
+        <div class="cover"><canvas data-art="watch" data-c="--lemon"></canvas></div>
+        <div class="body">
+          <div class="top"><span class="rank">A</span><span class="el">Chronomancy · In use</span><span class="sigil"></span></div>
+          <h3>Stopwatch</h3><span class="kind">Web app · Small and used</span>
+          <code class="incant">stopwatch.style(mine).start()</code>
+          <p>Every timer I found looked bad on my timelapses, so I built my own. Proof that a project doesn&rsquo;t need to be complicated to matter.</p>
+          <div class="tags"><span>TypeScript</span><a class="gh" href="https://github.com/z3zZ/Stopwatch" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <div class="foot"><span class="mp"><b>1</b>user, daily</span><button class="cast" type="button">Cast ▸</button></div>
+        </div>
+      </article>
+      <article class="pnl spell wide cf rise" style="--c:#ff7a1a" data-el="Sealed · Confidential" data-name="Private agent workflows" data-kind="Strictly confidential">
+        <div class="cover cf-cover"><div class="cf-bars"><i style="width:62%"></i><i style="width:88%"></i><i class="on" style="width:46%"></i><i style="width:74%"></i><i class="on" style="width:58%"></i><i style="width:80%"></i></div><span class="cf-stamp">Confidential</span></div>
+        <div class="body">
+          <div class="top"><span class="rank">✦</span><span class="el">Sealed · Confidential</span><span class="sigil"></span></div>
+          <h3>Private agent workflows</h3><span class="kind">Agentic workflows · Private</span>
+          <code class="incant">agents.run(nightly).brief(me)</code>
+          <p>Agentic workflows I run to optimise my life. Scheduled agents research overnight, keep their findings in a private repo as memory, and brief me in the morning. The code stays sealed; the concept and skills don&rsquo;t.</p>
+          <div class="tags"><span>Agent orchestration</span><span>Scheduled jobs</span><span>Git as memory</span><span>Prompt design</span></div>
+          <div class="foot"><span class="mp"><b>24/7</b>running</span><button class="cast" type="button">Cast ▸</button></div>
+        </div>
+      </article>
     </div>
     <div class="next"><a href="#sky">Next episode ▸</a></div>
   </div>
@@ -1011,6 +1036,9 @@ const ARTS={
   lapse(g,w,h,t,c){const n=7,fw=w*.4,fh=h*.42,step=Math.floor(t/450);for(let i=n-1;i>=0;i--){const x=w*.1+i*w*.055,y=h*.16+i*h*.05,on=(step%n)===i;
       g.fillStyle='#06041a';g.fillRect(x,y,fw,fh);g.strokeStyle=on?c:hexA(FG,.3);g.lineWidth=on?2.5:1;g.strokeRect(x+.5,y+.5,fw,fh);
       g.fillStyle=ACC[i%6];g.beginPath();g.arc(x+14+(i/n)*fw*.8,y+fh*.72-Math.sin(i/n*Math.PI)*fh*.45,5,0,TAU);g.fill()}},
+  watch(g,w,h,t,c){const cx=w/2,cy=h*.55,R=Math.min(w,h)*.34,a=(t/1000%60)/60*TAU-Math.PI/2;g.strokeStyle=hexA(FG,.35);g.lineWidth=2;g.beginPath();g.arc(cx,cy,R,0,TAU);g.stroke();g.fillStyle=c;g.fillRect(cx-9,cy-R-22,18,12);
+    for(let i=0;i<60;i++){const b=i/60*TAU-Math.PI/2,l=i%5?5:12;g.strokeStyle=i%5?hexA(FG,.3):FG;g.lineWidth=i%5?1:2;g.beginPath();g.moveTo(cx+Math.cos(b)*(R-4),cy+Math.sin(b)*(R-4));g.lineTo(cx+Math.cos(b)*(R-4-l),cy+Math.sin(b)*(R-4-l));g.stroke()}
+    g.strokeStyle=c;g.shadowColor=c;g.shadowBlur=12;g.lineWidth=6;g.beginPath();g.arc(cx,cy,R*.72,-Math.PI/2,a);g.stroke();g.shadowBlur=0;g.strokeStyle=FG;g.lineWidth=2;g.beginPath();g.moveTo(cx,cy);g.lineTo(cx+Math.cos(a)*R*.86,cy+Math.sin(a)*R*.86);g.stroke()},
   panes(g,w,h,t,c){for(let k=0;k<4;k++){const off=Math.sin(t/900+k)*8,x=w*.14+k*26+off,y=h*.14+k*16,pw=w*.5,ph=h*.58,col=ACC[(k+1)%6];
       g.fillStyle='#0a0724';g.fillRect(x,y,pw,ph);g.strokeStyle=col;g.lineWidth=2;g.strokeRect(x+1,y+1,pw-2,ph-2);g.fillStyle=col;g.fillRect(x,y,pw,10);
       for(let d=0;d<3;d++){g.fillStyle=ACC[(k+d+2)%6];g.beginPath();g.arc(x+8+d*9,y+5,2.4,0,TAU);g.fill()}g.fillStyle=hexA(FG,.5);g.fillRect(x+10,y+20,pw*.5,5);g.fillRect(x+10,y+30,pw*.35,4)}},

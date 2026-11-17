@@ -643,7 +643,7 @@ if(rmq.addEventListener)rmq.addEventListener('change',function(e){setStill(e.mat
 setStill(still);
 
 /* ---------- case files ---------- */
-var SKYC={ticketscope:'#f2a541',primelevels:'#f2a541',orgchecker:'#f2a541',transcriber:'#5fd1c4',neuronav:'#5fd1c4',stellareye:'#9aa8ff',cognisign:'#9aa8ff',forge:'#f2a541'};
+var SKYC={agents:'#ff7a1a',stopwatch:'#f2c94c',ticketscope:'#f2a541',primelevels:'#f2a541',orgchecker:'#f2a541',transcriber:'#5fd1c4',neuronav:'#5fd1c4',stellareye:'#9aa8ff',cognisign:'#9aa8ff',forge:'#f2a541'};
 var FILES={};Object.keys(window.ARC.P).forEach(function(id){var p=window.ARC.P[id],o={};for(var k in p)o[k]=p[k];if(SKYC[id])o.el=SKYC[id];FILES[id]=o;});
 var TENANTS=[['transcriber','Video Transcriber','Private, local transcription with Whisper. Recordings never leave the machine.','Up for adoption','#5fd1c4',''],
  ['neuronav','NeuroNav','Revision platform for neurodivergent learners. 30+ users.','Live','#5fd1c4',''],
@@ -651,8 +651,10 @@ var TENANTS=[['transcriber','Video Transcriber','Private, local transcription wi
  ['klokd','klokd','Privacy-first time tracking. Your day, kloked.','MVP built','#c8f135','mono'],
  ['cognisign','CogniSign','Gestures into actions and speech, for people who can&rsquo;t use their voice.','Rebuilding','#9aa8ff',''],
  ['forge','Roblox Forge','AI writes briefs overnight, Claude builds prototypes, I approve.','Running','#f2a541',''],
- ['inkd','inkd','Handwritten maths for pen tablets.','In development','#ff7a59',''],
+ ['agents','Private agent workflows','Agentic workflows I run to optimise my life. Strictly confidential.','Confidential','#ff7a1a','mono'],
+ ['inkd','inkd','Handwritten maths for pen tablets.','In development','#e86fa1',''],
  ['rewnd','rewnd','Local webcam timelapses on Linux.','In development','#8fa3b8',''],
+ ['stopwatch','Stopwatch','A custom stopwatch, built because every timer looked bad on my timelapses.','In use','#f2c94c',''],
  ['errnd','errnd','Voice-first assistant. Your errand, ran.','In design','#b9f04a','mono'],
  ['ja','JA Studios','A small web studio, co-founded with a friend.','Revamp','#b5532f','serif']];
 var ORDER=['ticketscope','primelevels','orgchecker'].concat(TENANTS.map(function(t){return t[0];}));

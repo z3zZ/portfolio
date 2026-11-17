@@ -157,7 +157,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 /* ---------- works ---------- */
 .works{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.4vw,40px);row-gap:clamp(56px,8vw,120px)}
 .work{grid-column:span 6;min-width:0;text-decoration:none}
-.work.w7{grid-column:span 7}.work.w5{grid-column:span 5}.work.w4{grid-column:span 4}.w6{grid-column:span 6}.work.w8{grid-column:span 8}
+.work.w7{grid-column:span 7}.work.w5{grid-column:span 5}.work.w4{grid-column:span 4}.w6{grid-column:span 6}
+.piece.cf{position:relative;background:#0b0b0b;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cf-bars{width:66%;display:grid;gap:14px}.cf-bars i{display:block;height:12px;background:rgba(244,236,228,.16)}.cf-bars i.on{background:#ff7a1a}
+.cf-stamp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-12deg);font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:clamp(18px,2.4vw,30px);letter-spacing:.2em;text-transform:uppercase;color:#ff7a1a;border:4px solid #ff7a1a;padding:8px 18px;background:rgba(11,11,11,.82)}.work.w8{grid-column:span 8}
 .work.drop{margin-top:clamp(0px,10vw,160px)}
 .work.off{grid-column:2 / span 5}
 @media (max-width:860px){.works{grid-template-columns:1fr}.work,.work.w7,.work.w5,.work.w4,.work.w8,.work.off{grid-column:1/-1}.work.drop{margin-top:0}}
@@ -316,7 +319,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
   <!-- ROOM I · WORKS -->
   <section class="room wrap" id="works">
-    <div class="room-h rv"><span class="no">Room I</span><h2>Works</h2><p>Thirteen pieces: shipped, in use, or still on the easel.</p></div>
+    <div class="room-h rv"><span class="no">Room I</span><h2>Works</h2><p>Fifteen pieces: shipped, in use, or still on the easel.</p></div>
     <div class="works">
       <article class="work w7 rv">
         <div class="piece"><canvas data-art="wave" aria-label="A sound wave settling into lines of text"></canvas></div>
@@ -405,6 +408,21 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <div class="label"><span class="n">13</span><h3>rewnd</h3><span class="med">Python</span>
           <p>A webcam timelapse capture tool that runs locally on Linux, with nothing sent to the cloud.</p>
           <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/rewnd" target="_blank" rel="noopener">GitHub ↗</a></span><span>In development</span></div></div>
+      </article>
+      <article class="work w6 rv">
+        <div class="piece"><canvas data-art="watch" aria-label="A stopwatch hand sweeping round its dial"></canvas></div>
+        <div class="label"><span class="n">14</span><h3>Stopwatch</h3><span class="med">TypeScript</span>
+          <p>I got fed up with how bad the on-screen timers looked in my timelapse videos, so I built my own and learned to make it look exactly how I wanted. Small, used daily, and proof that a project doesn&rsquo;t need to be complicated to matter.</p>
+          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Stopwatch" target="_blank" rel="noopener">GitHub ↗</a></span><span>In use</span></div></div>
+      </article>
+      <article class="work w6 drop rv">
+        <div class="piece cf" aria-label="A redacted document with a CONFIDENTIAL stamp">
+          <div class="cf-bars"><i style="width:62%"></i><i style="width:88%"></i><i class="on" style="width:46%"></i><i style="width:74%"></i><i style="width:58%"></i><i class="on" style="width:80%"></i><i style="width:40%"></i></div>
+          <span class="cf-stamp">Confidential</span>
+        </div>
+        <div class="label"><span class="n">15</span><h3>Private agent workflows</h3><span class="med">Claude, Grok, GitHub, scheduled jobs</span>
+          <p>Agentic workflows I run to optimise my own life: scheduled agents research overnight, keep what they find in a private repository as long-term memory, and hand me a short brief. Strictly confidential, so this shows the concept and the skills, not the code.</p>
+          <div class="meta"><span>Private collection</span><span>Running daily</span></div></div>
       </article>
     </div>
   </section>
@@ -581,6 +599,10 @@ const ARTS={
     for(let i=n-1;i>=0;i--){const x=w*.12+i*w*.06,y=h*.18+i*h*.05,on=(step%n)===i;g.fillStyle=WALL;g.fillRect(x,y,fw,fh);g.lineWidth=on?2.5:1;g.strokeRect(x+.5,y+.5,fw,fh);
       g.fillStyle=INK;const sun=(i/n)*fw;g.beginPath();g.arc(x+12+sun*.8,y+fh*.7-Math.sin(i/n*Math.PI)*fh*.45,5,0,TAU);g.fill()}
     g.font=`500 ${Math.max(11,h*.05)}px ui-monospace, monospace`;g.fillText('00:'+String(step%60).padStart(2,'0'),w*.12,h*.92)},
+  watch(g,w,h,t){const c=w/2,cy=h*.54,R=Math.min(w,h)*.34,a=(t/1000%60)/60*TAU-Math.PI/2;g.strokeStyle=INK;g.fillStyle=INK;g.lineWidth=2;ring(g,c,cy,R,2);
+    g.fillRect(c-10,cy-R-26,20,14);for(let i=0;i<60;i++){const b=i/60*TAU-Math.PI/2,l=i%5?6:14;g.lineWidth=i%5?1:2.5;g.beginPath();g.moveTo(c+Math.cos(b)*(R-4),cy+Math.sin(b)*(R-4));g.lineTo(c+Math.cos(b)*(R-4-l),cy+Math.sin(b)*(R-4-l));g.stroke()}
+    g.lineWidth=7;g.beginPath();g.arc(c,cy,R*.72,-Math.PI/2,a);g.stroke();g.lineWidth=2.5;g.beginPath();g.moveTo(c,cy);g.lineTo(c+Math.cos(a)*R*.86,cy+Math.sin(a)*R*.86);g.stroke();g.beginPath();g.arc(c,cy,6,0,TAU);g.fill();
+    const sec=(t/1000)%60;g.font=`500 ${Math.max(12,R*.16)}px ui-monospace, monospace`;g.textAlign='center';g.fillText('00:'+String(Math.floor(sec)).padStart(2,'0')+'.'+String(Math.floor(sec%1*100)).padStart(2,'0'),c,cy+R*.45);g.textAlign='start'},
   shoal(g,w,h,t){g.fillStyle=INK;for(let i=0;i<70;i++){const sp=.5+(i%5)*.15,x=((i*53.7+t*.035*sp)%(w+40))-20,y=h*.5+Math.sin(t/1200+i*.7)*h*.38*((i%7)/7+.25),s=4+(i%4)*2;
     g.beginPath();g.moveTo(x+s,y);g.lineTo(x-s,y-s*.55);g.lineTo(x-s,y+s*.55);g.closePath();g.fill()}}
 };

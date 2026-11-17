@@ -9,7 +9,7 @@ A.mulberry=function(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a
 A.esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
 A.rmq=window.matchMedia('(prefers-reduced-motion: reduce)');
 
-A.ORDER=['transcriber','ticketscope','primelevels','neuronav','orgchecker','stellareye','cognisign','klokd','forge','inkd','rewnd','errnd','ja'];
+A.ORDER=['transcriber','ticketscope','primelevels','neuronav','orgchecker','stellareye','cognisign','klokd','forge','agents','inkd','rewnd','stopwatch','errnd','ja'];
 A.P={
  transcriber:{name:'Video Transcriber',el:'#1f8fd6',soft:'rgba(31,143,214,.12)',viz:'transcript',school:'Inscription',type:'Tool · Independent',
   fx:'Turns recordings into searchable, timestamped text without them ever leaving the machine.',stat:'Fully local',
@@ -89,7 +89,7 @@ A.P={
   what:'An agentic pipeline for Roblox game development. An AI project manager writes game briefs overnight from a research bank, Claude builds playable prototypes, and I playtest and approve each one before it goes further.',
   part:'It grew out of an idea I dropped in October 2026: a dual-LLM app that routed each task to Claude or ChatGPT and let them debate. Forge keeps the core of it, different models in different roles, and adds an overnight schedule and a human approval loop. I designed the pipeline, the research bank and the asset pipeline.',stack:'Claude Code · Grok · Luau',status:'Early stage, running',
   note:'Private repository.'},
- inkd:{name:'inkd',el:'#ff7a59',soft:'rgba(255,122,89,.14)',viz:'ink',school:'Glyphcraft',type:'Desktop app · Independent',
+ inkd:{name:'inkd',el:'#e86fa1',soft:'rgba(232,111,161,.14)',viz:'ink',school:'Glyphcraft',type:'Desktop app · Independent',
   fx:'Write maths by hand on a pen tablet and have it recognised and worked through.',stat:'In development',
   incant:'inkd.read(stroke).solve()',
   context:'Independent · In development',lede:'Handwritten maths, understood.',
@@ -105,6 +105,22 @@ A.P={
   what:'A webcam timelapse capture tool that runs locally on Linux.',
   part:'Building it as a small, sharp utility.',stack:'Python',status:'In development',
   links:[['GitHub','https://github.com/z3zZ/rewnd']]},
+ agents:{name:'Private agent workflows',el:'#ff7a1a',soft:'rgba(255,122,26,.16)',viz:'classified',dk:1,cf:1,school:'Sealed',type:'Confidential · Independent',
+  fx:'Scheduled AI agents that research, remember and brief me, so the rest of my day runs on autopilot.',stat:'Confidential',
+  incant:'agents.run(nightly).brief(me)',
+  context:'Independent · Strictly confidential',lede:'Agentic workflows I run to optimise my own life.',
+  stats:['Agent orchestration','Scheduled jobs','Git as memory','Prompt design'],
+  what:'A private set of agentic workflows. Scheduled agents research topics overnight, keep what they find in a private repository as long-term memory, and hand me a short brief. The repositories stay private, so this card shows the concept and the skills, not the code.',
+  part:'Designed the jobs, the prompts, the memory layout and the hand-off to me. Built with Claude and Grok, run on a schedule.',
+  stack:'Claude · Grok · GitHub · scheduled jobs',status:'Running daily',note:'Strictly confidential. Repositories are private.'},
+ stopwatch:{name:'Stopwatch',el:'#f2c94c',soft:'rgba(242,201,76,.16)',viz:'stopwatch',school:'Chronomancy',type:'Web app · Independent',
+  fx:'A customisable stopwatch, built because every timer I could find looked bad on my timelapses.',stat:'In use',
+  incant:'stopwatch.style(mine).start()',
+  context:'Independent · Small and used',lede:'Proof that a project doesn’t need to be complicated to matter.',
+  stats:['In daily use','Fully customisable'],
+  what:'A customisable stopwatch app. I got fed up with how bad the on-screen timers looked in my timelapse videos, so I built my own and learned how to make it look and behave exactly how I wanted.',
+  part:'Designed and built it for myself. It’s small, but I use it, and it shows the point: with code you can make something do exactly what you want.',
+  stack:'TypeScript',status:'In use',links:[['GitHub','https://github.com/z3zZ/Stopwatch']]},
  errnd:{name:'errnd',el:'#b9f04a',soft:'rgba(185,240,74,.16)',viz:'wave',dk:1,school:'Evocation',type:'Assistant · In design',
   fx:'Your errand, ran. Say what needs doing and let it get handled.',stat:'In design',
   incant:'errnd.say("handle it")',
@@ -155,6 +171,12 @@ A.VIZ={
   [30,60,90].forEach(function(m){s+='<ellipse cx="200" cy="230" rx="'+(120*Math.cos(m*Math.PI/180)).toFixed(1)+'" ry="120" fill="none" stroke="var(--viz-a)" stroke-opacity=".3"/>';});
   return s+'<path d="M96 78 Q 200 20 304 70" fill="none" stroke="var(--viz-b)" stroke-opacity=".5" stroke-dasharray="3 6"/><circle cx="304" cy="70" r="7" fill="var(--viz-a)"/></svg>';},
  ink:function(){return'<svg viewBox="0 0 400 400"><path d="M62 210 C 78 160, 112 160, 104 206 S 90 252, 120 236" fill="none" stroke="var(--viz-b)" stroke-width="5" stroke-linecap="round"/><path d="M150 214 H196 M173 192 V236" stroke="var(--viz-b)" stroke-width="5" stroke-linecap="round"/><path d="M222 186 C 250 176, 262 198, 236 214 C 266 214, 266 246, 226 240" fill="none" stroke="var(--viz-b)" stroke-width="5" stroke-linecap="round"/><path d="M288 206 H330 M288 224 H330" stroke="var(--viz-a)" stroke-width="5" stroke-linecap="round"/><line x1="62" y1="290" x2="338" y2="290" stroke="var(--viz-a)" stroke-opacity=".35" stroke-dasharray="2 7"/><text x="200" y="330" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="20" fill="var(--viz-a)">x² + 3 =</text><path d="M300 84 L346 38 L362 54 L316 100 L294 106 Z" fill="none" stroke="var(--viz-a)" stroke-width="2.5" stroke-linejoin="round"/></svg>';},
+ stopwatch:function(){var s='<svg viewBox="0 0 400 400"><rect x="186" y="54" width="28" height="22" rx="4" fill="var(--viz-a)"/><line x1="290" y1="104" x2="306" y2="88" stroke="var(--viz-a)" stroke-width="10" stroke-linecap="round"/><circle cx="200" cy="216" r="134" fill="var(--viz-bg)" stroke="var(--viz-b)" stroke-opacity=".35" stroke-width="4"/>';
+  for(var i=0;i<60;i++){var a=i/60*Math.PI*2-Math.PI/2,r0=i%5?120:110;s+='<line x1="'+(200+Math.cos(a)*r0).toFixed(1)+'" y1="'+(216+Math.sin(a)*r0).toFixed(1)+'" x2="'+(200+Math.cos(a)*126).toFixed(1)+'" y2="'+(216+Math.sin(a)*126).toFixed(1)+'" stroke="var(--viz-b)" stroke-opacity="'+(i%5?.3:.7)+'" stroke-width="'+(i%5?1:2.5)+'"/>';}
+  return s+'<path d="'+arcPath(200,216,96,-Math.PI/2,Math.PI*.35)+'" fill="none" stroke="var(--viz-a)" stroke-width="10" stroke-linecap="round"/><line x1="200" y1="216" x2="'+(200+Math.cos(Math.PI*.35)*96).toFixed(1)+'" y2="'+(216+Math.sin(Math.PI*.35)*96).toFixed(1)+'" stroke="var(--viz-b)" stroke-width="3"/><circle cx="200" cy="216" r="7" fill="var(--viz-a)"/><text x="200" y="290" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" fill="var(--viz-b)">00:42.17</text></svg>';},
+ classified:function(){var s='<svg viewBox="0 0 400 400"><rect x="82" y="70" width="236" height="270" rx="6" fill="var(--viz-bg)" stroke="var(--viz-a)" stroke-opacity=".5" stroke-width="2"/>';
+  [[104,60],[104,150],[104,110],[104,170],[104,90],[104,140],[104,120]].forEach(function(r,i){s+='<rect x="'+r[0]+'" y="'+(104+i*30)+'" width="'+r[1]+'" height="12" rx="2" fill="var(--viz-b)" fill-opacity="'+(i%3===1?.85:.22)+'"/>';});
+  return s+'<g transform="rotate(-14 200 210)"><rect x="96" y="178" width="208" height="58" rx="4" fill="none" stroke="var(--viz-a)" stroke-width="5"/><text x="200" y="217" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="21" letter-spacing="2" fill="var(--viz-a)">CONFIDENTIAL</text></g></svg>';},
  frames:function(){var s='<svg viewBox="0 0 400 400">';for(var i=0;i<6;i++){var x=70+i*22,y=90+i*22,hl=i===5;s+='<rect x="'+x+'" y="'+y+'" width="180" height="120" rx="6" fill="var(--viz-bg)" stroke="'+(hl?'var(--viz-a)':'var(--viz-b)')+'" stroke-opacity="'+(hl?1:.18+i*.08)+'" stroke-width="'+(hl?2:1.2)+'"/>';}
   return s+'<circle cx="270" cy="270" r="22" fill="none" stroke="var(--viz-a)" stroke-width="2"/><path d="M262 258 L282 270 L262 282 Z" fill="var(--viz-a)"/></svg>';}
 };
