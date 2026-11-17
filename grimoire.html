@@ -161,6 +161,7 @@ main{position:relative;z-index:2}
 .toc button span:nth-child(2){flex:1;border-bottom:1px dotted var(--ink-faint);transform:translateY(-.25em)}
 .toc button:hover,.toc button:focus-visible{color:var(--ultra)}
 .toc button:focus-visible{outline:2px solid var(--ultra)}
+.toc.idx{margin-top:.6em;font-size:.88em}.toc.idx button{padding:.3em .2em}
 
 /* seals, testimony, sheet, ending */
 .seals{list-style:none;margin:.9em 0 0;padding:0;display:grid;gap:.75em}
@@ -275,15 +276,15 @@ a.c-v{border-bottom:1px solid var(--gold)}
   <a class="mark" href="#top" data-go="0" aria-label="Arcanum, back to the cover"><span class="sg" aria-hidden="true">J</span><span class="name">Arcanum</span></a>
   <nav aria-label="Chapters"><ul>
     <li><a class="lk" href="#p-3" data-go="2">Spells</a></li>
-    <li><a class="lk opt" href="#p-11" data-go="6">Seals</a></li>
-    <li><a class="lk" href="#p-13" data-go="7">Wielder</a></li>
-    <li><a class="lk" href="#p-16" data-go="8">Contact</a></li>
+    <li><a class="lk opt" href="#p-17" data-go="9">Seals</a></li>
+    <li><a class="lk" href="#p-19" data-go="10">Wielder</a></li>
+    <li><a class="lk" href="#p-22" data-go="11">Contact</a></li>
     <li><button class="still" id="still" type="button" aria-pressed="false">Pause</button></li>
   </ul></nav>
 </header>
 
 <main id="top">
-  <section class="bookwrap" id="bookwrap" style="--flips:8" aria-label="The grimoire of Joshan Randhawa">
+  <section class="bookwrap" id="bookwrap" style="--flips:11" aria-label="The grimoire of Joshan Randhawa">
     <div class="stage">
       <div class="book" id="book">
         <div class="base l" aria-hidden="true"></div>
@@ -314,11 +315,14 @@ a.c-v{border-bottom:1px solid var(--gold)}
                 <li><button type="button" data-go="1"><span>I. Origin</span><span></span><span>2</span></button></li>
                 <li><button type="button" data-go="2"><span>II. Spells from Amazon</span><span></span><span>3</span></button></li>
                 <li><button type="button" data-go="3"><span>III. Spells for people</span><span></span><span>5</span></button></li>
-                <li><button type="button" data-go="4"><span>IV. Works in progress</span><span></span><span>7</span></button></li>
-                <li><button type="button" data-go="5"><span>V. Experiments</span><span></span><span>9</span></button></li>
-                <li><button type="button" data-go="6"><span>VI. Seals and testimony</span><span></span><span>11</span></button></li>
-                <li><button type="button" data-go="7"><span>VII. The wielder</span><span></span><span>13</span></button></li>
-                <li><button type="button" data-go="8"><span>VIII. The next spell</span><span></span><span>15</span></button></li>
+                <li><button type="button" data-go="4"><span>IV. Wards and stars</span><span></span><span>7</span></button></li>
+                <li><button type="button" data-go="5"><span>V. Works in progress</span><span></span><span>9</span></button></li>
+                <li><button type="button" data-go="6"><span>VI. Experiments</span><span></span><span>11</span></button></li>
+                <li><button type="button" data-go="7"><span>VII. Small spells</span><span></span><span>13</span></button></li>
+                <li><button type="button" data-go="8"><span>VIII. The studio</span><span></span><span>15</span></button></li>
+                <li><button type="button" data-go="9"><span>IX. Seals and testimony</span><span></span><span>17</span></button></li>
+                <li><button type="button" data-go="10"><span>X. The wielder</span><span></span><span>19</span></button></li>
+                <li><button type="button" data-go="11"><span>XI. The next spell</span><span></span><span>21</span></button></li>
               </ol>
             </div>
           </article>
@@ -340,23 +344,44 @@ a.c-v{border-bottom:1px solid var(--gold)}
 
         <div class="leaf">
           <article class="face front page pj" id="p-4" data-id="primelevels" data-ch="Spells from Amazon" data-n="4"></article>
-          <article class="face back page pj" id="p-5" data-id="neuronav" data-ch="Chapter III" data-n="5" data-invis="Shipped the same Christmas as the Amazon placement."></article>
+          <article class="face back page pj" id="p-5" data-id="transcriber" data-ch="Chapter III" data-n="5" data-invis="Built it for myself first. Then work wanted it."></article>
         </div>
 
         <div class="leaf">
-          <article class="face front page pj" id="p-6" data-id="transcriber" data-ch="Spells for people" data-n="6"></article>
-          <article class="face back page pj pg-dk" id="p-7" data-id="klokd" data-ch="Chapter IV" data-n="7" data-invis="Best hours on record: after midnight."></article>
+          <article class="face front page pj" id="p-6" data-id="neuronav" data-ch="Spells for people" data-n="6" data-invis="Shipped the same Christmas as the Amazon placement."></article>
+          <article class="face back page pj" id="p-7" data-id="orgchecker" data-ch="Chapter IV" data-n="7"></article>
         </div>
 
         <div class="leaf">
-          <article class="face front page pj" id="p-8" data-id="forge" data-ch="Works in progress" data-n="8"></article>
-          <article class="face back page pj" id="p-9" data-id="cognisign" data-ch="Chapter V" data-n="9"></article>
+          <article class="face front page pj" id="p-8" data-id="stellareye" data-ch="Wards and stars" data-n="8"></article>
+          <article class="face back page pj pg-dk" id="p-9" data-id="klokd" data-ch="Chapter V" data-n="9" data-invis="Best hours on record: after midnight."></article>
         </div>
 
         <div class="leaf">
-          <article class="face front page pj" id="p-10" data-id="stellareye" data-ch="Experiments" data-n="10"></article>
-          <article class="face back page" id="p-11">
-            <header class="rh"><span>Chapter VI</span><span>Arcanum</span></header>
+          <article class="face front page pj" id="p-10" data-id="forge" data-ch="Works in progress" data-n="10"></article>
+          <article class="face back page pj" id="p-11" data-id="cognisign" data-ch="Chapter VI" data-n="11"></article>
+        </div>
+
+        <div class="leaf">
+          <article class="face front page pj" id="p-12" data-id="inkd" data-ch="Experiments" data-n="12"></article>
+          <article class="face back page pj" id="p-13" data-id="rewnd" data-ch="Chapter VII" data-n="13"></article>
+        </div>
+
+        <div class="leaf">
+          <article class="face front page pj pg-dk" id="p-14" data-id="errnd" data-ch="Small spells" data-n="14"></article>
+          <article class="face back page pj pg-ja" id="p-15" data-id="ja" data-ch="Chapter VIII" data-n="15"></article>
+        </div>
+
+        <div class="leaf">
+          <article class="face front page" id="p-16">
+            <header class="rh"><span>Arcanum</span><span>The studio</span></header>
+            <p class="chap">Index</p>
+            <h2 class="pt">Every spell in this book</h2>
+            <ol class="toc idx"><li><button type="button" data-open="ticketscope"><span>TicketScope</span><span></span><span>3</span></button></li><li><button type="button" data-open="primelevels"><span>Prime Levels</span><span></span><span>4</span></button></li><li><button type="button" data-open="transcriber"><span>Video Transcriber</span><span></span><span>5</span></button></li><li><button type="button" data-open="neuronav"><span>NeuroNav</span><span></span><span>6</span></button></li><li><button type="button" data-open="orgchecker"><span>Organisation Checker</span><span></span><span>7</span></button></li><li><button type="button" data-open="stellareye"><span>StellarEye</span><span></span><span>8</span></button></li><li><button type="button" data-open="klokd"><span>klokd</span><span></span><span>9</span></button></li><li><button type="button" data-open="forge"><span>Roblox Forge</span><span></span><span>10</span></button></li><li><button type="button" data-open="cognisign"><span>CogniSign</span><span></span><span>11</span></button></li><li><button type="button" data-open="inkd"><span>inkd</span><span></span><span>12</span></button></li><li><button type="button" data-open="rewnd"><span>rewnd</span><span></span><span>13</span></button></li><li><button type="button" data-open="errnd"><span>errnd</span><span></span><span>14</span></button></li><li><button type="button" data-open="ja"><span>JA Studios</span><span></span><span>15</span></button></li></ol>
+            <footer class="folio">16</footer>
+          </article>
+          <article class="face back page" id="p-17">
+            <header class="rh"><span>Chapter IX</span><span>Arcanum</span></header>
             <p class="chap">Seals</p>
             <h2 class="pt">Pressed in wax</h2>
             <ul class="seals">
@@ -367,31 +392,31 @@ a.c-v{border-bottom:1px solid var(--gold)}
               <li><span class="wax" style="--w:#0e9a90" aria-hidden="true">30</span><div><b>30+ real users</b><span>NeuroNav</span></div></li>
               <li><span class="wax" style="--w:#6a52ee" aria-hidden="true">18</span><div><b>Hired at eighteen</b><span>Junior Application Developer, Thirtyone:eight</span></div></li>
             </ul>
-            <footer class="folio">11</footer>
+            <footer class="folio">17</footer>
           </article>
         </div>
 
         <div class="leaf">
-          <article class="face front page" id="p-12">
+          <article class="face front page" id="p-18">
             <header class="rh"><span>Seals and testimony</span><span>Testimony</span></header>
             <blockquote class="testi">He is a quick learner who demonstrates an impeccable work ethic. His ability to communicate effectively with a diverse range of individuals in professional settings makes you forget the fact he's only 17.</blockquote>
             <p class="sig">Flo Busfield<small>UX/UI Apprentice, and my buddy at Amazon</small></p>
-            <footer class="folio">12</footer>
+            <footer class="folio">18</footer>
           </article>
-          <article class="face back page" id="p-13">
-            <header class="rh"><span>Chapter VII</span><span>Arcanum</span></header>
+          <article class="face back page" id="p-19">
+            <header class="rh"><span>Chapter X</span><span>Arcanum</span></header>
             <p class="chap">The wielder</p>
             <h2 class="pt">The magic is in the wielder.</h2>
             <p class="drop">I believe the ethical weight of technology sits with whoever holds it, not the tool. So I try to hold it well.</p>
             <p>That means owning what I ship, from the first line to the last bug. I'm drawn to ambitious engineering, developer tools, AI, and software that feels exceptional to use.</p>
             <p>Now I'm a Junior Application Developer at Thirtyone:eight, a safeguarding charity going through real change, and studying Computer Science with AI at The Open University.</p>
             <p class="invis" data-inv>The clearest plans tend to arrive around 4:30 in the morning.</p>
-            <footer class="folio">13</footer>
+            <footer class="folio">19</footer>
           </article>
         </div>
 
         <div class="leaf">
-          <article class="face front page" id="p-14">
+          <article class="face front page" id="p-20">
             <header class="rh"><span>The wielder</span><span>Character sheet</span></header>
             <dl class="cs">
               <div><dt>Class</dt><dd>Junior Application Developer. Dynamics 365, Power Platform and TypeScript.</dd></div>
@@ -401,22 +426,22 @@ a.c-v{border-bottom:1px solid var(--gold)}
               <div><dt>Side quests</dt><dd>Ricing Linux, an Obsidian second brain, Roblox worlds with Blender, and a Discord for apprentices.</dd></div>
               <div><dt>Main quest</dt><dd>Contribute to world-class engineering teams, and build independent products that last.</dd></div>
             </dl>
-            <footer class="folio">14</footer>
+            <footer class="folio">20</footer>
           </article>
-          <article class="face back page" id="p-15">
-            <header class="rh"><span>Chapter VIII</span><span>Arcanum</span></header>
+          <article class="face back page" id="p-21">
+            <header class="rh"><span>Chapter XI</span><span>Arcanum</span></header>
             <p class="chap">The next spell</p>
             <h2 class="pt">The next spell is unwritten.</h2>
             <p class="lines"><span>Let's make something worth remembering.</span></p>
             <p>The pages after this one are blank on purpose. If you have a problem worth solving, I'd like to help write them.</p>
             <p class="chap" style="margin-top:1.2em">Currently channelling</p>
-            <ul class="chan"><li>klokd</li><li>errnd</li><li>JA Studios</li><li>background AI agents</li></ul>
-            <footer class="folio">15</footer>
+            <ul class="chan"><li>Video Transcriber</li><li>CogniSign rebuild</li><li>Roblox Forge</li><li>klokd</li></ul>
+            <footer class="folio">21</footer>
           </article>
         </div>
 
         <div class="leaf">
-          <article class="face front page" id="p-16">
+          <article class="face front page" id="p-22">
             <header class="rh"><span>The next spell</span><span>Send word</span></header>
             <p class="chap">Send word</p>
             <h2 class="pt">Write to me</h2>
@@ -427,7 +452,7 @@ a.c-v{border-bottom:1px solid var(--gold)}
             </ul>
             <p class="invis" data-inv>Yes, I do reply at night.</p>
             <p class="colo">This book is drawn live in your browser, with no images. © 2026 Joshan Randhawa, London area.</p>
-            <footer class="folio">16</footer>
+            <footer class="folio">22</footer>
           </article>
           <article class="face back page blank" aria-hidden="true"></article>
         </div>
@@ -479,7 +504,7 @@ try{
 }catch(e){}
 
 /* ---------- project pages ---------- */
-var openSheet=A.initSheet(['ticketscope','primelevels','neuronav','transcriber','klokd','forge','cognisign','stellareye']);
+var openSheet=A.initSheet(['ticketscope','primelevels','transcriber','neuronav','orgchecker','stellareye','klokd','forge','cognisign','inkd','rewnd','errnd','ja']);
 [].slice.call(document.querySelectorAll('.pj')).forEach(function(pg){
   var id=pg.dataset.id,p=A.P[id],left=pg.classList.contains('back');
   var vs=p.dk?A.vizStyle(id):'--viz-a:'+p.el+';--viz-b:'+(p.ja?'#1d2a44':'#1b2340')+';--viz-bg:transparent';
@@ -502,7 +527,7 @@ var leaves=[].slice.call(book.querySelectorAll('.leaf')),N=leaves.length,FLIPS=N
 var mqFlow=window.matchMedia('(max-width:820px),(max-height:520px)');
 var flow=mqFlow.matches;
 var F=0,wrapTop=0,wrapH=0,cur=-1,lastT=[];
-var NAMES=['The cover','I · Origin','II · Spells from Amazon','III · Spells for people','IV · Works in progress','V · Experiments','VI · Seals and testimony','VII · The wielder','VIII · The next spell'];
+var NAMES=['The cover','I · Origin','II · Spells from Amazon','III · Spells for people','IV · Wards and stars','V · Works in progress','VI · Experiments','VII · Small spells','VIII · The studio','IX · Seals and testimony','X · The wielder','XI · The next spell'];
 var lbl=document.getElementById('lbl'),prev=document.getElementById('prev'),next=document.getElementById('next');
 var links=[].slice.call(document.querySelectorAll('.lk'));
 function measure(){book.style.height='';book.style.width='';if(!flow){var h=Math.round(parseFloat(getComputedStyle(book).height));book.style.height=h+'px';book.style.width=(Math.round(h*1.42/2)*2)+'px';}
@@ -536,13 +561,14 @@ function render(){
     [].slice.call(book.querySelectorAll('.face')).forEach(function(f){var on=vis.indexOf(f)>=0;f.classList.toggle('open',on);
       [].slice.call(f.querySelectorAll('button, a')).forEach(function(b){b.tabIndex=on?0:-1;});});
     lbl.innerHTML='<b>'+NAMES[k]+'</b>';prev.disabled=k===0;next.disabled=k===FLIPS;
-    var li=k>=8?8:k>=7?7:k>=6?6:k>=2?2:-1;
+    var li=k>=11?11:k>=10?10:k>=9?9:k>=2?2:-1;
     links.forEach(function(a){if(+a.dataset.go===li)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});
   }
 }
 function go(k){k=clamp(k,0,FLIPS);
   if(flow){var id=k===0?'p-0':'p-'+(2*k-1);var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:still?'auto':'smooth',block:'start'});return;}
   measure();var f=k===0?0:k-.1;var y=wrapTop+f/FLIPS*(wrapH-window.innerHeight);window.scrollTo({top:y,behavior:still?'auto':'smooth'});}
+[].slice.call(document.querySelectorAll('[data-open]')).forEach(function(b){b.addEventListener('click',function(){openSheet(b.dataset.open,b);});});
 [].slice.call(document.querySelectorAll('[data-go]')).forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();go(+b.dataset.go);});});
 prev.addEventListener('click',function(){go(cur-1);});
 next.addEventListener('click',function(){go(cur+1);});

@@ -87,7 +87,7 @@ A.P={
   context:'Independent · Early stage',lede:'AI that builds game prototypes while I sleep, and asks before anything ships.',
   stats:['Multi-agent','Human approval','Research bank'],
   what:'An agentic pipeline for Roblox game development. An AI project manager writes game briefs overnight from a research bank, Claude builds playable prototypes, and I playtest and approve each one before it goes further.',
-  part:'Designed the pipeline and its approval loop, and set up the research bank and the asset pipeline.',stack:'Claude Code · Grok · Luau',status:'Early stage, running',
+  part:'It grew out of an idea I dropped in October 2026: a dual-LLM app that routed each task to Claude or ChatGPT and let them debate. Forge keeps the core of it, different models in different roles, and adds an overnight schedule and a human approval loop. I designed the pipeline, the research bank and the asset pipeline.',stack:'Claude Code · Grok · Luau',status:'Early stage, running',
   note:'Private repository.'},
  inkd:{name:'inkd',el:'#ff7a59',soft:'rgba(255,122,89,.14)',viz:'ink',school:'Glyphcraft',type:'Desktop app · Independent',
   fx:'Write maths by hand on a pen tablet and have it recognised and worked through.',stat:'In development',

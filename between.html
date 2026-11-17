@@ -277,7 +277,7 @@ a.c-v:hover{border-bottom-color:var(--gold)}
       <div class="ink" style="max-width:620px">
         <p class="eyebrow"><span class="kj" lang="ja" aria-hidden="true">作</span><span class="ln" aria-hidden="true"></span>Work</p>
         <h2 class="sec" id="work-h">The pavilion of work</h2>
-        <p class="lead">Eight scrolls hang here. Select one to unroll it.</p>
+        <p class="lead">Thirteen scrolls hang here. Select one to unroll it.</p>
       </div>
       <ul class="gallery">
         <li><button class="scroll" style="--i:0" data-p="0" type="button" aria-haspopup="dialog" aria-label="Video Transcriber, private local transcription. Open project.">
@@ -319,6 +319,31 @@ a.c-v:hover{border-bottom-color:var(--gold)}
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
           <span class="mount"><span class="inner"><span class="seal">SE</span><span class="vt">StellarEye</span><span class="meta">Independent<br>Live</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:8" data-p="8" type="button" aria-haspopup="dialog" aria-label="Roblox Forge, agentic pipeline. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner"><span class="seal">RF</span><span class="vt">Roblox Forge</span><span class="meta">Agentic<br>Early stage</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:9" data-p="9" type="button" aria-haspopup="dialog" aria-label="inkd, handwritten maths. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner"><span class="seal">IN</span><span class="vt">inkd</span><span class="meta">Pen maths<br>In development</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:10" data-p="10" type="button" aria-haspopup="dialog" aria-label="rewnd, local timelapses. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner"><span class="seal">RW</span><span class="vt">rewnd</span><span class="meta">Timelapse<br>In development</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:11" data-p="11" type="button" aria-haspopup="dialog" aria-label="Errnd, voice assistant. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner dark e"><span class="seal">E</span><span class="vt">errnd</span><span class="meta">In design</span></span></span>
+          <span class="rod low"></span></button></li>
+        <li><button class="scroll" style="--i:12" data-p="12" type="button" aria-haspopup="dialog" aria-label="JA Studios, web studio. Open project.">
+          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
+          <span class="rod"></span>
+          <span class="mount"><span class="inner"><span class="seal">JA</span><span class="vt">JA Studios</span><span class="meta">Co-founder<br>Revamp</span></span></span>
           <span class="rod low"></span></button></li>
       </ul>
       <p class="gallery-hint">TicketScope and Org Checker are internal tools, shown in abstract</p>
@@ -887,7 +912,7 @@ setStill(still);
 resize();requestAnimationFrame(frame);
 
 /* ---------------- projects ---------------- */
-var PROJECTS=['transcriber', 'ticketscope', 'primelevels', 'neuronav', 'klokd', 'orgchecker', 'cognisign', 'stellareye'].map(function(id){var p=window.ARC.P[id];return{title:p.name,theme:id==='klokd'?'klokd':'ink',viz:p.viz,context:p.context,lede:p.lede,what:p.what,part:p.part,stack:p.stack?p.stack.split(' · '):null,status:p.status,note:p.note,links:p.links};});
+var PROJECTS=['transcriber', 'ticketscope', 'primelevels', 'neuronav', 'klokd', 'orgchecker', 'cognisign', 'stellareye', 'forge', 'inkd', 'rewnd', 'errnd', 'ja'].map(function(id){var p=window.ARC.P[id];return{title:p.name,theme:id==='klokd'?'klokd':id==='errnd'?'errnd':'ink',viz:p.viz,context:p.context,lede:p.lede,what:p.what,part:p.part,stack:p.stack?p.stack.split(' · '):null,status:p.status,note:p.note,links:p.links};});
 
 function arcPath(cx,cy,r,a0,a1){var x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
   return 'M'+x0.toFixed(1)+' '+y0.toFixed(1)+' A'+r+' '+r+' 0 '+((a1-a0)>Math.PI?1:0)+' 1 '+x1.toFixed(1)+' '+y1.toFixed(1);}

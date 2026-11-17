@@ -622,7 +622,7 @@ section.ep > *{position:relative;z-index:1}
           <div class="top"><span class="rank">✦</span><span class="el">Summoning · Early stage</span><span class="sigil"></span></div>
           <h3>Roblox Forge</h3><span class="kind">Agentic pipeline · Private</span>
           <code class="incant">forge.overnight().await(approval)</code>
-          <p>An AI project manager writes game briefs overnight, Claude builds playable prototypes, and I playtest and approve each one.</p>
+          <p>An AI project manager writes game briefs overnight, Claude builds playable prototypes, and I playtest and approve each one. It grew out of a dual-LLM app I dropped, which routed tasks between Claude and ChatGPT.</p>
           <div class="tags"><span>Claude Code</span><span>Grok</span><span>Luau</span></div>
           <div class="foot"><span class="mp"><b>✦</b>running</span><button class="cast" type="button">Cast ▸</button></div>
         </div>
@@ -636,6 +636,28 @@ section.ep > *{position:relative;z-index:1}
           <p>A small web studio I co-run. We design, build and maintain websites for local organisations. I lead the build and the technical upkeep.</p>
           <div class="tags"><span>Web design</span><span>Hosting</span></div>
           <div class="foot"><span class="mp"><b>2</b>founders · revamp in progress</span><button class="cast" type="button">Cast ▸</button></div>
+        </div>
+      </article>
+      <article class="pnl spell wide rise" style="--c:var(--tang)" data-el="Glyphcraft · In development" data-name="inkd" data-kind="Handwritten maths">
+        <div class="cover"><canvas data-art="pen" data-c="--tang"></canvas></div>
+        <div class="body">
+          <div class="top"><span class="rank">✦</span><span class="el">Glyphcraft · In development</span><span class="sigil"></span></div>
+          <h3>inkd</h3><span class="kind">Desktop app · Pen input</span>
+          <code class="incant">inkd.read(stroke).solve()</code>
+          <p>Write maths by hand on a pen tablet and have it recognised and worked through. Modelled on MyScript Math, more customisable, and free of paid engines.</p>
+          <div class="tags"><span>TypeScript</span><span>Pen input</span><a class="gh" href="https://github.com/z3zZ/inkd" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <div class="foot"><span class="mp"><b>0</b>paid engines</span><button class="cast" type="button">Cast ▸</button></div>
+        </div>
+      </article>
+      <article class="pnl spell rise" style="--c:var(--mint)" data-el="Recall · In development" data-name="rewnd" data-kind="Local timelapses">
+        <div class="cover"><canvas data-art="lapse" data-c="--mint"></canvas></div>
+        <div class="body">
+          <div class="top"><span class="rank">✦</span><span class="el">Recall · In development</span><span class="sigil"></span></div>
+          <h3>rewnd</h3><span class="kind">Tool · Linux</span>
+          <code class="incant">rewnd.capture({ every: '10s' })</code>
+          <p>A webcam timelapse capture tool that runs locally on Linux, with nothing sent to the cloud.</p>
+          <div class="tags"><span>Python</span><a class="gh" href="https://github.com/z3zZ/rewnd" target="_blank" rel="noopener">GitHub ↗</a></div>
+          <div class="foot"><span class="mp"><b>0</b>cloud uploads</span><button class="cast" type="button">Cast ▸</button></div>
         </div>
       </article>
     </div>
@@ -982,6 +1004,13 @@ const ARTS={
   relay(g,w,h,t,c){const cx=w/2,cy=h/2,R=Math.min(w,h)*.34,n=6,k=Math.floor(t/650)%n;for(let i=0;i<n;i++){const a=i/n*TAU-Math.PI/2,x=cx+Math.cos(a)*R,y=cy+Math.sin(a)*R;
       g.strokeStyle=i===k?ACC[i%6]:hexA(FG,.2);g.lineWidth=i===k?2.5:1;g.beginPath();g.moveTo(x,y);g.lineTo(cx,cy);g.stroke();g.fillStyle=i===k?ACC[i%6]:'#06041a';g.strokeStyle=ACC[i%6];g.lineWidth=1.5;g.beginPath();g.arc(x,y,i===k?11:8,0,TAU);g.fill();g.stroke()}
     g.fillStyle=c;g.fillRect(cx-18,cy-18,36,36);g.strokeStyle='#06041a';g.lineWidth=4;g.beginPath();g.moveTo(cx-9,cy);g.lineTo(cx-2,cy+7);g.lineTo(cx+10,cy-8);g.stroke()},
+  pen(g,w,h,t,c){const u=(t%5600)/5600,k=Math.min(1,u*1.25);g.strokeStyle=FG;g.lineWidth=4;g.lineCap='round';g.lineJoin='round';
+    const strokes=[[[.1,.55],[.13,.38],[.2,.36],[.2,.52],[.14,.62],[.24,.6]],[[.3,.5],[.4,.5]],[[.35,.42],[.35,.58]],[[.47,.4],[.55,.38],[.56,.46],[.5,.5],[.57,.54],[.55,.62],[.47,.6]],[[.64,.47],[.74,.47]],[[.64,.55],[.74,.55]]];
+    const tot=strokes.length*k;strokes.forEach((st,i)=>{const f=Math.max(0,Math.min(1,tot-i));if(!f)return;g.strokeStyle=i>=4?c:FG;g.beginPath();g.moveTo(st[0][0]*w,st[0][1]*h);const n=Math.max(1,Math.floor((st.length-1)*f));for(let j=1;j<=n;j++)g.lineTo(st[j][0]*w,st[j][1]*h);g.stroke()});
+    g.fillStyle=c;g.shadowColor=c;g.shadowBlur=14;g.font=`700 ${h*.16}px sans-serif`;g.globalAlpha=k>=1?Math.min(1,(u-.8)*6):0;g.fillText('?',w*.79,h*.6);g.globalAlpha=1;g.shadowBlur=0},
+  lapse(g,w,h,t,c){const n=7,fw=w*.4,fh=h*.42,step=Math.floor(t/450);for(let i=n-1;i>=0;i--){const x=w*.1+i*w*.055,y=h*.16+i*h*.05,on=(step%n)===i;
+      g.fillStyle='#06041a';g.fillRect(x,y,fw,fh);g.strokeStyle=on?c:hexA(FG,.3);g.lineWidth=on?2.5:1;g.strokeRect(x+.5,y+.5,fw,fh);
+      g.fillStyle=ACC[i%6];g.beginPath();g.arc(x+14+(i/n)*fw*.8,y+fh*.72-Math.sin(i/n*Math.PI)*fh*.45,5,0,TAU);g.fill()}},
   panes(g,w,h,t,c){for(let k=0;k<4;k++){const off=Math.sin(t/900+k)*8,x=w*.14+k*26+off,y=h*.14+k*16,pw=w*.5,ph=h*.58,col=ACC[(k+1)%6];
       g.fillStyle='#0a0724';g.fillRect(x,y,pw,ph);g.strokeStyle=col;g.lineWidth=2;g.strokeRect(x+1,y+1,pw-2,ph-2);g.fillStyle=col;g.fillRect(x,y,pw,10);
       for(let d=0;d<3;d++){g.fillStyle=ACC[(k+d+2)%6];g.beginPath();g.arc(x+8+d*9,y+5,2.4,0,TAU);g.fill()}g.fillStyle=hexA(FG,.5);g.fillRect(x+10,y+20,pw*.5,5);g.fillRect(x+10,y+30,pw*.35,4)}},
