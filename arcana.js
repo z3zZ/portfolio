@@ -17,7 +17,7 @@ A.P={
   context:'Independent · Up for adoption at Thirtyone:eight',lede:'Private transcription. Your recordings never leave your machine.',
   stats:['Runs locally','~99 languages','GPU with CPU fallback'],
   what:'Cloud transcription means uploading every recording to someone else’s server, which is a non-starter for safeguarding work. Video Transcriber runs Whisper entirely on your own machine: drop in a video, watch the transcript stream in live, click any timestamp to jump there, and export to TXT, SRT, VTT or JSON.',
-  part:'Designed and built it end to end: the engine, a background job queue with live streaming, the web app and a pytest suite. It uses the GPU when there is one, retries on CPU if the GPU fails mid-job, and skips silence automatically.',
+  part:'I built it on my own time for my own use: turning long videos into transcripts so I can learn faster, and so LLMs can take them in as memory. Open source, built end to end: the engine, a background job queue with live streaming, the web app and a pytest suite. It uses the GPU when there is one, retries on CPU if the GPU fails mid-job, and skips silence automatically.',
   stack:'Python · FastAPI · faster-whisper · Silero VAD · CUDA',status:'Being considered for adoption at Thirtyone:eight',
   links:[['GitHub','https://github.com/z3zZ/Video-Transcriber']]},
  ticketscope:{name:'TicketScope',el:'#2d5bff',soft:'rgba(45,91,255,.12)',viz:'signal',school:'Divination',type:'Tool · Amazon Prime Video',
