@@ -316,13 +316,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
   <!-- ROOM I · WORKS -->
   <section class="room wrap" id="works">
-    <div class="room-h rv"><span class="no">Room I</span><h2>Works</h2><p>Nine pieces: shipped, in use, or still on the easel.</p></div>
+    <div class="room-h rv"><span class="no">Room I</span><h2>Works</h2><p>Eleven pieces: shipped, in use, or still on the easel.</p></div>
     <div class="works">
       <article class="work w7 rv">
-        <div class="piece"><canvas data-art="pages" aria-label="Ten vertical columns rising and falling"></canvas></div>
-        <div class="label"><span class="n">01</span><h3>Prime Levels</h3><span class="med">Python, Flask, AWS S3 · ten pages, WCAG 2.1</span>
-          <p>A promotional website for Amazon's T-Level programme. I wrote about 95% of the frontend and presented it live to the stakeholders.</p>
-          <div class="meta"><span>Collection of <b>Amazon</b></span><span><b>80+</b> stakeholders</span></div></div>
+        <div class="piece"><canvas data-art="wave" aria-label="A sound wave settling into lines of text"></canvas></div>
+        <div class="label"><span class="n">01</span><h3>Video Transcriber</h3><span class="med">Python, FastAPI, faster-whisper, Silero VAD</span>
+          <p>Private transcription. Whisper runs entirely on your own machine, so recordings never leave it: the transcript streams in live, every timestamp jumps the video, and it exports to TXT, SRT, VTT or JSON. GPU when there is one, CPU fallback when it fails.</p>
+          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Video-Transcriber" target="_blank" rel="noopener">GitHub ↗</a></span><span>Piloting at a safeguarding charity</span></div></div>
       </article>
       <article class="work w5 drop rv">
         <div class="piece tall"><div class="withheld"><b>Work withheld</b><span>at the lender's request</span></div></div>
@@ -330,17 +330,29 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <p>An internal tool for on-call engineers, confirmed for company-wide adoption. I learned React and TypeScript from scratch to build it. Shown by title only, under NDA.</p>
           <div class="meta"><span>Collection of <b>Amazon</b></span><span>Adopted company-wide</span></div></div>
       </article>
-      <article class="work w5 rv">
+      <article class="work w5 drop rv">
         <div class="piece sq"><canvas data-art="rings" aria-label="Concentric circles breathing slowly"></canvas></div>
         <div class="label"><span class="n">03</span><h3>NeuroNav</h3><span class="med">React, TypeScript, Vite</span>
           <p>A revision app built accessibility-first for neurodivergent learners. The main artefact of my EPQ.</p>
-          <div class="meta"><span>Personal collection</span><span><b>30+</b> real users</span></div></div>
+          <div class="meta"><span>Personal collection · <a href="https://neuro-nav.vercel.app" target="_blank" rel="noopener">Live ↗</a></span><span><b>30+</b> real users</span></div></div>
+      </article>
+      <article class="work w7 rv">
+        <div class="piece"><canvas data-art="pages" aria-label="Ten vertical columns rising and falling"></canvas></div>
+        <div class="label"><span class="n">04</span><h3>Prime Levels</h3><span class="med">Python, Flask, AWS S3 · ten pages, WCAG 2.1</span>
+          <p>A promotional website for Amazon's T-Level programme. I wrote about 95% of the frontend and presented it live to the stakeholders.</p>
+          <div class="meta"><span>Collection of <b>Amazon</b></span><span><b>80+</b> stakeholders</span></div></div>
       </article>
       <article class="work w7 drop rv">
         <div class="piece"><canvas data-art="grid" aria-label="A grid of squares being checked one row at a time"></canvas></div>
-        <div class="label"><span class="n">04</span><h3>Organisation Checker</h3><span class="med">Power Apps, Dataverse, Power Fx</span>
-          <p>A solution that validates organisation and user details. I build the test-case data and debug the validation engine.</p>
-          <div class="meta"><span>Collection of <b>Thirtyone:eight</b></span><span>In testing</span></div></div>
+        <div class="label"><span class="n">05</span><h3>Organisation Checker</h3><span class="med">Power Apps, Power Fx, Dataverse, Dynamics 365</span>
+          <p>A validation engine where the rules live as data, not code. It runs every active rule against every organisation record, compares names across two systems, and reports each failure by account and reason. I configured the rules, wrote and debugged the engine, built the regression set and brought it into the model-driven app.</p>
+          <div class="meta"><span>Collection of <b>Thirtyone:eight</b> · under NDA</span><span>In UAT</span></div></div>
+      </article>
+      <article class="work w5 rv">
+        <div class="piece sq"><canvas data-art="orbit" aria-label="A globe with a point of light crossing the sky above it"></canvas></div>
+        <div class="label"><span class="n">06</span><h3>StellarEye</h3><span class="med">TypeScript, NASA APIs</span>
+          <p>A live 3D Earth showing which sky events you can see tonight. Built early in bringing AI tools into my workflow.</p>
+          <div class="meta"><span>Personal collection · <a href="https://stellareye.vercel.app" target="_blank" rel="noopener">Live ↗</a></span><span>Live</span></div></div>
       </article>
       <article class="work w7 rv">
         <div class="piece klokd" aria-label="klokd: a chart of tracked hours with late-night peaks highlighted in lime">
@@ -349,9 +361,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <div class="k-bars" id="kbars"></div>
           <div class="k-axis"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
         </div>
-        <div class="label"><span class="n">05</span><h3><span class="b-klokd">klokd</span></h3><span class="med">Electron, better-sqlite3, Node</span>
+        <div class="label"><span class="n">07</span><h3><span class="b-klokd">klokd</span></h3><span class="med">Electron, better-sqlite3, Node</span>
           <p>A desktop time tracker with a pattern-analysis layer that surfaces your peak productivity hours and what you were doing during them.</p>
-          <div class="meta"><span>Personal collection</span><span>On the easel</span></div>
+          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Klokd" target="_blank" rel="noopener">GitHub ↗</a></span><span>MVP built</span></div>
           <span class="note">Shown in the product's own colours.</span></div>
       </article>
       <article class="work w5 drop rv">
@@ -359,28 +371,28 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <span class="e-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><g class="e-wave"><rect x="3" y="8" width="5" height="24" rx="2.5"/><rect x="11" y="4" width="5" height="32" rx="2.5"/><rect x="19" y="10" width="5" height="20" rx="2.5"/><rect x="27" y="5" width="5" height="30" rx="2.5"/><rect x="35" y="12" width="5" height="16" rx="2.5"/></g><path class="e-check" d="M6 21 L16 31 L35 9"/></svg></span>
           <span class="e-word">errnd<i>.</i><small>Your errand, ran.</small></span>
         </div>
-        <div class="label"><span class="n">06</span><h3><span class="b-errnd">errnd</span></h3><span class="med">Voice, single agent</span>
+        <div class="label"><span class="n">08</span><h3><span class="b-errnd">errnd</span></h3><span class="med">Voice, single agent</span>
           <p>A voice-driven personal assistant. Say what needs doing and it gets handled.</p>
           <div class="meta"><span>Personal collection</span><span>In design</span></div>
           <span class="note">Shown in the product's own colours.</span></div>
       </article>
       <article class="work w4 rv">
-        <div class="piece tall"><canvas data-art="lines" aria-label="Parallel diagonal lines accelerating"></canvas></div>
-        <div class="label"><span class="n">07</span><h3>Job Accelerator</h3><span class="med">React, Claude API</span>
-          <p>An application assistant with a tracker for every application's status.</p>
-          <div class="meta"><span>Personal collection</span><span>Prototype</span></div></div>
+        <div class="piece tall"><canvas data-art="trace" aria-label="A single line tracing a five-point star"></canvas></div>
+        <div class="label"><span class="n">09</span><h3>CogniSign</h3><span class="med">Python, MediaPipe, OpenCV</span>
+          <p>Gestures in, actions and speech out, for people who can&rsquo;t use their voice. It began in February 2026 as an intruder-detection app and kept evolving. Now being rebuilt as a full proof of concept.</p>
+          <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Intruder-Detection-app" target="_blank" rel="noopener">Origin ↗</a></span><span>Rebuilding</span></div></div>
       </article>
       <article class="work w4 drop rv">
-        <div class="piece tall"><canvas data-art="trace" aria-label="A single line tracing a five-point star"></canvas></div>
-        <div class="label"><span class="n">08</span><h3>CogniSign</h3><span class="med">Python, MediaPipe</span>
-          <p>Hands-free control. A webcam tracks hand gestures and turns them into commands.</p>
-          <div class="meta"><span>Personal collection</span><span>Prototype</span></div></div>
+        <div class="piece tall"><canvas data-art="relay" aria-label="Points passing a signal around a loop to a central checkpoint"></canvas></div>
+        <div class="label"><span class="n">10</span><h3>Roblox Forge</h3><span class="med">Claude Code, Grok, Luau</span>
+          <p>An agentic pipeline: an AI project manager writes game briefs overnight, Claude builds playable prototypes, and I playtest and approve each one.</p>
+          <div class="meta"><span>Personal collection</span><span>Early stage</span></div></div>
       </article>
       <article class="work w4 rv">
         <div class="piece tall"><canvas data-art="frames" aria-label="Overlapping window outlines drifting"></canvas></div>
-        <div class="label"><span class="n">09</span><h3>JA Studios</h3><span class="med">Web design, build and hosting</span>
+        <div class="label"><span class="n">11</span><h3>JA Studios</h3><span class="med">Web design, build and hosting</span>
           <p>A small web studio I co-run, building and maintaining websites for local organisations.</p>
-          <div class="meta"><span>Co-founder</span><span>Ongoing</span></div></div>
+          <div class="meta"><span>Co-founder</span><span>Revamp in progress</span></div></div>
       </article>
     </div>
   </section>
@@ -408,10 +420,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     <div class="room-h rv"><span class="no">Room III</span><h2>Now</h2><p>Works in progress, and a few figures from the walls.</p></div>
     <div class="now">
       <ul class="wip rv">
-        <li><div><b>Organisation Checker</b><small>Validation testing at Thirtyone:eight</small></div><span class="st">In progress</span></li>
+        <li><div><b>Organisation Checker</b><small>In UAT at Thirtyone:eight</small></div><span class="st">In progress</span></li>
+        <li><div><b>CogniSign rebuild</b><small>Full proof of concept</small></div><span class="st">In progress</span></li>
+        <li><div><b>Roblox Forge</b><small>Agentic prototyping pipeline</small></div><span class="st">Running</span></li>
         <li><div><b>Open University</b><small>TM110, TM129, MST124</small></div><span class="st">In progress</span></li>
-        <li><div><b>A new brief for <span class="b-klokd">klokd</span></b><small>Next side project</small></div><span class="st">Queued</span></li>
-        <li><div><b>Design for <span class="b-errnd">errnd</span></b><small>Concept stage</small></div><span class="st">Queued</span></li>
+        <li><div><b><span class="b-klokd">klokd</span> after the MVP</b><small>Side project</small></div><span class="st">Ongoing</span></li>
+        <li><div><b>Design for <span class="b-errnd">errnd</span></b><small>In design</small></div><span class="st">Parked</span></li>
         <li><div><b>Mandarin</b><small>Self-study</small></div><span class="st">Daily</span></li>
       </ul>
       <div class="figs rv">
@@ -537,6 +551,15 @@ const ARTS={
     if(f<N){const k=tot-f;hx=pts[f][0]+(pts[f+1][0]-pts[f][0])*k;hy=pts[f][1]+(pts[f+1][1]-pts[f][1])*k;g.lineTo(hx,hy)}g.stroke();g.fillStyle=INK;g.beginPath();g.arc(hx,hy,6,0,TAU);g.fill()},
   frames(g,w,h,t){g.strokeStyle=INK;g.lineWidth=1.5;for(let k=0;k<6;k++){const o=Math.sin(t/1600+k*.8)*w*.04,x=w*.06+k*w*.07+o,y=h*.06+k*h*.08,fw=w*.52,fh=h*.4;
     g.fillStyle=WALL;g.fillRect(x,y,fw,fh);g.strokeRect(x+.5,y+.5,fw,fh);g.fillStyle=INK;g.fillRect(x,y,fw,8)}},
+  wave(g,w,h,t){g.fillStyle=INK;const n=34,bw=w/n*.5,mid=h*.3;for(let i=0;i<n;i++){const env=Math.sin(i/(n-1)*Math.PI),a=(Math.sin(t/420+i*.55)*.5+.5)*env*h*.2+3;g.fillRect(i*w/n+bw*.5,mid-a,bw,a*2)}
+    const rows=5,lh=h*.1,u=(t%6000)/6000;for(let r=0;r<rows;r++){const y=h*.56+r*lh,len=w*(.35+((r*37)%5)/10),k=Math.min(1,Math.max(0,u*rows*1.3-r));g.fillRect(w*.08,y,w*.06,3);g.fillRect(w*.18,y,len*k,3)}},
+  orbit(g,w,h,t){const c=w/2,cy=h*.58,R=Math.min(w,h)*.3;g.strokeStyle=INK;g.lineWidth=1.5;ring(g,c,cy,R,1.5);g.lineWidth=.75;
+    for(let k=1;k<4;k++){g.beginPath();g.ellipse(c,cy,R*Math.cos(k*.5),R,0,0,TAU);g.stroke()}for(let k=-2;k<=2;k++){const y=cy+R*k/3,rx=Math.sqrt(Math.max(0,R*R-(R*k/3)**2));g.beginPath();g.ellipse(c,y,rx,rx*.16,0,0,TAU);g.stroke()}
+    const u=(t%7000)/7000,a=Math.PI*(1.1+.8*u),ox=c+Math.cos(a)*R*1.45,oy=cy+Math.sin(a)*R*1.25;g.setLineDash([3,6]);g.beginPath();g.ellipse(c,cy,R*1.45,R*1.25,0,Math.PI*1.1,Math.PI*1.9);g.stroke();g.setLineDash([]);g.fillStyle=INK;g.beginPath();g.arc(ox,oy,6,0,TAU);g.fill()},
+  relay(g,w,h,t){const c=w/2,cy=h/2,R=Math.min(w,h)*.34,n=6,k=Math.floor(t/700)%n;g.strokeStyle=INK;g.fillStyle=INK;g.lineWidth=1;
+    for(let i=0;i<n;i++){const a=i/n*TAU-Math.PI/2,x=c+Math.cos(a)*R,y=cy+Math.sin(a)*R;g.globalAlpha=i===k?1:.35;g.beginPath();g.moveTo(x,y);g.lineTo(c,cy);g.stroke();g.globalAlpha=1;
+      g.beginPath();g.arc(x,y,i===k?10:7,0,TAU);i===k?g.fill():g.stroke()}
+    g.fillRect(c-16,cy-16,32,32);g.strokeStyle=WALL;g.lineWidth=3;g.beginPath();g.moveTo(c-8,cy);g.lineTo(c-2,cy+6);g.lineTo(c+9,cy-7);g.stroke()},
   shoal(g,w,h,t){g.fillStyle=INK;for(let i=0;i<70;i++){const sp=.5+(i%5)*.15,x=((i*53.7+t*.035*sp)%(w+40))-20,y=h*.5+Math.sin(t/1200+i*.7)*h*.38*((i%7)/7+.25),s=4+(i%4)*2;
     g.beginPath();g.moveTo(x+s,y);g.lineTo(x-s,y-s*.55);g.lineTo(x-s,y+s*.55);g.closePath();g.fill()}}
 };

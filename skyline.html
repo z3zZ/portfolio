@@ -335,7 +335,7 @@ a.c-v:hover{border-bottom-color:var(--sodium)}
           <span class="tag">Day · Thirtyone:eight</span>
           <h3>Junior Application Developer</h3>
           <p>A safeguarding charity in the middle of real change. At a place this size, one person's work still shapes the outcome, and I want to help move its technology somewhere more modern.</p>
-          <p>I work across Dynamics 365 and Power Platform, with my first project in TypeScript. I'm also on the Organisation Checker, a Power Apps and Dataverse solution, preparing test data and debugging its validation engine.</p>
+          <p>I work across Dynamics 365 and Power Platform, with my first project in TypeScript. I'm also building the Organisation Checker, a rules engine on Power Apps and Dataverse where the validation rules live as data: I configure the rules, write and debug the engine, and keep a regression set covering every rule.</p>
           <ul class="chips"><li>Dynamics 365</li><li>Power Platform</li><li>Dataverse</li><li>TypeScript</li></ul>
           <button class="open" type="button" data-p="orgchecker" aria-haspopup="dialog">Open case file</button>
         </article>
@@ -535,6 +535,7 @@ void main(){
 }
 </script>
 
+<script src="/arcana.js"></script>
 <script>
 (function(){
 'use strict';
@@ -642,78 +643,21 @@ if(rmq.addEventListener)rmq.addEventListener('change',function(e){setStill(e.mat
 setStill(still);
 
 /* ---------- case files ---------- */
-var FILES={
- ticketscope:{name:'TicketScope',el:'#f2a541',viz:'signal',context:'Amazon Prime Video · LiRA team',lede:'An operational intelligence tool for on-call engineers.',
-  stats:['Company-wide adoption','MCP server','Self-taught React + TS'],
-  what:'When something breaks, on-call engineers need to understand what happened, fast. TicketScope brings the operational information around an incident into one place so they can investigate it.',
-  part:'Built during my nine-week T Level placement. I learned React and TypeScript from scratch to make it, with a TypeScript MCP server behind the interface.',
-  stack:'React · TypeScript · MCP · Recharts',status:'Confirmed for company-wide adoption at Amazon',note:'Internal to Amazon. The interface and data stay confidential, so the illustration is abstract.'},
- primelevels:{name:'Prime Levels',el:'#f2a541',viz:'pages',context:'Amazon · T Level cohort project',lede:'An accessible ten-page site for Amazon’s T Level placement programme.',
-  stats:['10 pages','~95% frontend','80+ stakeholders','WCAG 2.1'],
-  what:'A promotional website for Amazon’s T Level placement programme, aimed at prospective students, parents and educators, presented to more than eighty stakeholders.',
-  part:'Lead frontend developer in a five-person cohort. I wrote roughly ninety-five percent of the frontend across all ten pages, built to WCAG 2.1.',
-  stack:'HTML · CSS · JavaScript · Python · Flask · AWS S3',status:'Delivered, Oct to Nov 2025'},
- orgchecker:{name:'Organisation Checker',el:'#f2a541',viz:'ward',context:'Thirtyone:eight · Day job',lede:'Validation for a safeguarding charity’s records.',
-  stats:['Power Apps','Dataverse','Power Fx'],
-  what:'A Power Apps solution on Dataverse that validates organisation and user details.',
-  part:'I prepare the test-case data and debug the validation engine, working alongside a colleague who builds the Power Fx test harnesses.',
-  stack:'Power Apps · Dataverse · Power Fx',status:'In testing',note:'Internal to Thirtyone:eight, so shown in abstract.'},
- neuronav:{name:'NeuroNav',el:'#5fd1c4',viz:'route',context:'Independent · EPQ artefact',lede:'Revision that works with the way your brain works.',
-  stats:['30+ users','Deployed','EPQ artefact'],
-  what:'An accessibility-focused revision app for neurodivergent learners. It started as my EPQ artefact and didn’t stay theoretical for long.',
-  part:'Designed and built it alongside the Amazon placement, not after it. There was a Christmas deadline that didn’t care I was on placement full time, so I met both.',
-  stack:'React · TypeScript · Vite',status:'Deployed, used by 30+ students'},
- cognisign:{name:'CogniSign',el:'#9aa8ff',viz:'hand',context:'Independent · Prototype',lede:'Controlling a computer with your hands.',stats:['Gesture control','Hand tracking'],
-  what:'A gesture-control prototype that reads hand landmarks and maps movements to actions.',part:'Built it independently to learn computer vision by doing.',stack:'Python · MediaPipe',status:'Prototype'},
- klokd:{name:'klokd',el:'#c8f135',viz:'clock',dk:1,context:'Independent product · In development',lede:'Your day, kloked.',stats:['Privacy-first','Local data','Pattern insights'],
-  what:'A privacy-first desktop time tracker. Data stays local, and a pattern layer surfaces insights such as your peak productive hours and what you were doing during them.',
-  part:'Product design and engineering. An evolving independent product, not a finished one.',stack:'Electron · Node · SQLite',status:'In development'},
- errnd:{name:'errnd',el:'#b9f04a',viz:'wave',dk:1,context:'Independent · Concept',lede:'Your errand, ran.',stats:['Voice-first','Single agent'],
-  what:'An early concept for a voice-driven personal assistant for the errands that fall through the cracks.',part:'Concept and product thinking. More to come.',status:'Concept'},
- ja:{name:'JA Studios',el:'#b5532f',viz:'mono',ja:1,context:'Co-founded with a friend',lede:'Websites, built properly.',stats:['Co-founder','Web studio'],
-  what:'A website studio I’m starting with a friend, with its own navy and rust identity. Our first project is a prototype site for a local church.',part:'I handle the build and the ongoing technical upkeep.',status:'Launching'},
- agents:{name:'Agent crew',el:'#f2a541',viz:'agents',context:'Independent · Research',lede:'AI that works while I can’t, and asks before it ships.',stats:['Multi-agent','Human approval'],
-  what:'An idea for a crew of autonomous AI agents that work in the background, for example building and studying small Roblox games, then hand finished work back for a quick human yes or no.',
-  part:'Researching the architecture: several agents, one manual approval loop.',status:'Research'},
- accel:{name:'Application accelerator',el:'#f2a541',viz:'kanban',context:'Independent · Tool',lede:'A faster way through job applications.',stats:['React','Claude API','Tracker'],
-  what:'A tool that speeds up writing job applications, with a tracker tab for where each application stands.',part:'Designed and built it for my own job search.',stack:'React · Claude API',status:'Built'}
-};
-var TENANTS=[['neuronav','NeuroNav','Revision platform for neurodivergent learners. 30+ users.','Deployed','#5fd1c4',''],
- ['klokd','klokd','Privacy-first time tracking. Your day, kloked.','In development','#c8f135','mono'],
- ['errnd','errnd','Voice-first assistant. Your errand, ran.','Concept','#b9f04a','mono'],
- ['ja','JA Studios','A small web studio, co-founded with a friend.','Launching','#b5532f','serif'],
- ['cognisign','CogniSign','Gesture control with Python and MediaPipe.','Prototype','#9aa8ff',''],
- ['accel','Application accelerator','React and the Claude API, with an application tracker.','Built','#f2a541',''],
- ['agents','Agent crew','Background AI agents with a human approval loop.','Research','#f2a541','']];
-var ORDER=['ticketscope','primelevels','orgchecker','neuronav','klokd','errnd','ja','cognisign','accel','agents'];
+var SKYC={ticketscope:'#f2a541',primelevels:'#f2a541',orgchecker:'#f2a541',transcriber:'#5fd1c4',neuronav:'#5fd1c4',stellareye:'#9aa8ff',cognisign:'#9aa8ff',forge:'#f2a541'};
+var FILES={};Object.keys(window.ARC.P).forEach(function(id){var p=window.ARC.P[id],o={};for(var k in p)o[k]=p[k];if(SKYC[id])o.el=SKYC[id];FILES[id]=o;});
+var TENANTS=[['transcriber','Video Transcriber','Private, local transcription with Whisper. Recordings never leave the machine.','Piloting','#5fd1c4',''],
+ ['neuronav','NeuroNav','Revision platform for neurodivergent learners. 30+ users.','Live','#5fd1c4',''],
+ ['stellareye','StellarEye','A live 3D Earth showing tonight&rsquo;s sky events.','Live','#9aa8ff',''],
+ ['klokd','klokd','Privacy-first time tracking. Your day, kloked.','MVP built','#c8f135','mono'],
+ ['cognisign','CogniSign','Gestures into actions and speech, for people who can&rsquo;t use their voice.','Rebuilding','#9aa8ff',''],
+ ['forge','Roblox Forge','AI writes briefs overnight, Claude builds prototypes, I approve.','Running','#f2a541',''],
+ ['inkd','inkd','Handwritten maths for pen tablets.','In development','#ff7a59',''],
+ ['errnd','errnd','Voice-first assistant. Your errand, ran.','In design','#b9f04a','mono'],
+ ['ja','JA Studios','A small web studio, co-founded with a friend.','Revamp','#b5532f','serif']];
+var ORDER=['ticketscope','primelevels','orgchecker'].concat(TENANTS.map(function(t){return t[0];}));
 
 function arcPath(cx,cy,r,a0,a1){var x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);return'M'+x0.toFixed(1)+' '+y0.toFixed(1)+' A'+r+' '+r+' 0 '+((a1-a0)>Math.PI?1:0)+' 1 '+x1.toFixed(1)+' '+y1.toFixed(1);}
-var VIZ={
- signal:function(){var r=mulberry(11),s='<svg viewBox="0 0 400 400">';for(var i=0;i<70;i++){var a=r()*Math.PI*2,d=62+Math.pow(r(),.6)*128,x=(200+Math.cos(a)*d).toFixed(1),y=(200+Math.sin(a)*d).toFixed(1);
-  s+='<line x1="'+x+'" y1="'+y+'" x2="200" y2="200" stroke="var(--viz-a)" stroke-opacity="'+(.06+r()*.16).toFixed(2)+'" stroke-width=".8"/><circle cx="'+x+'" cy="'+y+'" r="'+(1.2+r()*2.2).toFixed(1)+'" fill="var(--viz-b)" fill-opacity="'+(.3+r()*.5).toFixed(2)+'"/>';}
-  return s+'<circle cx="200" cy="200" r="50" fill="none" stroke="var(--viz-a)" stroke-opacity=".4" stroke-dasharray="2 6"/><circle cx="200" cy="200" r="26" fill="var(--viz-bg)" stroke="var(--viz-a)" stroke-width="1.5"/><circle cx="200" cy="200" r="8" fill="var(--viz-a)"/></svg>';},
- pages:function(){var s='<svg viewBox="0 0 400 400">';for(var i=0;i<10;i++){var ang=-27+i*6,hl=i===9;s+='<g transform="rotate('+ang+' 200 350)"><rect x="140" y="80" width="120" height="164" fill="var(--viz-bg)" stroke="'+(hl?'var(--viz-a)':'var(--viz-b)')+'" stroke-opacity="'+(hl?1:.3)+'" stroke-width="1.2"/>';
-  if(hl)s+='<line x1="156" y1="104" x2="226" y2="104" stroke="var(--viz-a)" stroke-width="3"/><line x1="156" y1="122" x2="240" y2="122" stroke="var(--viz-b)" stroke-opacity=".5"/><line x1="156" y1="134" x2="232" y2="134" stroke="var(--viz-b)" stroke-opacity=".5"/><rect x="156" y="156" width="88" height="60" fill="none" stroke="var(--viz-b)" stroke-opacity=".35"/>';s+='</g>';}return s+'</svg>';},
- route:function(){var d='M48 334 C 130 336, 96 238, 176 226 S 268 150, 248 112 S 300 62, 352 66';var s='<svg viewBox="0 0 400 400"><path d="'+d+'" fill="none" stroke="var(--viz-a)" stroke-opacity=".2" stroke-width="24" stroke-linecap="round"/><path d="'+d+'" fill="none" stroke="var(--viz-a)" stroke-width="2" stroke-dasharray="1 8" stroke-linecap="round"/>';
-  [[48,334],[176,226],[248,112],[352,66]].forEach(function(p,i){s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+(i===3?10:6)+'" fill="'+(i===3?'var(--viz-a)':'var(--viz-bg)')+'" stroke="var(--viz-a)" stroke-width="2"/>';});return s+'</svg>';},
- ward:function(){var s='<svg viewBox="0 0 400 400">';for(var i=0;i<4;i++){var r=150-i*32;s+='<path d="M200 '+(200-r)+' L'+(200+r*.86)+' '+(200-r*.5)+' L'+(200+r*.86)+' '+(200+r*.5)+' L200 '+(200+r)+' L'+(200-r*.86)+' '+(200+r*.5)+' L'+(200-r*.86)+' '+(200-r*.5)+' Z" fill="none" stroke="var(--viz-a)" stroke-opacity="'+(.2+i*.2)+'" stroke-width="1.5"/>';}
-  return s+'<path d="M168 202 L192 226 L236 176" fill="none" stroke="var(--viz-b)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>';},
- hand:function(){var P=[[200,320],[150,280],[118,232],[100,190],[90,150],[170,240],[160,170],[156,120],[154,80],[205,236],[205,160],[205,108],[205,64],[238,240],[250,172],[256,124],[260,86],[266,256],[292,204],[306,166],[316,132]];
-  var E=[[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[5,9],[9,10],[10,11],[11,12],[9,13],[13,14],[14,15],[15,16],[13,17],[0,17],[17,18],[18,19],[19,20]];var s='<svg viewBox="0 0 400 400">';
-  E.forEach(function(e){s+='<line x1="'+P[e[0]][0]+'" y1="'+P[e[0]][1]+'" x2="'+P[e[1]][0]+'" y2="'+P[e[1]][1]+'" stroke="var(--viz-a)" stroke-width="2"/>';});P.forEach(function(p){s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="5" fill="var(--viz-b)"/>';});return s+'</svg>';},
- clock:function(){var s='<svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="140" fill="none" stroke="var(--viz-b)" stroke-opacity=".12" stroke-width="18"/>';
-  for(var i=0;i<24;i++){var a=i/24*Math.PI*2-Math.PI/2,r0=i%6?166:160;s+='<line x1="'+(200+Math.cos(a)*r0).toFixed(1)+'" y1="'+(200+Math.sin(a)*r0).toFixed(1)+'" x2="'+(200+Math.cos(a)*172).toFixed(1)+'" y2="'+(200+Math.sin(a)*172).toFixed(1)+'" stroke="var(--viz-b)" stroke-opacity=".4"/>';}
-  [[8.6,10.4,1],[10.8,12.3,.75],[13.3,15.9,1],[16.2,17.4,.55],[19.6,20.8,.35]].forEach(function(b){var a0=b[0]/24*Math.PI*2-Math.PI/2,a1=b[1]/24*Math.PI*2-Math.PI/2;s+='<path d="'+arcPath(200,200,140,a0,a1)+'" fill="none" stroke="var(--viz-a)" stroke-opacity="'+b[2]+'" stroke-width="18"/>';});
-  return s+'<text x="200" y="206" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="17" fill="var(--viz-a)">kloked.</text></svg>';},
- wave:function(){var r=mulberry(5),s='<svg viewBox="0 0 400 400">';for(var i=0;i<24;i++){var x=46+i*8.4,env=Math.sin(i/23*Math.PI),h=(10+r()*60)*env+4;s+='<rect x="'+x.toFixed(1)+'" y="'+(200-h).toFixed(1)+'" width="4" height="'+(h*2).toFixed(1)+'" rx="2" fill="var(--viz-a)" fill-opacity="'+(.25+i/23*.6).toFixed(2)+'"/>';}
-  return s+'<path d="M262 202 L294 236 L356 160" fill="none" stroke="var(--viz-a)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>';},
- mono:function(){return'<svg viewBox="0 0 400 400"><rect x="96" y="96" width="208" height="208" fill="none" stroke="var(--viz-a)" stroke-width="2"/><text x="200" y="236" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="104" fill="var(--viz-b)" letter-spacing="4">JA</text><line x1="136" y1="262" x2="264" y2="262" stroke="var(--viz-a)" stroke-width="2"/></svg>';},
- agents:function(){var s='<svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="130" fill="none" stroke="var(--viz-b)" stroke-opacity=".15" stroke-dasharray="3 6"/>';
-  for(var i=0;i<6;i++){var a=i/6*Math.PI*2-Math.PI/2,x=200+Math.cos(a)*130,y=200+Math.sin(a)*130;s+='<line x1="'+x.toFixed(1)+'" y1="'+y.toFixed(1)+'" x2="200" y2="200" stroke="var(--viz-a)" stroke-opacity=".35"/><circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="14" fill="var(--viz-bg)" stroke="var(--viz-a)" stroke-width="1.5"/>';}
-  return s+'<rect x="172" y="172" width="56" height="56" fill="var(--viz-a)"/><path d="M186 201 L196 211 L214 189" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>';},
- kanban:function(){var s='<svg viewBox="0 0 400 400">',cols=[[4,1],[3,.7],[2,.45],[1,.3]];
-  cols.forEach(function(c,i){var x=52+i*78;s+='<line x1="'+x+'" y1="80" x2="'+(x+66)+'" y2="80" stroke="var(--viz-a)" stroke-width="3"/>';for(var j=0;j<c[0];j++)s+='<rect x="'+x+'" y="'+(96+j*56)+'" width="66" height="44" fill="none" stroke="var(--viz-b)" stroke-opacity="'+c[1]+'"/>';});return s+'</svg>';}
-};
+var VIZ=window.ARC.VIZ;
 
 var tb=document.getElementById('tenants');
 TENANTS.forEach(function(t){var tr=document.createElement('tr');
@@ -728,6 +672,7 @@ function fill(i){var p=FILES[ORDER[i]];cur=i;
   el('sh-stats').innerHTML=p.stats.map(function(s){return'<li>'+esc(s)+'</li>';}).join('');
   var rows=[['What it is',p.what],['My part',p.part]];if(p.stack)rows.push(['Built with',p.stack]);rows.push(['Status',p.status]);
   el('sh-facts').innerHTML=rows.map(function(r){return'<div><dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd></div>';}).join('');
+  if(p.links)el('sh-facts').innerHTML+='<div><dt>Links</dt><dd class="sh-links">'+p.links.map(function(l){return'<a href="'+esc(l[1])+'" target="_blank" rel="noopener">'+esc(l[0])+' ↗</a>';}).join(' · ')+'</dd></div>';
   var note=el('sh-note');if(p.note){note.textContent=p.note;note.hidden=false;}else note.hidden=true;
   el('sh-viz').innerHTML=VIZ[p.viz]();el('sh-count').textContent=(i+1)+' / '+ORDER.length;
   body.classList.remove('swap');void body.offsetWidth;body.classList.add('swap');}
