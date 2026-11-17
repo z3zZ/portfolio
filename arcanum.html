@@ -630,7 +630,7 @@ function drawSparks(){
 /* ---------- frame ---------- */
 var secs=[].slice.call(document.querySelectorAll('main > section')),tops=[];
 function measure(){tops=secs.map(function(s){var r=s.getBoundingClientRect();return{top:r.top+window.scrollY,h:r.height};});}
-function stageNow(){if(!tops.length)return 0;var c=window.scrollY+window.innerHeight*.55,i=0;for(var k=0;k<tops.length;k++)if(tops[k].top<=c)i=k;return i+clamp((c-tops[i].top)/tops[i].h,0,1);}
+function stageNow(){if(!tops.length)return 0;var c=window.scrollY+Math.min(window.scrollY,window.innerHeight*.55),i=0;for(var k=0;k<tops.length;k++)if(tops[k].top<=c)i=k;return i+clamp((c-tops[i].top)/tops[i].h,0,1);}
 function resize(){var w=fg.clientWidth,h=fg.clientHeight;if(!w||!h)return;if(w===W&&h===H){measure();return;}
   W=w;H=h;small=W<760;DPR=Math.min(window.devicePixelRatio||1,1.75);fg.width=Math.round(W*DPR);fg.height=Math.round(H*DPR);
   sizeSky();buildSigil();seedMotes();measure();dirty=true;}

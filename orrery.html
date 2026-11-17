@@ -380,7 +380,7 @@ var pls=[].slice.call(panels.children),ibtn=[].slice.call(idx.querySelectorAll('
 var secs=[].slice.call(document.querySelectorAll('main > section')),tops=[];
 var sysEl=document.getElementById('system'),sysTop=0,sysH=0;
 function measure(){tops=secs.map(function(s){var r=s.getBoundingClientRect();return{top:r.top+window.scrollY,h:r.height};});var r=sysEl.getBoundingClientRect();sysTop=r.top+window.scrollY;sysH=sysEl.offsetHeight;}
-function stageNow(){var c=window.scrollY+window.innerHeight*.5,i=0;for(var k=0;k<tops.length;k++)if(tops[k].top<=c)i=k;return i+clamp((c-tops[i].top)/tops[i].h,0,1);}
+function stageNow(){var c=window.scrollY+Math.min(window.scrollY,window.innerHeight*.5),i=0;for(var k=0;k<tops.length;k++)if(tops[k].top<=c)i=k;return i+clamp((c-tops[i].top)/tops[i].h,0,1);}
 function sysProg(){return clamp((window.scrollY-sysTop)/Math.max(1,sysH-window.innerHeight),0,1);}
 function goFocus(i){measure();var y=sysTop+(i+.5)/IDS.length*(sysH-window.innerHeight);window.scrollTo({top:y,behavior:still?'auto':'smooth'});}
 var focus=-1,links=[].slice.call(document.querySelectorAll('.lk')),lastSec=-1;
