@@ -840,7 +840,7 @@ function drawPine(){
 /* ---------------- frame ---------------- */
 var secs=[].slice.call(document.querySelectorAll('main > section')),tops=[];
 function measure(){tops=secs.map(function(s){var r=s.getBoundingClientRect();return{top:r.top+window.scrollY,h:r.height};});}
-function stageNow(){if(!tops.length)return 0;var c=window.scrollY+window.innerHeight*.55,i=0;
+function stageNow(){if(!tops.length)return 0;var c=window.scrollY+Math.min(window.scrollY,window.innerHeight*.55),i=0;
   for(var k=0;k<tops.length;k++)if(tops[k].top<=c)i=k;
   return i+clamp((c-tops[i].top)/tops[i].h,0,1);}
 
