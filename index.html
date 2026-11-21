@@ -66,8 +66,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero h1{margin:0;font-weight:600;font-size:clamp(54px,9.6vw,150px);line-height:.86;letter-spacing:-.055em}
 .portrait{margin:0;position:relative}
 .portrait .frame{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--rule)}
-.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:48% 40%;filter:grayscale(1) contrast(1.08);transition:filter .6s,transform 1.2s cubic-bezier(.2,.7,.1,1)}
-.portrait:hover img{filter:none;transform:scale(1.03)}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:60% 45%;filter:grayscale(1) contrast(1.08) brightness(1.12);transition:filter .6s,transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.portrait:hover img,.portrait.is-colour img{filter:none;transform:scale(1.03)}
 .portrait .frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--ink) 14%,transparent);pointer-events:none}
 .portrait figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-family:var(--f-mono);font-size:11.5px;color:var(--mute)}
 .portrait figcaption b{color:var(--ink);font-weight:500}
@@ -197,7 +197,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
     </div>
     </div>
     <figure class="portrait">
-      <div class="frame"><img src="img/gym.jpg" alt="Joshan at the gym, headphones on, between cable machines" width="1000" height="558"></div>
+      <div class="frame"><img src="img/portrait.jpg" alt="Joshan at a dimly lit restaurant under glass globe lamps, looking over his shoulder in a black-and-white patterned jumper" width="900" height="1125"></div>
       <figcaption><b>Joshan</b><span>Showing up on the tired days too.</span></figcaption>
     </figure>
   </section>
@@ -346,6 +346,9 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
 <script>
 (function(){
 'use strict';
+/* portrait: tap to reveal colour on touch screens */
+var pf=document.querySelector('.portrait');
+if(pf){pf.addEventListener('click',function(){pf.classList.toggle('is-colour');});}
 /* London clock */
 var clock=document.getElementById('clock');
 function tick(){try{clock.textContent='London '+new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit'}).format(new Date());}catch(e){}}
