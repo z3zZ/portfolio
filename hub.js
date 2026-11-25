@@ -3,7 +3,7 @@
 'use strict';
 var WORLDS=['arcanum','grimoire','orrery','incantation','academy','between','skyline','selected-works','neon-aurora'];
 var NAMES={arcanum:'Arcanum',grimoire:'Grimoire',orrery:'Orrery',incantation:'Incantation',academy:'Academy',between:'The World Between Worlds',skyline:'Skyline','selected-works':'Selected Works','neon-aurora':'Neon Aurora'};
-var HOW={arcanum:'Scroll down to travel through it.',grimoire:'Scroll to turn the pages.',orrery:'Scroll to set the planets moving.',incantation:'Type a spell into the console, like cast neuronav, or type help.',academy:'Scroll to unlock the skill tree.',between:'Scroll to walk through the gate.',skyline:'Scroll to ride the lift up the tower.','selected-works':'Scroll through the gallery.','neon-aurora':'Scroll through the city. Click the sky for fireworks.'};
+var HOW={arcanum:'Scroll down to travel through it.',grimoire:'Scroll to turn the pages. On a phone, swipe them sideways.',orrery:'Scroll to set the planets moving.',incantation:'Type a spell into the console, like cast neuronav, or type help.',academy:'Scroll to unlock the skill tree.',between:'Scroll to walk through the gate.',skyline:'Scroll to ride the lift up the tower.','selected-works':'Scroll through the gallery. On a phone, swipe sideways through the projects.','neon-aurora':'Scroll through the city and swipe through the projects. Tap the sky for fireworks.'};
 var OWN_ESC={incantation:1,'selected-works':1,'neon-aurora':1};
 
 var file=(location.pathname.split('/').pop()||'').replace(/\.html$/,'');
@@ -23,7 +23,7 @@ note.className='jr-note'+(first?'':' mini');
 note.setAttribute('role','status');
 note.innerHTML=first
   ?'<span class="jr-k">World '+num+' of 09 · '+name+'</span>'+
-   '<p>This is <b>Joshan Randhawa&rsquo;s portfolio</b>, told as an interactive world. The projects, experience and contact details are all in here.</p>'+
+   '<p>This is <b>Joshan Randhawa&rsquo;s portfolio</b>, told as a world from his imagination. The real projects, experience and contact details are all in here.</p>'+
    '<ul><li>'+HOW[file]+'</li><li>Tap <b>Home</b> (bottom left) to see all nine worlds.</li></ul>'+
    '<div class="jr-row"><a href="index.html#plain">Prefer a plain CV page?</a><button type="button">Got it</button></div>'
   :'<span class="jr-k">World '+num+' of 09 · '+name+'</span>';
