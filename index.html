@@ -6,7 +6,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="joshan.dev">
 <meta property="og:title" content="Joshan Randhawa · Software engineer">
-<meta property="og:description" content="Software engineer in the London area. One person, nine worlds: pick a door and explore the work.">
+<meta property="og:description" content="The portfolio of Joshan Randhawa, software engineer in the London area. Nine interactive worlds, one story: pick one to explore the work.">
 <meta property="og:url" content="https://joshan.dev/">
 <meta property="og:image" content="https://joshan.dev/og/og.png?v=3">
 <meta property="og:image:width" content="1200">
@@ -14,12 +14,12 @@
 <meta property="og:image:alt" content="Joshan Randhawa · Software engineer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Joshan Randhawa · Software engineer">
-<meta name="twitter:description" content="Software engineer in the London area. One person, nine worlds: pick a door and explore the work.">
+<meta name="twitter:description" content="The portfolio of Joshan Randhawa, software engineer in the London area. Nine interactive worlds, one story: pick one to explore the work.">
 <meta name="twitter:image" content="https://joshan.dev/og/og.png?v=3">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3Eg%7Bstroke%3A%230a0a0a%7D.s%7Bfill%3A%230a0a0a%7D%40media%20%28prefers-color-scheme%3Adark%29%7Bg%7Bstroke%3A%23fafafa%7D.s%7Bfill%3A%23fafafa%7D%7D%3C/style%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222.6%22%3E%3Cpath%20d%3D%22M22.5%204.2A13.5%2013.5%200%201%200%2027.8%209.5%22%20stroke-width%3D%223.2%22/%3E%3Cpath%20d%3D%22M26%202.5l1.1%202.9%202.9%201.1-2.9%201.1-1.1%202.9-1.1-2.9-2.9-1.1%202.9-1.1z%22%20class%3D%22s%22%20stroke-width%3D%22.6%22/%3E%3Cpath%20d%3D%22M19.5%209.5V18.5a4.5%204.5%200%200%201-9%200%22%20stroke-width%3D%223.2%22/%3E%3C/g%3E%3C/svg%3E">
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Joshan Randhawa, software engineer. One person, nine worlds.">
+<meta name="description" content="The portfolio of Joshan Randhawa, software engineer. Nine interactive worlds telling one story, plus a one-screen summary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
@@ -170,12 +170,31 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
 @media (hover:none){.peek{display:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.world a,.world a::before,.ar,.ic svg .sp{transition:none}}
 .flo+.flo{margin-top:20px}.plain .intro .flo p{font-size:17px;line-height:1.5;color:var(--ink-2);margin:0}.flo{margin:28px 0 0;padding-left:18px;border-left:1px solid currentColor}.flo p{font-style:italic;margin:0}.flo cite{display:block;margin-top:10px;font-style:normal;font-size:12px;opacity:.6;letter-spacing:.04em}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.how{padding-block:8px clamp(40px,7vh,64px)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--rule)}
+.steps li{padding:22px 24px 24px 0;display:grid;gap:8px;align-content:start}
+.steps li+li{padding-left:24px;border-left:1px solid var(--rule)}
+.steps .sn{font-family:var(--f-mono);font-size:12px;color:var(--mute)}
+.steps h3{margin:0;font-size:19px;font-weight:600;letter-spacing:-.015em}
+.steps p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.5;max-width:36ch}
+.steps p b{color:var(--ink);font-weight:600}
+.steps kbd,.hurry kbd{font-family:var(--f-mono);font-size:11px;border:1px solid var(--rule);padding:1px 5px}
+.hurry{margin:16px 0 0;font-family:var(--f-mono);font-size:12.5px;color:var(--mute)}
+.hurry a{color:var(--ink)}
+@media (max-width:760px){.steps{grid-template-columns:1fr}.steps li,.steps li+li{padding:18px 0;border-left:0;border-top:1px solid var(--rule)}.steps li:first-child{border-top:0}}
+.k-touch{display:none}
+@media (hover:none){.k-touch{display:inline}.k-key{display:none}
+  .ar{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:14px}}
+@media (max-width:640px){.head p{display:block}.head p .k-key{display:none}.head p .k-touch{display:inline}}
+@media (max-width:480px){.world a{grid-template-columns:32px minmax(0,1fr) 30px}.bar nav{gap:14px}.bar nav a[href="#worlds"]{display:none}}
+.bar nav a{white-space:nowrap}
 </style>
 
 <header class="top">
   <div class="wrap bar">
     <a class="mark" href="#top"><i aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 4.2A13.5 13.5 0 1 0 27.8 9.5" stroke-width="2.2"/><path d="M26 2.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1z" fill="currentColor" stroke-width=".6"/><path d="M19.5 9.5V18.5a4.5 4.5 0 0 1-9 0" stroke-width="2.8"/></svg></i>joshan.dev</a>
-    <nav aria-label="Sections"><a href="#worlds">Worlds</a><a href="#plain">Summary</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Sections"><a href="#how">How it works</a><a href="#worlds">Worlds</a><a href="#plain">Summary</a><a href="#contact">Contact</a></nav>
     <span class="clock" id="clock" aria-label="Local time in London">London --:--</span>
   </div>
 </header>
@@ -186,24 +205,34 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;paddin
     <h1><span>Joshan</span><span>Randhawa</span></h1>
     <p class="sig">Excited by the idea, satisfied by the result.</p>
     <div class="hero-row">
-      <p class="lead">Software engineer. <b>One person, nine worlds.</b> Each one is a different way through the same work. Pick a door.</p>
+      <p class="lead">Software engineer. <b>This is my portfolio, built as nine worlds.</b> Each one is an interactive way through the same projects and CV. Pick one to step inside.</p>
       <ul class="facts">
         <li>Junior Application Developer · <span>Thirtyone:eight</span></li>
         <li>BSc Computer Science with AI · <span>The Open University</span></li>
         <li>Previously · <span>Amazon Prime Video</span></li>
         <li>London area</li>
       </ul>
-      <div class="cta"><a class="btn" href="#plain">No time for magic <span aria-hidden="true">&darr;</span></a><span>The whole story on one screen, no effects.</span></div>
+      <div class="cta"><a class="btn" href="#worlds">Choose a world <span aria-hidden="true">&darr;</span></a><a class="btn ghost" href="#plain">No time for magic</a><span>No time? The whole story on one screen, no effects.</span></div>
     </div>
     </div>
     <figure class="portrait">
-      <div class="frame"><img src="img/portrait.jpg" alt="Joshan at a dimly lit restaurant under glass globe lamps, looking over his shoulder in a black-and-white patterned jumper" width="900" height="1125"></div>
+      <div class="frame"><img src="img/portrait.jpg" alt="Joshan smiling in an office, wearing a navy jumper and lanyard, standing next to a tall orange mascot costume" width="900" height="1125"></div>
       <figcaption><b>Joshan</b><span>Showing up on the tired days too.</span></figcaption>
     </figure>
   </section>
 
+  <section class="wrap how" id="how" aria-labelledby="how-h">
+    <div class="head"><h2 id="how-h">How this site works</h2><p>Three things to know</p></div>
+    <ol class="steps">
+      <li><span class="sn">01</span><h3>It&rsquo;s a portfolio</h3><p>Everything here is about my work: projects, experience, skills and how to reach me. Nothing to buy, nothing to sign up for.</p></li>
+      <li><span class="sn">02</span><h3>Pick a world</h3><p>Each world below is a full interactive site telling the same story in a different style. Choose one to enter, then scroll or play.</p></li>
+      <li><span class="sn">03</span><h3>Come home any time</h3><p>Hit <b>Home</b> in the bottom-left corner, or the logo at the top of any world.</p></li>
+    </ol>
+    <p class="hurry">In a hurry? <a href="#plain">Read the one-screen summary</a>. Same story, no effects.</p>
+  </section>
+
   <section class="wrap" id="worlds" aria-labelledby="worlds-h">
-    <div class="head"><h2 id="worlds-h">Worlds · 09</h2><p>Press <kbd>1</kbd> to <kbd>9</kbd> to jump in</p></div>
+    <div class="head"><h2 id="worlds-h">Choose a world · 09</h2><p><span class="k-touch">Tap any world to enter</span><span class="k-key">Click to enter, or press <kbd>1</kbd> to <kbd>9</kbd></span></p></div>
     <p class="series"><span>The Arcanum series</span><span>Light · code as magic</span></p>
     <ol class="worlds">
       <li class="world"><a href="arcanum.html" data-k="1" data-peek="Enter Arcanum">
