@@ -95,7 +95,7 @@ h2.sec em{font-style:italic;color:var(--brass)}
 .whisper{margin:0;font-family:var(--f-display);font-style:italic;font-size:17px;color:var(--ink-faint)}
 
 /* system */
-#system{height:calc(var(--n) * 52vh + 100vh);padding:0}
+#system{height:calc(var(--n) * 34vh + 100vh);padding:0}
 .sys{position:sticky;top:0;height:100vh;height:100svh;padding-left:var(--gutter);padding-right:var(--gutter-r);display:flex;align-items:center}
 .sys .wrap{display:flex;flex-direction:column;gap:20px}
 .sys-head{max-width:480px}
@@ -240,7 +240,7 @@ a.c-v:hover{border-bottom-color:var(--brass)}
 <a class="skip" href="#system">Skip to the work</a>
 
 <header class="nav">
-  <a class="mark" href="#arrival" aria-label="Joshan Randhawa, back to the start">
+  <a class="mark" href="index.html" aria-label="Home: Joshan Randhawa's portfolio, all nine worlds">
     <svg viewBox="0 0 30 30" aria-hidden="true"><ellipse cx="15" cy="15" rx="13" ry="6" fill="none" stroke="#a8761e" stroke-width="1.2"/><ellipse cx="15" cy="15" rx="8" ry="3.6" fill="none" stroke="#14213d" stroke-opacity=".5"/><circle cx="15" cy="15" r="3.2" fill="#e3c27a" stroke="#a8761e"/><circle cx="27" cy="16.4" r="1.8" fill="#3563e9"/></svg>
     <span class="name">Joshan Randhawa</span></a>
   <nav aria-label="Sections"><ul>
@@ -307,7 +307,7 @@ a.c-v:hover{border-bottom-color:var(--brass)}
         <p class="eyebrow">The astronomer</p>
         <h2 class="sec" id="log-h">The magic is <em>in the wielder.</em></h2>
         <p class="big">I believe the ethical weight of technology sits with whoever holds it, not the tool. So I try to hold it well.</p>
-        <p class="b">I came into software through games, modding Minecraft and Counter-Strike. Code still feels like LEGO: the fun is in the building. I chose a T Level over A Levels to start building sooner, and worked with Amazon Prime Video at seventeen. Along the way: shadowing at Tribeca in 2023, and Amazon’s Step Up work experience in 2025.</p>
+        <p class="b">I came into software through games, modding Minecraft and Counter-Strike. Code still feels like magic: the right words, in the right order, until something real appears. I chose a T Level over A Levels to start building sooner, and worked with Amazon Prime Video at seventeen. Along the way: shadowing at Tribeca in 2023, and Amazon’s Step Up work experience in 2025.</p>
         <p class="b">I own what I ship, from the first line to the last bug, and I'm drawn to ambitious engineering, developer tools, AI and software that feels exceptional to use.</p>
       </div>
       <ol class="entries">
@@ -511,6 +511,7 @@ resize();requestAnimationFrame(frame);
 })();
 </script>
 
-<style>.jr-hub{position:fixed;z-index:9999;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 16px);display:inline-flex;align-items:center;gap:8px;padding:7px 12px 7px 10px;background:#0a0a0a;color:#fafafa;border:1px solid rgba(255,255,255,.22);border-radius:999px;font:500 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em;text-decoration:none;box-shadow:0 8px 24px -10px rgba(0,0,0,.6);transition:transform .2s}.jr-hub:hover{transform:translateX(-2px)}.jr-hub:focus-visible{outline:2px solid #fafafa;outline-offset:3px}.jr-hub b{display:block;width:18px;height:18px;color:#fafafa}.jr-hub b svg{display:block;width:100%;height:100%}</style>
-<a class="jr-hub" href="index.html" aria-label="Back to all worlds"><b aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 4.2A13.5 13.5 0 1 0 27.8 9.5" stroke-width="2.2"/><path d="M26 2.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1z" fill="currentColor" stroke-width=".6"/><path d="M19.5 9.5V18.5a4.5 4.5 0 0 1-9 0" stroke-width="2.8"/></svg></b>&larr; All worlds</a>
+<link rel="stylesheet" href="hub.css">
+<a class="jr-hub" href="index.html" aria-label="Home: back to all nine worlds"><b aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 4.2A13.5 13.5 0 1 0 27.8 9.5" stroke-width="2.2"/><path d="M26 2.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1z" fill="currentColor" stroke-width=".6"/><path d="M19.5 9.5V18.5a4.5 4.5 0 0 1-9 0" stroke-width="2.8"/></svg></b><span class="jr-t"><strong>Home</strong><small>All 9 worlds</small></span></a>
+<script src="hub.js" defer></script>
 </html>
