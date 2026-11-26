@@ -42,7 +42,7 @@
   --rule:#e4e4e4;    /* hairlines */
   --frame:#f4f4f4;   /* passe-partout */
   --klokd-bg:#0d0f0b; --klokd-ink:#eef2e4; --klokd-mute:#8e9682; --klokd-line:#262a20; --klokd:#c8f135;
-  --errnd-bg:#0c0e0d; --errnd-ink:#ecf2ea; --errnd-mute:#8a9488; --errnd-line:#242a25; --errnd:#b4ef3a;
+ 
   --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
   --serif:"Instrument Serif","Times New Roman",Georgia,serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
@@ -201,17 +201,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .k-bars i.pk{background:var(--klokd)}
 @keyframes kb{0%,100%{transform:scaleY(.85)}50%{transform:none}}
 .k-axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--klokd-mute)}
-.piece.errnd{background:var(--errnd-bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
-.e-icon{width:clamp(80px,9vw,112px);aspect-ratio:1;border-radius:24%;background:#151915;border:1.5px solid var(--errnd-line);display:grid;place-items:center}
-.e-icon svg{width:60%;height:60%;overflow:visible}
-.e-wave rect{fill:var(--errnd);transform-box:fill-box;transform-origin:center;animation:ew 4s ease-in-out infinite}
-.e-wave rect:nth-child(2){animation-delay:.1s}.e-wave rect:nth-child(3){animation-delay:.2s}.e-wave rect:nth-child(4){animation-delay:.3s}.e-wave rect:nth-child(5){animation-delay:.4s}
-@keyframes ew{0%,8%{transform:scaleY(.3);opacity:1}14%{transform:scaleY(1)}20%{transform:scaleY(.45)}26%{transform:scaleY(.9)}32%{transform:scaleY(.5)}40%{transform:scaleY(.2);opacity:1}46%,92%{opacity:0;transform:scaleY(.1)}100%{opacity:1;transform:scaleY(.3)}}
-.e-check{fill:none;stroke:var(--errnd);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:ec 4s ease-in-out infinite}
-@keyframes ec{0%,42%{stroke-dashoffset:40}55%,88%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
-.e-word{font-family:var(--mono);font-weight:700;font-size:clamp(26px,3vw,38px);color:var(--errnd-ink);letter-spacing:-.03em;text-align:center;line-height:1}
-.e-word i{font-style:normal;color:var(--errnd)}
-.e-word small{display:block;font-size:13px;font-weight:500;letter-spacing:0;color:var(--errnd);margin-top:6px}
 .note{font-family:var(--serif);font-style:italic;color:var(--grey);font-size:16px;margin-top:6px}
 
 /* ---------- chronology (inverted room) ---------- */
@@ -240,9 +229,8 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .wip .st{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;white-space:nowrap}
 .wip .st::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;animation:pulse 2s var(--ease) infinite}
 @keyframes pulse{50%{opacity:.25}}
-.b-klokd,.b-errnd{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-weight:700;font-size:.82em;padding:1px 8px 1px 7px;border-radius:4px;vertical-align:.06em;white-space:nowrap}
+.b-klokd{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-weight:700;font-size:.82em;padding:1px 8px 1px 7px;border-radius:4px;vertical-align:.06em;white-space:nowrap}
 .b-klokd{background:var(--klokd-bg);color:var(--klokd-ink)}.b-klokd::before{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--klokd)}
-.b-errnd{background:var(--errnd-bg);color:var(--errnd-ink)}.b-errnd::before{content:"";width:.5em;height:.5em;border-radius:2px;background:var(--errnd)}
 .figs{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink)}
 .figs div{padding:22px 0;border-bottom:1px solid var(--rule)}
 .figs div:nth-child(odd){padding-right:18px;border-right:1px solid var(--rule)}
@@ -330,7 +318,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   <!-- ROOM I · WORKS -->
   <section class="room wrap" id="works">
     <div class="room-h rv"><span class="no">Room I</span><h2>Works</h2><p>Fifteen pieces: shipped, in use, or still on the easel.</p></div>
-    <p class="swipe-hint" aria-hidden="true"><span>Swipe for all <b>15</b> projects</span><span class="sw-n">01 / 15 &rarr;</span></p>
+    <p class="swipe-hint" aria-hidden="true"><span>Swipe for all <b>14</b> projects</span><span class="sw-n">01 / 14 &rarr;</span></p>
 <div class="works">
       <article class="work w5 rv">
         <div class="piece tall"><div class="withheld"><b>Work withheld</b><span>at the lender's request</span></div></div>
@@ -413,27 +401,17 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           <p>I got fed up with how bad the on-screen timers looked in my timelapse videos, so I built my own and learned to make it look exactly how I wanted. Small, used daily, and proof that a project doesn&rsquo;t need to be complicated to matter.</p>
           <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/Stopwatch" target="_blank" rel="noopener">GitHub ↗</a></span><span>In use</span></div></div>
       </article>
-      <article class="work w4 rv">
+      <article class="work w6 rv">
         <div class="piece"><canvas data-art="pen" aria-label="A handwritten equation being drawn stroke by stroke"></canvas></div>
         <div class="label"><span class="n">13</span><h3>inkd</h3><span class="med">TypeScript</span>
           <p>Handwritten maths for pen tablets: write an equation by hand and have it recognised and worked through. Modelled on MyScript Math, but more customisable, with no paid engines.</p>
           <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/inkd" target="_blank" rel="noopener">GitHub ↗</a></span><span>In development</span></div></div>
       </article>
-      <article class="work w4 drop rv">
+      <article class="work w6 drop rv">
         <div class="piece"><canvas data-art="lapse" aria-label="Frames of a timelapse ticking past"></canvas></div>
         <div class="label"><span class="n">14</span><h3>rewnd</h3><span class="med">Python</span>
           <p>A webcam timelapse capture tool that runs locally on Linux, with nothing sent to the cloud.</p>
           <div class="meta"><span>Personal collection · <a href="https://github.com/z3zZ/rewnd" target="_blank" rel="noopener">GitHub ↗</a></span><span>In development</span></div></div>
-      </article>
-      <article class="work w4 rv">
-        <div class="piece errnd sq" aria-label="errnd: a waveform icon that turns into a checkmark">
-          <span class="e-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><g class="e-wave"><rect x="3" y="8" width="5" height="24" rx="2.5"/><rect x="11" y="4" width="5" height="32" rx="2.5"/><rect x="19" y="10" width="5" height="20" rx="2.5"/><rect x="27" y="5" width="5" height="30" rx="2.5"/><rect x="35" y="12" width="5" height="16" rx="2.5"/></g><path class="e-check" d="M6 21 L16 31 L35 9"/></svg></span>
-          <span class="e-word">errnd<i>.</i><small>Your errand, ran.</small></span>
-        </div>
-        <div class="label"><span class="n">15</span><h3><span class="b-errnd">errnd</span></h3><span class="med">Voice, single agent</span>
-          <p>A voice-driven personal assistant. Say what needs doing and it gets handled.</p>
-          <div class="meta"><span>Personal collection</span><span>In design</span></div>
-          <span class="note">Shown in the product's own colours.</span></div>
       </article>
     </div>
   </section>
@@ -466,7 +444,6 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <li><div><b>Roblox Forge</b><small>Self-improving agent pipeline</small></div><span class="st">Running</span></li>
         <li><div><b>Open University</b><small>TM110, TM129, MST124</small></div><span class="st">In progress</span></li>
         <li><div><b><span class="b-klokd">klokd</span> after the MVP</b><small>Side project</small></div><span class="st">Ongoing</span></li>
-        <li><div><b>Design for <span class="b-errnd">errnd</span></b><small>In design</small></div><span class="st">Parked</span></li>
         <li><div><b>Mandarin</b><small>Self-study</small></div><span class="st">Daily</span></li>
       </ul>
       <div class="figs rv">

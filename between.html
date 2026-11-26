@@ -43,7 +43,6 @@
   --crimson:#a3392a;
   --wood:#5b3f2e;
   --klokd:#c8f135;
-  --errnd:#b9f04a;
   --f-display:"Shippori Mincho","Hiragino Mincho ProN","Songti SC","Times New Roman",serif;
   --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -137,9 +136,7 @@ h2.sec{font-family:var(--f-display);font-weight:500;font-size:clamp(34px,4.6vw,6
 .inner.dark .vt{font-family:var(--f-mono);font-weight:500;letter-spacing:.18em;font-size:clamp(19px,1.7vw,23px)}
 .inner.dark .meta{color:rgba(233,235,221,.55)}
 .inner.k .seal{border-color:var(--klokd);color:var(--klokd);font-family:var(--f-mono)}
-.inner.e{color:var(--errnd)}
 .inner.cf{background:#0b0b0b;color:#ff7a1a;box-shadow:inset 0 0 0 1px rgba(255,122,26,.5)}.inner.cf .seal{border-color:#ff7a1a;color:#ff7a1a;font-family:var(--f-mono)}.inner.cf .meta{color:rgba(255,122,26,.75)}
-.inner.e .seal{border-color:var(--errnd);color:var(--errnd);font-family:var(--f-mono)}
 .gallery-hint{margin:6px 0 0;text-align:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-faint)}
 @media (max-width:820px){
   .gallery{flex-wrap:nowrap;max-width:none;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter-r));padding-left:var(--gutter);padding-right:var(--gutter-r);scrollbar-width:none}
@@ -190,9 +187,8 @@ a.c-v:hover{border-bottom-color:var(--gold)}
 .sheet[open]{animation:unroll .75s cubic-bezier(.2,.75,.1,1)}
 @keyframes unroll{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
 .sheet::backdrop{background:rgba(4,6,9,.66)}
-.sheet.t-klokd,.sheet.t-errnd{--sh-bg:#0e0f0b;--sh-fg:#e9ebdd;--sh-dim:rgba(233,235,221,.6);--sh-rule:rgba(200,241,53,.16);--sh-title:var(--f-mono);--viz-bg:#080906;--viz-b:#e9ebdd}
+.sheet.t-klokd{--sh-bg:#0e0f0b;--sh-fg:#e9ebdd;--sh-dim:rgba(233,235,221,.6);--sh-rule:rgba(200,241,53,.16);--sh-title:var(--f-mono);--viz-bg:#080906;--viz-b:#e9ebdd}
 .sheet.t-klokd{--sh-acc:var(--klokd);--viz-a:var(--klokd)}
-.sheet.t-errnd{--sh-acc:var(--errnd);--viz-a:var(--errnd)}
 .sheet.t-cf{--sh-bg:#0b0b0b;--sh-fg:#f4ece4;--sh-dim:rgba(244,236,228,.6);--sh-rule:rgba(255,122,26,.25);--sh-acc:#ff7a1a;--viz-a:#ff7a1a;--viz-b:#f4ece4;--viz-bg:#0b0b0b}
 .sheet-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);min-height:min(620px,calc(100dvh - 48px))}
 .sheet-viz{margin:0;background:var(--viz-bg);display:grid;place-items:center;padding:clamp(24px,4vw,56px)}
@@ -200,9 +196,9 @@ a.c-v:hover{border-bottom-color:var(--gold)}
 .sheet-body{padding:clamp(28px,4.5vw,60px);display:flex;flex-direction:column;min-width:0}
 .sh-eyebrow{margin:0;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--sh-dim)}
 .sheet h2{font-family:var(--sh-title);font-weight:500;font-size:clamp(34px,4.2vw,54px);line-height:1.04;margin:14px 0 0;letter-spacing:.005em}
-.t-klokd h2,.t-errnd h2{letter-spacing:-.02em}
+.t-klokd h2{letter-spacing:-.02em}
 .sh-lede{font-size:clamp(17px,1.5vw,19px);line-height:1.55;margin:16px 0 0;max-width:42ch}
-.t-klokd .sh-lede,.t-errnd .sh-lede{font-family:var(--f-mono);font-size:16px;color:var(--sh-acc)}
+.t-klokd .sh-lede{font-family:var(--f-mono);font-size:16px;color:var(--sh-acc)}
 .sh-facts{margin:28px 0 0;display:grid}
 .sh-facts div{display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--sh-rule)}
 .sh-facts dt{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--sh-dim);padding-top:4px}
@@ -279,7 +275,7 @@ a.c-v:hover{border-bottom-color:var(--gold)}
       <div class="ink" style="max-width:620px">
         <p class="eyebrow"><span class="kj" lang="ja" aria-hidden="true">作</span><span class="ln" aria-hidden="true"></span>Work</p>
         <h2 class="sec" id="work-h">The pavilion of work</h2>
-        <p class="lead">Fifteen scrolls hang here. Select one to unroll it.</p>
+        <p class="lead">Fourteen scrolls hang here. Select one to unroll it.</p>
       </div>
       <ul class="gallery">
         <li><button class="scroll" style="--i:0" data-p="0" type="button" aria-haspopup="dialog" aria-label="TicketScope, Amazon Prime Video. Open project.">
@@ -351,11 +347,6 @@ a.c-v:hover{border-bottom-color:var(--gold)}
           <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
           <span class="rod"></span>
           <span class="mount"><span class="inner"><span class="seal">RW</span><span class="vt">rewnd</span><span class="meta">Timelapse<br>In development</span></span></span>
-          <span class="rod low"></span></button></li>
-        <li><button class="scroll" style="--i:14" data-p="14" type="button" aria-haspopup="dialog" aria-label="Errnd, voice assistant. Open project.">
-          <svg class="cord" viewBox="0 0 60 28" aria-hidden="true"><path d="M30 2 L4 27 M30 2 L56 27"/><circle cx="30" cy="2.5" r="2"/></svg>
-          <span class="rod"></span>
-          <span class="mount"><span class="inner dark e"><span class="seal">E</span><span class="vt">errnd</span><span class="meta">In design</span></span></span>
           <span class="rod low"></span></button></li>
       </ul>
       <p class="gallery-hint">TicketScope and Org Checker are internal tools, shown in abstract</p>
@@ -924,7 +915,7 @@ setStill(still);
 resize();requestAnimationFrame(frame);
 
 /* ---------------- projects ---------------- */
-var PROJECTS=['ticketscope', 'orgchecker', 'ja', 'forge', 'agents', 'klokd', 'transcriber', 'primelevels', 'neuronav', 'cognisign', 'stellareye', 'stopwatch', 'inkd', 'rewnd', 'errnd'].map(function(id){var p=window.ARC.P[id];return{title:p.name,theme:id==='klokd'?'klokd':id==='errnd'?'errnd':id==='agents'?'cf':'ink',viz:p.viz,context:p.context,lede:p.lede,what:p.what,part:p.part,stack:p.stack?p.stack.split(' · '):null,status:p.status,note:p.note,links:p.links};});
+var PROJECTS=['ticketscope', 'orgchecker', 'ja', 'forge', 'agents', 'klokd', 'transcriber', 'primelevels', 'neuronav', 'cognisign', 'stellareye', 'stopwatch', 'inkd', 'rewnd'].map(function(id){var p=window.ARC.P[id];return{title:p.name,theme:id==='klokd'?'klokd':id==='agents'?'cf':'ink',viz:p.viz,context:p.context,lede:p.lede,what:p.what,part:p.part,stack:p.stack?p.stack.split(' · '):null,status:p.status,note:p.note,links:p.links};});
 
 function arcPath(cx,cy,r,a0,a1){var x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
   return 'M'+x0.toFixed(1)+' '+y0.toFixed(1)+' A'+r+' '+r+' 0 '+((a1-a0)>Math.PI?1:0)+' 1 '+x1.toFixed(1)+' '+y1.toFixed(1);}
