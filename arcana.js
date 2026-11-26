@@ -9,7 +9,7 @@ A.mulberry=function(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a
 A.esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
 A.rmq=window.matchMedia('(prefers-reduced-motion: reduce)');
 
-A.ORDER=['ticketscope','orgchecker','ja','forge','agents','klokd','transcriber','primelevels','neuronav','cognisign','stellareye','stopwatch','inkd','rewnd','errnd'];
+A.ORDER=['ticketscope','orgchecker','ja','forge','agents','klokd','transcriber','primelevels','neuronav','cognisign','stellareye','stopwatch','inkd','rewnd'];
 A.P={
  transcriber:{name:'Video Transcriber',el:'#1f8fd6',soft:'rgba(31,143,214,.12)',viz:'transcript',school:'Inscription',type:'Tool · Independent',
   fx:'Turns recordings into searchable, timestamped text without them ever leaving the machine.',stat:'Fully local',
@@ -121,12 +121,6 @@ A.P={
   what:'A customisable stopwatch app. I got fed up with how bad the on-screen timers looked in my timelapse videos, so I built my own and learned how to make it look and behave exactly how I wanted.',
   part:'Designed and built it for myself. It’s small, but I use it, and it shows the point: with code you can make something do exactly what you want.',
   stack:'TypeScript',status:'In use',links:[['GitHub','https://github.com/z3zZ/Stopwatch']]},
- errnd:{name:'errnd',el:'#b9f04a',soft:'rgba(185,240,74,.16)',viz:'wave',dk:1,school:'Evocation',type:'Assistant · In design',
-  fx:'Your errand, ran. Say what needs doing and let it get handled.',stat:'In design',
-  incant:'errnd.say("handle it")',
-  context:'Independent · In design',lede:'Your errand, ran.',stats:['Voice-first','Single agent'],
-  what:'A voice-driven personal assistant for the errands that fall through the cracks.',
-  part:'Concept and product design. Parked in the design phase for now.',status:'In design'},
  ja:{name:'JA Studios',el:'#b5532f',soft:'rgba(181,83,47,.2)',viz:'mono',ja:1,school:'Enchantment',type:'Studio · Co-founder',
   fx:'A small web studio building proper websites for organisations that need one.',stat:'Revamp in progress',
   incant:'studio.build(site, { properly: true })',

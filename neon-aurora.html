@@ -1,7 +1,7 @@
 <!doctype html><html><head>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3Eg%7Bstroke%3A%230a0a0a%7D.s%7Bfill%3A%230a0a0a%7D%40media%20%28prefers-color-scheme%3Adark%29%7Bg%7Bstroke%3A%23fafafa%7D.s%7Bfill%3A%23fafafa%7D%7D%3C/style%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222.6%22%3E%3Cpath%20d%3D%22M22.5%204.2A13.5%2013.5%200%201%200%2027.8%209.5%22%20stroke-width%3D%223.2%22/%3E%3Cpath%20d%3D%22M26%202.5l1.1%202.9%202.9%201.1-2.9%201.1-1.1%202.9-1.1-2.9-2.9-1.1%202.9-1.1z%22%20class%3D%22s%22%20stroke-width%3D%22.6%22/%3E%3Cpath%20d%3D%22M19.5%209.5V18.5a4.5%204.5%200%200%201-9%200%22%20stroke-width%3D%223.2%22/%3E%3C/g%3E%3C/svg%3E"><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.flo{margin:56px 0 0;padding:26px 28px;border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.14);max-width:820px}.flo p{font-size:clamp(18px,2vw,24px);line-height:1.45;margin:0}.flo cite{display:block;margin-top:14px;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
 
-/* phones: projects become a swipe row instead of fifteen screens of scrolling */
+/* phones: projects become a swipe row instead of fourteen screens of scrolling */
 .swipe-hint{display:none}
 @media (max-width:760px){
   .swipe-hint{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 14px;font:500 11.5px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
@@ -45,7 +45,7 @@
   --magenta:#ff2bd6; --cyan:#00e5ff; --lemon:#ffe600; --tang:#ff7a1a; --violet:#8b5cff; --mint:#00f5a0;
   /* product brands keep their own palettes */
   --klokd-bg:#0d0f0b; --klokd-ink:#eef2e4; --klokd-mute:#8e9682; --klokd-line:#262a20; --klokd:#c8f135;
-  --errnd-bg:#0c0e0d; --errnd-ink:#ecf2ea; --errnd-mute:#8a9488; --errnd-line:#242a25; --errnd:#b4ef3a;
+ 
   --display:"Bungee","Arial Black",Impact,sans-serif;
   --neon:"Bungee Inline","Bungee","Arial Black",sans-serif;
   --body:"Figtree","Segoe UI","Helvetica Neue",Arial,sans-serif;
@@ -74,11 +74,9 @@ h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1;margin:0;text-
 @keyframes slide{to{transform:translateX(-50%)}}
 @keyframes beat{50%{transform:scale(1.5);opacity:.45}}
 
-.b-klokd,.b-errnd{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-weight:700;font-size:.86em;padding:1px 8px 1px 7px;border-radius:4px;vertical-align:.04em;white-space:nowrap}
+.b-klokd{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-weight:700;font-size:.86em;padding:1px 8px 1px 7px;border-radius:4px;vertical-align:.04em;white-space:nowrap}
 .b-klokd{background:var(--klokd-bg);color:var(--klokd-ink);border:1px solid var(--klokd-line)}
 .b-klokd::before{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--klokd);box-shadow:0 0 6px var(--klokd)}
-.b-errnd{background:var(--errnd-bg);color:var(--errnd-ink);border:1px solid var(--errnd-line)}
-.b-errnd::before{content:"";width:.5em;height:.5em;border-radius:2px;background:var(--errnd);box-shadow:0 0 6px var(--errnd)}
 
 #spark{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:40}
 .xp{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:4px;background:var(--line);z-index:30}
@@ -255,6 +253,7 @@ section.ep > *{position:relative;z-index:1}
 .cover .badge{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;padding:3px 8px;background:var(--c);color:var(--night)}
 .spell .body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;min-width:0}
 .spell.wide{grid-column:span 2;display:grid;grid-template-columns:1.05fr 1fr}
+@media (min-width:981px){.spell.full{grid-column:1/-1}}
 .spell.wide .cover{height:auto;min-height:300px;border-bottom:0;border-right:2px solid var(--c)}
 @media (max-width:620px){.spell.wide{grid-column:span 1;grid-template-columns:1fr}.spell.wide .cover{min-height:200px;border-right:0;border-bottom:2px solid var(--c)}}
 .top{display:flex;align-items:center;gap:10px;justify-content:space-between}
@@ -280,12 +279,11 @@ section.ep > *{position:relative;z-index:1}
 
 /* brand cards */
 .spell.klokd{--deep:var(--klokd-bg);--fg:var(--klokd-ink);--mute:var(--klokd-mute);--line:var(--klokd-line);--night:var(--klokd-bg);--c:var(--klokd)}
-.spell.errnd{--deep:var(--errnd-bg);--fg:var(--errnd-ink);--mute:var(--errnd-mute);--line:var(--errnd-line);--night:var(--errnd-bg);--c:var(--errnd)}
-.spell.klokd,.spell.errnd{border-color:var(--line)}
-.spell.klokd h3,.spell.errnd h3{font-family:var(--mono);font-weight:700;letter-spacing:-.02em;font-size:clamp(28px,2.6vw,34px)}
-.spell.klokd h3 i,.spell.errnd h3 i{font-style:normal;color:var(--c)}
+.spell.klokd{border-color:var(--line)}
+.spell.klokd h3{font-family:var(--mono);font-weight:700;letter-spacing:-.02em;font-size:clamp(28px,2.6vw,34px)}
+.spell.klokd h3 i{font-style:normal;color:var(--c)}
 .tagline{font-family:var(--mono);font-size:13px;color:var(--c);margin-top:6px;display:block}
-.spell.klokd .rank,.spell.errnd .rank{background:var(--fg)}
+.spell.klokd .rank{background:var(--fg)}
 .k-chart{padding:20px;border-right:2px solid var(--klokd-line);display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-width:0}
 @media (max-width:620px){.k-chart{border-right:0;border-bottom:2px solid var(--klokd-line)}}
 .k-chart .hd{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--klokd-mute);letter-spacing:.08em}
@@ -296,14 +294,6 @@ section.ep > *{position:relative;z-index:1}
 .k-axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--klokd-mute)}
 .k-peak{font-family:var(--mono);font-size:12px;color:var(--klokd-ink)}
 .k-peak b{color:var(--klokd)}
-.errnd .stage-e{height:150px;border-bottom:2px solid var(--errnd-line);display:grid;place-items:center;background:radial-gradient(circle at 50% 60%,color-mix(in srgb,var(--errnd) 14%,transparent),transparent 60%)}
-.e-icon{width:84px;height:84px;border-radius:20px;background:#151915;border:1.5px solid var(--errnd-line);display:grid;place-items:center}
-.e-icon svg{width:50px;height:50px;overflow:visible}
-.e-wave rect{fill:var(--errnd);transform-box:fill-box;transform-origin:center;animation:ew 4s ease-in-out infinite}
-.e-wave rect:nth-child(2){animation-delay:.1s}.e-wave rect:nth-child(3){animation-delay:.2s}.e-wave rect:nth-child(4){animation-delay:.3s}.e-wave rect:nth-child(5){animation-delay:.4s}
-@keyframes ew{0%,8%{transform:scaleY(.3);opacity:1}14%{transform:scaleY(1)}20%{transform:scaleY(.45)}26%{transform:scaleY(.9)}32%{transform:scaleY(.5)}40%{transform:scaleY(.2);opacity:1}46%,92%{opacity:0;transform:scaleY(.1)}100%{opacity:1;transform:scaleY(.3)}}
-.e-check{fill:none;stroke:var(--errnd);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:ec 4s ease-in-out infinite}
-@keyframes ec{0%,42%{stroke-dashoffset:40;opacity:1}55%,88%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
 
 /* playground */
 .play{position:relative;border:3px solid var(--fg);box-shadow:10px 10px 0 var(--magenta);background:#05031a;overflow:hidden}
@@ -524,7 +514,7 @@ section.ep > *{position:relative;z-index:1}
       <p>Shipped, in use, or in progress. Every spell has its own colour. Press Cast to see it.</p>
     </div>
     <div class="legend rise"><span><b>S</b>Adopted company-wide</span><span><b>A</b>Shipped to real users</span><span><b>B</b>Working prototype</span><span><b>✦</b>In progress</span></div>
-    <p class="swipe-hint" aria-hidden="true"><span>Swipe for all <b>15</b> projects</span><span class="sw-n">01 / 15 &rarr;</span></p>
+    <p class="swipe-hint" aria-hidden="true"><span>Swipe for all <b>14</b> projects</span><span class="sw-n">01 / 14 &rarr;</span></p>
 <div class="spells">
       <article class="pnl spell rise" style="--c:var(--lemon)" data-el="Lightning · Sealed under NDA" data-name="TicketScope" data-kind="Amazon · On-call tooling">
         <div class="cover"><canvas data-art="bolt" data-c="--lemon"></canvas><span class="seal">SEALED</span></div>
@@ -674,7 +664,7 @@ section.ep > *{position:relative;z-index:1}
           <div class="foot"><span class="mp"><b>0</b>paid engines</span><button class="cast" type="button">Cast ▸</button></div>
         </div>
       </article>
-      <article class="pnl spell wide rise" style="--c:var(--mint)" data-el="Recall · In development" data-name="rewnd" data-kind="Local timelapses">
+      <article class="pnl spell wide full rise" style="--c:var(--mint)" data-el="Recall · In development" data-name="rewnd" data-kind="Local timelapses">
         <div class="cover"><canvas data-art="lapse" data-c="--mint"></canvas></div>
         <div class="body">
           <div class="top"><span class="rank">✦</span><span class="el">Recall · In development</span><span class="sigil"></span></div>
@@ -683,17 +673,6 @@ section.ep > *{position:relative;z-index:1}
           <p>A webcam timelapse capture tool that runs locally on Linux, with nothing sent to the cloud.</p>
           <div class="tags"><span>Python</span><a class="gh" href="https://github.com/z3zZ/rewnd" target="_blank" rel="noopener">GitHub ↗</a></div>
           <div class="foot"><span class="mp"><b>0</b>cloud uploads</span><button class="cast" type="button">Cast ▸</button></div>
-        </div>
-      </article>
-      <article class="pnl spell errnd rise" data-el="Voice magic · In design" data-name="errnd" data-kind="Your errand, ran.">
-        <div class="stage-e"><span class="e-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><g class="e-wave"><rect x="3" y="8" width="5" height="24" rx="2.5"/><rect x="11" y="4" width="5" height="32" rx="2.5"/><rect x="19" y="10" width="5" height="20" rx="2.5"/><rect x="27" y="5" width="5" height="30" rx="2.5"/><rect x="35" y="12" width="5" height="16" rx="2.5"/></g><path class="e-check" d="M6 21 L16 31 L35 9"/></svg></span></div>
-        <div class="body">
-          <div class="top"><span class="rank">✦</span><span class="el">Voice magic · In design</span><span class="sigil"></span></div>
-          <h3>errnd<i>.</i></h3><span class="tagline">Your errand, ran.</span>
-          <code class="incant">listen(voice).run(errand) → ✓</code>
-          <p>A voice-driven personal assistant. Say what needs doing and it gets handled. A single focused agent, in the design stage.</p>
-          <div class="tags"><span>Voice</span><span>Agents</span></div>
-          <div class="foot"><span class="mp"><b>✦</b>in design</span><button class="cast" type="button">Cast ▸</button></div>
         </div>
       </article>
     </div>
@@ -770,7 +749,7 @@ section.ep > *{position:relative;z-index:1}
         <span class="label">Season goal</span>
         <h3>Grow fast, ship real change</h3>
         <p>Progress quickly at Thirtyone:eight while making changes that matter, at a scale where one developer's input still counts.</p>
-        <p>Study in the evenings and keep building on the side, with <span class="b-klokd">klokd</span> and <span class="b-errnd">errnd</span> next in line.</p>
+        <p>Study in the evenings and keep building on the side, with <span class="b-klokd">klokd</span> next in line.</p>
       </div>
     </div>
     <div class="dmg">
@@ -1114,7 +1093,7 @@ document.querySelectorAll('.cast').forEach(b=>b.addEventListener('click',()=>{
   const card=b.closest('.spell'),cs=getComputedStyle(card),c=cs.getPropertyValue('--c').trim();
   ann.textContent='Cast '+card.dataset.name;const r=card.getBoundingClientRect();spawn(r.left+r.width/2,r.top+r.height/2,60,9,c);
   if(reduce)return;
-  fx.style.setProperty('--c',c);const brand=card.classList.contains('klokd')||card.classList.contains('errnd');
+  fx.style.setProperty('--c',c);const brand=card.classList.contains('klokd');
   ['--night','--fg','--mute'].forEach(v=>fx.style.setProperty(v,brand?cs.getPropertyValue(v).trim():''));
   document.getElementById('fxEl').textContent=card.dataset.el;document.getElementById('fxName').textContent=card.dataset.name;document.getElementById('fxKind').textContent=card.dataset.kind;
   fx.hidden=false;fx.classList.remove('go');void fx.offsetWidth;fx.classList.add('go');
