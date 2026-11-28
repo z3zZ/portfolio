@@ -1,23 +1,23 @@
 /* Shared chrome for every world: a clear Home button and a one-time "how this works" note. */
-.jr-hub{position:fixed;z-index:9999;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 50px);display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:6px 16px 6px 8px;background:#fafafa;color:#0a0a0a;border:1px solid rgba(0,0,0,.14);border-radius:999px;font:500 13px/1.1 "Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-decoration:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.55),0 0 0 4px rgba(250,250,250,.14);transition:transform .2s,box-shadow .2s}
-.jr-hub:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(0,0,0,.6),0 0 0 4px rgba(250,250,250,.24)}
+.jr-hub{position:fixed;z-index:9999;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 50px);display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:6px 16px 6px 8px;background:#fafafa;color:#0a0a0a;border:1px solid rgba(0,0,0,.14);border-radius:4px;font:500 13px/1.1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-decoration:none}
+.jr-hub:hover{background:#0a0a0a;color:#fafafa;border-color:#fafafa}.jr-hub:hover b{background:#fafafa;color:#0a0a0a}
 .jr-hub:focus-visible{outline:2px solid #0a0a0a;outline-offset:3px}
-.jr-hub b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#0a0a0a;color:#fafafa;flex:none}
+.jr-hub b{display:grid;place-items:center;width:32px;height:32px;border-radius:2px;background:#0a0a0a;color:#fafafa;flex:none}
 .jr-hub b svg{display:block;width:18px;height:18px}
 .jr-hub .jr-t{display:flex;flex-direction:column;gap:2px}
 .jr-hub strong{font-weight:600;font-size:14px;letter-spacing:-.01em}
-.jr-hub small{font:500 10.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;text-transform:uppercase;opacity:.6}
+.jr-hub small{font:500 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;opacity:.6}
 
-.jr-note{position:fixed;z-index:9998;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 108px);max-width:360px;padding:16px 16px 14px;background:#0a0a0a;color:#f2f2f2;border:1px solid rgba(255,255,255,.16);border-radius:16px;box-shadow:0 24px 60px -20px rgba(0,0,0,.7);font:400 14px/1.5 "Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s;pointer-events:none}
+.jr-note{position:fixed;z-index:9998;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 108px);max-width:360px;padding:16px 16px 14px;background:#0a0a0a;color:#f2f2f2;border:1px solid rgba(255,255,255,.16);border-radius:6px;font:400 14px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s;pointer-events:none}
 .jr-note.on{opacity:1;transform:none;pointer-events:auto}
-.jr-note .jr-k{display:block;margin:0 0 6px;font:500 10.5px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a}
+.jr-note .jr-k{display:block;margin:0 0 6px;font:500 12px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;color:#9a9a9a}
 .jr-note p{margin:0;color:#dcdcdc}
 .jr-note p b{color:#fff;font-weight:600}
-.jr-note ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:4px;font-size:13px;color:#bdbdbd}
-.jr-note li::before{content:"→ ";color:#fff}
+.jr-note ul{margin:10px 0 0;padding:0 0 0 1.1em;list-style:square;display:grid;gap:4px;font-size:13px;color:#bdbdbd}
+.jr-note li::marker{color:#fff}
 .jr-note .jr-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}
 .jr-note .jr-row a{color:#bdbdbd;font-size:12.5px}
-.jr-note button{appearance:none;border:0;border-radius:999px;background:#fafafa;color:#0a0a0a;font:600 13px/1 inherit;font-family:inherit;padding:10px 16px;cursor:pointer}
+.jr-note button{appearance:none;border:0;border-radius:3px;background:#fafafa;color:#0a0a0a;font:600 13px/1 inherit;font-family:inherit;padding:10px 16px;cursor:pointer}
 .jr-note button:focus-visible{outline:2px solid #fafafa;outline-offset:3px}
 .jr-note.mini{max-width:280px;padding:10px 14px}
 .jr-note.mini .jr-k{margin:0}

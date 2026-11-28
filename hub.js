@@ -4,7 +4,7 @@
 var WORLDS=['arcanum','grimoire','orrery','incantation','academy','between','skyline','selected-works','neon-aurora'];
 var NAMES={arcanum:'Arcanum',grimoire:'Grimoire',orrery:'Orrery',incantation:'Incantation',academy:'Academy',between:'The World Between Worlds',skyline:'Skyline','selected-works':'Selected Works','neon-aurora':'Neon Aurora'};
 var HOW={arcanum:'Scroll down to travel through it.',grimoire:'Scroll to turn the pages. On a phone, swipe them sideways.',orrery:'Scroll to set the planets moving.',incantation:'Type a spell into the console, like cast neuronav, or type help.',academy:'Scroll to unlock the skill tree.',between:'Scroll to walk through the gate.',skyline:'Scroll to ride the lift up the tower.','selected-works':'Scroll through the gallery. On a phone, swipe sideways through the projects.','neon-aurora':'Scroll through the city and swipe through the projects. Tap the sky for fireworks.'};
-var OWN_ESC={incantation:1,'selected-works':1,'neon-aurora':1};
+
 
 var file=(location.pathname.split('/').pop()||'').replace(/\.html$/,'');
 var i=WORLDS.indexOf(file);if(i<0)return;
@@ -38,14 +38,8 @@ setTimeout(function(){
 },first?900:500);
 var btn=note.querySelector('button');if(btn)btn.addEventListener('click',hide);
 
-/* Esc goes home, except in worlds that use Esc themselves or while typing. */
-if(!OWN_ESC[file]){
-  window.addEventListener('keydown',function(e){
-    if(e.key!=='Escape'||e.defaultPrevented)return;
-    var el=document.activeElement,tag=el&&el.tagName;
-    if(tag==='INPUT'||tag==='TEXTAREA'||(el&&el.isContentEditable))return;
-    if(note.classList.contains('on')){hide();return;}
-    location.href='index.html';
-  });
-}
+/* Esc dismisses the note. It never navigates: leaving a world is always a deliberate click on Home. */
+window.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&note.classList.contains('on'))hide();
+});
 })();
