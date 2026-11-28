@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cstyle%3Eg%7Bstroke%3A%230a0a0a%7D.s%7Bfill%3A%230a0a0a%7D%40media%20%28prefers-color-scheme%3Adark%29%7Bg%7Bstroke%3A%23fafafa%7D.s%7Bfill%3A%23fafafa%7D%7D%3C/style%3E%3Cg%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222.6%22%3E%3Cpath%20d%3D%22M22.5%204.2A13.5%2013.5%200%201%200%2027.8%209.5%22%20stroke-width%3D%223.2%22/%3E%3Cpath%20d%3D%22M26%202.5l1.1%202.9%202.9%201.1-2.9%201.1-1.1%202.9-1.1-2.9-2.9-1.1%202.9-1.1z%22%20class%3D%22s%22%20stroke-width%3D%22.6%22/%3E%3Cpath%20d%3D%22M19.5%209.5V18.5a4.5%204.5%200%200%201-9%200%22%20stroke-width%3D%223.2%22/%3E%3C/g%3E%3C/svg%3E">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Arcanum Incantation</title>
+<title>Incantation · Joshan Randhawa</title>
+<link rel="canonical" href="https://www.joshan.dev/">
 <meta name="theme-color" content="#b08a5b">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="joshan.dev">
 <meta property="og:title" content="Incantation · Joshan Randhawa">
 <meta property="og:description" content="A real console inside a casting circle. Type a spell to summon the work. One of nine portfolio worlds by Joshan Randhawa.">
-<meta property="og:url" content="https://joshan.dev/incantation.html">
-<meta property="og:image" content="https://joshan.dev/og/incantation.png">
+<meta property="og:url" content="https://www.joshan.dev/incantation.html">
+<meta property="og:image" content="https://www.joshan.dev/og/incantation.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Incantation · Joshan Randhawa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Incantation · Joshan Randhawa">
 <meta name="twitter:description" content="A real console inside a casting circle. Type a spell to summon the work. One of nine portfolio worlds by Joshan Randhawa.">
-<meta name="twitter:image" content="https://joshan.dev/og/incantation.png">
+<meta name="twitter:image" content="https://www.joshan.dev/og/incantation.png">
 
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Joshan Randhawa, software engineer. Type a spell to summon the work.">
@@ -91,16 +92,16 @@ h2.sec em{font-style:normal;color:var(--violet)}
 #circle{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding-block:110px 70px}
 .hero{max-width:760px;width:100%;display:flex;flex-direction:column;align-items:center}
 .hero h1{font-family:var(--f-display);font-weight:700;font-size:clamp(46px,8.4vw,120px);line-height:.9;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
-.hero h1 span{display:block;background:linear-gradient(90deg,var(--violet),var(--pink) 60%,#ff9f43);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 span{display:block;color:var(--violet)}
 .hero .sub{font-size:clamp(17px,1.6vw,20px);color:var(--ink-dim);margin:18px 0 0;max-width:36ch}
 .slot{width:min(620px,100%);margin-top:30px;min-height:56px}
 form.cast{width:min(620px,100%);display:flex;flex-direction:column;gap:8px;z-index:45}
-.line{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 16px;border-radius:14px;background:var(--card);box-shadow:0 0 0 1.5px var(--violet),0 0 0 6px rgba(107,60,255,.12),0 24px 50px -26px rgba(60,30,160,.55);transition:box-shadow .25s}
-.line:focus-within{box-shadow:0 0 0 2px var(--violet),0 0 0 8px rgba(107,60,255,.2),0 24px 50px -26px rgba(60,30,160,.6)}
+.line{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 16px;border-radius:6px;background:var(--card);box-shadow:0 0 0 1.5px var(--violet)}
+.line:focus-within{box-shadow:0 0 0 2.5px var(--violet)}
 .line .pr{font-family:var(--f-mono);font-weight:700;color:var(--violet);font-size:17px}
 .line input{flex:1;min-width:0;font-family:var(--f-mono);font-size:16px;color:var(--ink);background:none;border:0;outline:none;padding:8px 0;caret-color:var(--pink)}
 .line input::placeholder{color:var(--ink-faint)}
-.line button{flex:0 0 auto;font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--violet),var(--pink));border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+.line button{flex:0 0 auto;font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--violet);border:0;border-radius:3px;padding:10px 16px;cursor:pointer}
 .out{list-style:none;margin:0;padding:0 4px;text-align:left;font-family:var(--f-mono);font-size:13px;min-height:1.6em}
 .out li{padding:2px 0;color:var(--ink-dim);overflow-wrap:anywhere}
 .out li.in{color:var(--ink)}
@@ -182,7 +183,7 @@ form.cast.docked .out li.last{display:block;animation:fade 4s ease forwards}
 #final{padding-block:14vh 8vh;text-align:center}
 #final .eyebrow{justify-content:center}
 .final{font-family:var(--f-display);font-weight:700;font-size:clamp(40px,6.4vw,92px);line-height:.94;text-transform:uppercase;margin:0 auto;max-width:12ch;text-wrap:balance}
-.term{margin:32px auto 0;max-width:620px;text-align:left;padding:18px 20px;border-radius:14px;background:#17132b;color:#ece9f8;font-family:var(--f-mono);font-size:14px;line-height:1.7;box-shadow:0 30px 60px -36px rgba(40,20,120,.7);overflow-x:auto}
+.term{margin:32px auto 0;max-width:620px;text-align:left;padding:18px 20px;border-radius:4px;background:#17132b;color:#ece9f8;font-family:var(--f-mono);font-size:14px;line-height:1.7;overflow-x:auto}
 .term .p{color:#9b7bff}
 .term .e{color:#ff7aae}
 .term .c{color:rgba(236,233,248,.5)}
@@ -282,14 +283,14 @@ a.c-v:hover{border-bottom-color:var(--violet)}
         <li><button type="button" data-say="nox">nox</button></li>
         <li><button type="button" data-say="help">help</button></li>
       </ul>
-      <p class="kbd">Press <kbd>/</kbd> anywhere to cast. Ten spells to find.</p>
+      <p class="kbd">Press <kbd>/</kbd> anywhere to cast. Fourteen spells to find.</p>
     </div>
   </section>
 
   <section id="spells" aria-labelledby="spells-h">
     <div class="wrap">
       <p class="eyebrow">Known spells</p>
-      <h2 class="sec" id="spells-h">Ten spells, <em>all real.</em></h2>
+      <h2 class="sec" id="spells-h">Fourteen spells, <em>all real.</em></h2>
       <p class="lead">Every card is something I've built, am building or am researching. Cast one and the console types it for you.</p>
       <ul class="deck" id="deck"></ul>
     </div>
@@ -308,11 +309,6 @@ a.c-v:hover{border-bottom-color:var(--violet)}
           <li class="badge"><span class="hex" style="--c:#f0478f" aria-hidden="true">30+</span><div><small>NeuroNav</small><b>Real users</b><span>Used by more than thirty students</span></div></li>
           <li class="badge"><span class="hex" style="--c:#2d5bff" aria-hidden="true">18</span><div><small>Thirtyone:eight</small><b>Hired at 18</b><span>Junior Application Developer</span></div></li>
         </ul>
-        <figure class="ally">
-          <span class="lbl">Ally testimony</span>
-          <blockquote>"He is a quick learner who demonstrates an impeccable work ethic. His ability to communicate effectively with a diverse range of individuals in professional settings makes you forget the fact he's only 17."</blockquote>
-          <figcaption><b>Flo Busfield</b>, UX/UI Apprentice and my Amazon buddy</figcaption>
-        </figure>
       </div>
     </div>
   </section>
